@@ -10,11 +10,6 @@ const flopAreasContainer = document.getElementById("flopAreas");
 const backLink = document.getElementById("backToOverview");
 const candidateError = document.getElementById("candidateError");
 const candidateContent = [...document.querySelectorAll(".candidate-content")];
-const DEFAULT_UI_STATE = Object.freeze({
-  selectedParty: "all",
-  selectedAreaMayor: "all",
-  selectedAreaCouncil: "all",
-});
 
 function formatInteger(value) {
   return Number(value || 0).toLocaleString("de-DE");
@@ -95,70 +90,23 @@ function sortCandidatesByArea(candidates, areaKey) {
   });
 }
 
-function readStoredUiState() {
-  try {
-    const raw = localStorage.getItem(UI_STATE_STORAGE_KEY);
-    if (!raw) {
-      return { ...DEFAULT_UI_STATE };
-    }
-
-    const parsed = JSON.parse(raw);
-    const selectedParty =
-      typeof parsed?.selectedParty === "string" && parsed.selectedParty.length > 0
-        ? parsed.selectedParty
-        : DEFAULT_UI_STATE.selectedParty;
-    const selectedAreaMayor =
-      typeof parsed?.selectedAreaMayor === "string" && parsed.selectedAreaMayor.length > 0
-        ? parsed.selectedAreaMayor
-        : DEFAULT_UI_STATE.selectedAreaMayor;
-    const selectedAreaCouncil =
-      typeof parsed?.selectedAreaCouncil === "string" && parsed.selectedAreaCouncil.length > 0
-        ? parsed.selectedAreaCouncil
-        : DEFAULT_UI_STATE.selectedAreaCouncil;
-
-    return {
-      selectedParty,
-      selectedAreaMayor,
-      selectedAreaCouncil,
-    };
-  } catch (_error) {
-    return { ...DEFAULT_UI_STATE };
-  }
-}
-
-function rankedCandidatesForArea(candidates, areaKey) {
-  const withVotes = candidates.map((candidate) => ({
+function areaViewCandidates(candidates, areaKey) {
+  const ranked = sortCandidatesByArea(candidates, areaKey).map((candidate) => ({
     ...candidate,
-    totalVotes: Number(candidate.votes || 0),
-    votes: voteCountForArea(candidate, areaKey),
+    votesInArea: voteCountForArea(candidate, areaKey),
   }));
 
-  withVotes.sort((left, right) => {
-    const voteDiff = right.votes - left.votes;
-    if (voteDiff !== 0) {
-      return voteDiff;
-    }
+  const totalVotesInArea = ranked.reduce(
+    (sum, candidate) => sum + Number(candidate.votesInArea || 0),
+    0
+  );
 
-    const partyDiff = (left.party || "").localeCompare(right.party || "", "de");
-    if (partyDiff !== 0) {
-      return partyDiff;
-    }
-
-    return (left.name || "").localeCompare(right.name || "", "de");
-  });
-
-  return withVotes.map((candidate, index) => ({
+  return ranked.map((candidate) => ({
     ...candidate,
-    rank: index + 1,
-  }));
-}
-
-function addViewPercentages(candidates) {
-  const totalVotes = candidates.reduce((sum, candidate) => sum + Number(candidate.votes || 0), 0);
-
-  return candidates.map((candidate) => ({
-    ...candidate,
-    percent: totalVotes > 0 ? (Number(candidate.votes || 0) / totalVotes) * 100 : 0,
+    percentInArea:
+      totalVotesInArea > 0
+        ? (Number(candidate.votesInArea || 0) / totalVotesInArea) * 100
+        : 0,
   }));
 }
 
@@ -166,26 +114,33 @@ function buildAreaPerformance(candidate, candidates, areaOptions) {
   const targetIdentity = candidateIdentity(candidate);
 
   return areaOptions.map((option) => {
-    const rankedForArea = sortCandidatesByArea(candidates, option.key);
-    const areaTotalVotes = rankedForArea.reduce(
-      (sum, rankedCandidate) => sum + voteCountForArea(rankedCandidate, option.key),
-      0
-    );
+    // For each row, emulate the same context as selecting this area in the overview
+    // without applying party filtering.
+    const rankedForArea = areaViewCandidates(candidates, option.key);
     const rankByIdentity = new Map(
       rankedForArea.map((rankedCandidate, index) => [
         candidateIdentity(rankedCandidate),
         index + 1,
       ])
     );
+    const votesByIdentity = new Map(
+      rankedForArea.map((rankedCandidate) => [
+        candidateIdentity(rankedCandidate),
+        Number(rankedCandidate.votesInArea || 0),
+      ])
+    );
+    const percentByIdentity = new Map(
+      rankedForArea.map((rankedCandidate) => [
+        candidateIdentity(rankedCandidate),
+        Number(rankedCandidate.percentInArea || 0),
+      ])
+    );
 
     return {
       key: option.key,
       label: option.label,
-      votes: voteCountForArea(candidate, option.key),
-      percent:
-        areaTotalVotes > 0
-          ? (voteCountForArea(candidate, option.key) / areaTotalVotes) * 100
-          : 0,
+      votes: votesByIdentity.get(targetIdentity) || 0,
+      percent: percentByIdentity.get(targetIdentity) || 0,
       rank: rankByIdentity.get(targetIdentity) || candidates.length,
       comparedCandidates: candidates.length,
     };
@@ -224,7 +179,7 @@ function renderKpis(candidate, candidateCount) {
     },
     {
       label: "Stimmen gesamt",
-      value: formatInteger(candidate.totalVotes),
+      value: formatInteger(candidate.votes),
     },
     {
       label: "Kandidaten gesamt",
@@ -345,31 +300,17 @@ async function bootstrap() {
 
   try {
     const data = await loadData();
-    const uiState = readStoredUiState();
-    const areaOptions = data?.areas?.options || [{ key: "all", label: "Alle Stimmen" }];
-    const validAreaKeys = new Set(areaOptions.map((option) => option.key));
-
-    const selectedArea =
-      scope === "mayor" ? uiState.selectedAreaMayor : uiState.selectedAreaCouncil;
-    const resolvedArea = validAreaKeys.has(selectedArea) ? selectedArea : "all";
-
     const baseCandidates = scope === "mayor" ? data?.mayor?.candidates || [] : data?.council?.candidates || [];
-    const rankedForArea = rankedCandidatesForArea(baseCandidates, resolvedArea);
-    const visibleCandidates =
-      scope === "council" && uiState.selectedParty !== "all"
-        ? rankedForArea.filter((entry) => entry.party === uiState.selectedParty)
-        : rankedForArea;
-    const candidatesWithPercentages = addViewPercentages(visibleCandidates);
-
-    const candidate = findCandidate(candidatesWithPercentages, candidateName, partyName);
+    const candidate = findCandidate(baseCandidates, candidateName, partyName);
     if (!candidate) {
       showError("Der ausgewählte Kandidat wurde in den Daten nicht gefunden.");
       return;
     }
 
+    const areaOptions = data?.areas?.options || [{ key: "all", label: "Alle Stimmen" }];
     const areaPerformanceOptions = areaOptions.filter((option) => option?.key && option.key !== "all");
 
-    const areaPerformance = buildAreaPerformance(candidate, rankedForArea, areaPerformanceOptions);
+    const areaPerformance = buildAreaPerformance(candidate, baseCandidates, areaPerformanceOptions);
     const { top, flop } = pickTopAndFlopAreas(areaPerformance);
 
     const electionLabel = scope === "mayor" ? "Bürgermeister" : "Stadtrat";
@@ -378,7 +319,7 @@ async function bootstrap() {
     partyLabel.textContent = candidate.party || "Unabhängig";
     generatedAtLabel.textContent = formatGeneratedAt(data?.meta?.generatedAt);
 
-    renderKpis(candidate, rankedForArea.length);
+    renderKpis(candidate, baseCandidates.length);
     renderAreaRanking(topAreasContainer, top);
     renderAreaRanking(flopAreasContainer, flop);
   } catch (error) {

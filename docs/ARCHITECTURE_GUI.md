@@ -119,8 +119,8 @@ This file defines the terminology used for prompting and change requests.
   - Flop 3 Ortsteile by candidate rank
 - Ortsteil comparison uses `areas.options` except `all`.
 - `Briefwahl (gesamt)` is treated as one single comparison area.
-- The page uses the persisted area filter state from the main page (`selectedAreaMayor` / `selectedAreaCouncil`) to calculate current rank and percentage context.
-- Area rows show percentages inline with votes (`Stimmen (X %)`) for each area.
+- Candidate detail metrics are view-independent and based on the full scope dataset from `final_results.json`.
+- Area rows show percentages inline with votes (`Stimmen (X %)`) for each area, calculated as if that area filter were selected in the overview and with no party filter applied (full candidate set of the selected election scope).
 - Includes a `Back Link` to return to the main page.
 
 ## 4. Prompt Terminology
