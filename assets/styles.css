@@ -408,6 +408,22 @@ h3 {
     gap: 0.85rem;
 }
 
+.area-rank-row-clickable {
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.area-rank-row-clickable:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(18, 24, 40, 0.1);
+    border-color: #d7c8b5;
+}
+
+.area-rank-row-clickable:focus-visible {
+    outline: 2px solid #1f2937;
+    outline-offset: 2px;
+}
+
 .area-rank-main {
     min-width: 0;
 }

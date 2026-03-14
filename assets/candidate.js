@@ -5,11 +5,16 @@ const nameLabel = document.getElementById("candidateName");
 const partyLabel = document.getElementById("candidateParty");
 const generatedAtLabel = document.getElementById("candidateGeneratedAt");
 const kpiContainer = document.getElementById("candidateKpis");
-const topAreasContainer = document.getElementById("topAreas");
-const flopAreasContainer = document.getElementById("flopAreas");
+const areaRanksContainer = document.getElementById("areaRanks");
 const backLink = document.getElementById("backToOverview");
 const candidateError = document.getElementById("candidateError");
 const candidateContent = [...document.querySelectorAll(".candidate-content")];
+const NAV_DEFAULT_UI_STATE = Object.freeze({
+  activeTab: "mayor",
+  selectedParty: "all",
+  selectedAreaMayor: "all",
+  selectedAreaCouncil: "all",
+});
 
 function formatInteger(value) {
   return Number(value || 0).toLocaleString("de-DE");
@@ -147,28 +152,14 @@ function buildAreaPerformance(candidate, candidates, areaOptions) {
   });
 }
 
-function pickTopAndFlopAreas(areaPerformance) {
-  const top = [...areaPerformance]
-    .sort((left, right) => {
-      const rankDiff = left.rank - right.rank;
-      if (rankDiff !== 0) {
-        return rankDiff;
-      }
-      return right.votes - left.votes;
-    })
-    .slice(0, 3);
-
-  const flop = [...areaPerformance]
-    .sort((left, right) => {
-      const rankDiff = right.rank - left.rank;
-      if (rankDiff !== 0) {
-        return rankDiff;
-      }
-      return left.votes - right.votes;
-    })
-    .slice(0, 3);
-
-  return { top, flop };
+function sortAreaPerformanceByRank(areaPerformance) {
+  return [...areaPerformance].sort((left, right) => {
+    const rankDiff = left.rank - right.rank;
+    if (rankDiff !== 0) {
+      return rankDiff;
+    }
+    return right.votes - left.votes;
+  });
 }
 
 function renderKpis(candidate, candidateCount) {
@@ -206,7 +197,57 @@ function renderKpis(candidate, candidateCount) {
   }
 }
 
-function renderAreaRanking(container, entries) {
+function readNavigationStateSnapshot() {
+  try {
+    const raw = localStorage.getItem(UI_STATE_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : {};
+
+    return {
+      activeTab:
+        parsed?.activeTab === "mayor" || parsed?.activeTab === "council"
+          ? parsed.activeTab
+          : NAV_DEFAULT_UI_STATE.activeTab,
+      selectedParty:
+        typeof parsed?.selectedParty === "string" && parsed.selectedParty.length > 0
+          ? parsed.selectedParty
+          : NAV_DEFAULT_UI_STATE.selectedParty,
+      selectedAreaMayor:
+        typeof parsed?.selectedAreaMayor === "string" && parsed.selectedAreaMayor.length > 0
+          ? parsed.selectedAreaMayor
+          : NAV_DEFAULT_UI_STATE.selectedAreaMayor,
+      selectedAreaCouncil:
+        typeof parsed?.selectedAreaCouncil === "string" && parsed.selectedAreaCouncil.length > 0
+          ? parsed.selectedAreaCouncil
+          : NAV_DEFAULT_UI_STATE.selectedAreaCouncil,
+    };
+  } catch (_error) {
+    return { ...NAV_DEFAULT_UI_STATE };
+  }
+}
+
+function writeNavigationState(scope, areaKey) {
+  const snapshot = readNavigationStateSnapshot();
+  snapshot.activeTab = scope;
+
+  if (scope === "mayor") {
+    snapshot.selectedAreaMayor = areaKey;
+  } else {
+    snapshot.selectedAreaCouncil = areaKey;
+  }
+
+  try {
+    localStorage.setItem(UI_STATE_STORAGE_KEY, JSON.stringify(snapshot));
+  } catch (_error) {
+    // Ignore storage failures.
+  }
+}
+
+function navigateToOverviewWithArea(scope, areaKey) {
+  writeNavigationState(scope, areaKey);
+  window.location.href = "index.html";
+}
+
+function renderAreaRanking(container, entries, scope) {
   container.innerHTML = "";
 
   if (!entries.length) {
@@ -216,7 +257,17 @@ function renderAreaRanking(container, entries) {
 
   for (const entry of entries) {
     const row = document.createElement("article");
-    row.className = "area-rank-row";
+    row.className = "area-rank-row area-rank-row-clickable";
+    row.setAttribute("role", "link");
+    row.tabIndex = 0;
+    row.setAttribute("aria-label", `${entry.label} in Übersicht öffnen`);
+    row.addEventListener("click", () => navigateToOverviewWithArea(scope, entry.key));
+    row.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        navigateToOverviewWithArea(scope, entry.key);
+      }
+    });
 
     const main = document.createElement("div");
     main.className = "area-rank-main";
@@ -266,10 +317,9 @@ function primeBackNavigation(scope) {
   }
 
   backLink.addEventListener("click", () => {
+    const snapshot = readNavigationStateSnapshot();
+    snapshot.activeTab = scope;
     try {
-      const raw = localStorage.getItem(UI_STATE_STORAGE_KEY);
-      const snapshot = raw ? JSON.parse(raw) : {};
-      snapshot.activeTab = scope;
       localStorage.setItem(UI_STATE_STORAGE_KEY, JSON.stringify(snapshot));
     } catch (_error) {
       // Ignore storage failures.
@@ -311,7 +361,7 @@ async function bootstrap() {
     const areaPerformanceOptions = areaOptions.filter((option) => option?.key && option.key !== "all");
 
     const areaPerformance = buildAreaPerformance(candidate, baseCandidates, areaPerformanceOptions);
-    const { top, flop } = pickTopAndFlopAreas(areaPerformance);
+    const rankedAreas = sortAreaPerformanceByRank(areaPerformance);
 
     const electionLabel = scope === "mayor" ? "Bürgermeister" : "Stadtrat";
     scopeLabel.textContent = `${data?.meta?.location || "Karlstadt"} • ${electionLabel}`;
@@ -320,8 +370,7 @@ async function bootstrap() {
     generatedAtLabel.textContent = formatGeneratedAt(data?.meta?.generatedAt);
 
     renderKpis(candidate, baseCandidates.length);
-    renderAreaRanking(topAreasContainer, top);
-    renderAreaRanking(flopAreasContainer, flop);
+    renderAreaRanking(areaRanksContainer, rankedAreas, scope);
   } catch (error) {
     showError(error.message || "Fehler beim Laden der Kandidatendaten.");
   }
