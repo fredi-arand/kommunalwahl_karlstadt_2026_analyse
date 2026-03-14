@@ -278,6 +278,23 @@ h3 {
     background: #fffbf5;
 }
 
+.app-footer {
+    margin-top: 1.1rem;
+    text-align: center;
+}
+
+.app-footer a {
+    color: #6b4224;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+.app-footer a:hover {
+    color: #3f2a1a;
+}
+
 @keyframes fadeSlide {
     from {
         opacity: 0;

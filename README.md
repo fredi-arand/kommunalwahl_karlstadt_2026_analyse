@@ -2,6 +2,12 @@
 
 Mobile-first web app for analyzing the final results of the 2026 local election in Karlstadt.
 
+## Live Website
+- https://kommunalwahl-karlstadt-2026-analyse.vercel.app
+
+## Repository
+- https://github.com/fredi-arand/kommunalwahl_karlstadt_2026_analyse
+
 ## Scope
 This repository is intentionally **not** built for live election-night reporting. The focus is on final-result analysis and rankings:
 
