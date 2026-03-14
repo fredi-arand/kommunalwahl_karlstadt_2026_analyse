@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kandidat | Kommunalwahl 2026 Karlstadt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+    <div class="bg-shape bg-shape-one" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-two" aria-hidden="true"></div>
+
+    <main class="app">
+        <a class="back-link" id="backToOverview" href="index.html">Zurück zur Übersicht</a>
+
+        <section class="hero candidate-hero candidate-content">
+            <p class="eyebrow" id="candidateScope">Kandidatenansicht</p>
+            <h1 id="candidateName">Lade Kandidat...</h1>
+            <p class="subtitle" id="candidateParty"></p>
+            <div class="meta-row">
+                <span id="candidateGeneratedAt">Lade Daten...</span>
+            </div>
+        </section>
+
+        <section class="summary-cards candidate-kpis candidate-content" id="candidateKpis"></section>
+
+        <section class="panel candidate-content">
+            <h2>Top 3 Ortsteile nach Rang</h2>
+            <p class="panel-hint">
+                Beste Platzierungen des Kandidaten je Ortsteil (inklusive Briefwahl als ein Bereich).
+            </p>
+            <div class="area-rank-list" id="topAreas"></div>
+        </section>
+
+        <section class="panel candidate-content">
+            <h2>Flop 3 Ortsteile nach Rang</h2>
+            <p class="panel-hint">
+                Schwachste Platzierungen des Kandidaten je Ortsteil (inklusive Briefwahl als ein Bereich).
+            </p>
+            <div class="area-rank-list" id="flopAreas"></div>
+        </section>
+
+        <section class="empty-state candidate-error" id="candidateError" hidden></section>
+
+        <footer class="app-footer">
+            <a href="https://github.com/fredi-arand/kommunalwahl_karlstadt_2026_analyse" target="_blank"
+                rel="noopener noreferrer">GitHub Repository</a>
+        </footer>
+    </main>
+
+    <script src="assets/candidate.js" defer></script>
+</body>
+
+</html>

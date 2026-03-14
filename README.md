@@ -13,6 +13,7 @@ This repository is intentionally **not** built for live election-night reporting
 
 - Mayor candidates with vote totals and rank
 - Council candidates with vote totals and rank
+- Dedicated candidate detail pages with total rank and top/flop Ortsteil ranking
 - Party filter, seat overview, and turnout KPIs
 
 ## Data Sources
@@ -25,8 +26,10 @@ This repository is intentionally **not** built for live election-night reporting
 
 ## Project Structure
 - `index.html`: app entry point
+- `candidate.html`: candidate detail page entry point
 - `assets/styles.css`: design system and mobile-first styling
 - `assets/app.js`: UI logic, tabs, filters, rendering
+- `assets/candidate.js`: candidate detail rendering and Ortsteil rank insights
 - `scripts/build_data.py`: fetches final raw data and generates `data/final_results.json`
 - `data/csv/council_candidate_mapping_2026.json`: mapping of D blocks to candidate lists
 - `docs/ARCHITECTURE_GUI.md`: architecture and GUI terminology for prompting

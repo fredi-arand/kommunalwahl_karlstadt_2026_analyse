@@ -74,6 +74,7 @@ This file defines the terminology used for prompting and change requests.
   - Party
   - Votes
   - Optional percentage
+  - Click opens the `Candidate Detail Page`
 
 ### 3.5 Council Panel
 - `Party Filter` with chip buttons.
@@ -87,6 +88,7 @@ This file defines the terminology used for prompting and change requests.
   - Name
   - Party
   - Votes
+  - Click opens the `Candidate Detail Page`
 
 ### 3.6 Area Selection Behavior
 - Area selection affects both mayor and council vote values.
@@ -102,6 +104,17 @@ This file defines the terminology used for prompting and change requests.
 - On page reload, the previous view is restored.
 - Invalid persisted values are sanitized against current data (unknown party names are dropped, unknown tabs/areas fall back to defaults).
 
+### 3.8 Candidate Detail Page
+- Dedicated page per candidate (`candidate.html`).
+- Contains:
+  - Candidate name and party
+  - `Gesamtrang` (total rank)
+  - Top 3 Ortsteile by candidate rank
+  - Flop 3 Ortsteile by candidate rank
+- Ortsteil comparison uses `areas.options` except `all`.
+- `Briefwahl (gesamt)` is treated as one single comparison area.
+- Includes a `Back Link` to return to the main page.
+
 ## 4. Prompt Terminology
 
 Use these terms so requirements stay unambiguous:
@@ -113,6 +126,8 @@ Use these terms so requirements stay unambiguous:
 - "Party Filter" = chip row in the Stadtrat panel
 - "Candidate Card" = candidate entry in a list
 - "Rank Pill" = visual rank element inside each Candidate Card
+- "Candidate Detail Page" = dedicated detail view for one candidate
+- "Back Link" = navigation element from candidate detail to main page
 
 ## 5. Change Guidelines
 - Always document structural changes here.

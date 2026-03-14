@@ -129,9 +129,24 @@ function rankedCandidatesForArea(candidates) {
   }));
 }
 
+function buildCandidateHref(candidate, scope) {
+  const params = new URLSearchParams({
+    scope,
+    name: candidate?.name || "",
+  });
+
+  if (candidate?.party) {
+    params.set("party", candidate.party);
+  }
+
+  return `candidate.html?${params.toString()}`;
+}
+
 function createCandidateCard(candidate, options = {}) {
-  const card = document.createElement("article");
-  card.className = "candidate-card";
+  const card = document.createElement("a");
+  card.className = "candidate-card candidate-card-link";
+  card.href = buildCandidateHref(candidate, options.scope || "mayor");
+  card.setAttribute("aria-label", `Details für ${candidate.name} öffnen`);
   card.style.borderLeftColor = options.color || "#b9a999";
 
   const percentPart =
@@ -199,12 +214,12 @@ function renderMayorList() {
   const ranked = rankedCandidatesForArea(candidates);
 
   if (!ranked.length) {
-    mayorList.innerHTML = '<div class="empty-state">Keine Daten fur Bürgermeisterkandidaten gefunden.</div>';
+    mayorList.innerHTML = '<div class="empty-state">Keine Daten für Bürgermeisterkandidaten gefunden.</div>';
     return;
   }
 
   for (const candidate of ranked) {
-    mayorList.appendChild(createCandidateCard(candidate));
+    mayorList.appendChild(createCandidateCard(candidate, { scope: "mayor" }));
   }
 }
 
@@ -282,20 +297,25 @@ function renderCouncilList() {
       : allCandidates.filter((candidate) => state.selectedParties.has(candidate.party));
 
   if (!visibleCandidates.length) {
-    councilList.innerHTML = '<div class="empty-state">Keine Kandidaten fur die gewahlten Parteien.</div>';
+    councilList.innerHTML = '<div class="empty-state">Keine Kandidaten für die gewählten Parteien.</div>';
     return;
   }
 
   for (const candidate of visibleCandidates) {
     const partyInfo = partyMap.get(candidate.party);
-    councilList.appendChild(createCandidateCard(candidate, { color: partyInfo?.color }));
+    councilList.appendChild(
+      createCandidateCard(candidate, {
+        color: partyInfo?.color,
+        scope: "council",
+      })
+    );
   }
 }
 
 async function loadData() {
   const response = await fetch("data/final_results.json", { cache: "no-store" });
   if (!response.ok) {
-    throw new Error(`Konnte Daten nicht laden: HTTP ${response.status}`);
+    throw new Error(`Könnte Daten nicht laden: HTTP ${response.status}`);
   }
 
   state.data = await response.json();
