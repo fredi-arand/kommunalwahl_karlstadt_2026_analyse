@@ -1,0 +1,12 @@
+.vercel
+
+# Editor settings
+.vscode/
+
+# Python local environment/cache
+.venv/
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store

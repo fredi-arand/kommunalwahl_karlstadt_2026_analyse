@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kommunalwahl 2026 Karlstadt | Analyse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+    <div class="bg-shape bg-shape-one" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-two" aria-hidden="true"></div>
+
+    <main class="app">
+        <header class="hero">
+            <p class="eyebrow">Karlstadt • Kommunalwahl 2026</p>
+            <h1>Wahlanalyse</h1>
+            <p class="subtitle">
+                Finale Ergebnisse fur Bürgermeisterwahl und Stadtrat.
+            </p>
+            <div class="meta-row">
+                <span id="generatedAt">Lade Daten...</span>
+            </div>
+        </header>
+
+        <section class="summary-cards" id="summaryCards"></section>
+
+        <section class="tabs" aria-label="Ansichten">
+            <button class="tab-button is-active" data-tab="mayor" type="button">Bürgermeister</button>
+            <button class="tab-button" data-tab="council" type="button">Stadtrat</button>
+        </section>
+
+        <section class="panel" data-panel="mayor">
+            <h2>Bürgermeisterkandidaten</h2>
+            <p class="panel-hint">Sortiert nach Stimmenzahl, inklusive Rang.</p>
+            <div class="candidate-list" id="mayorList"></div>
+        </section>
+
+        <section class="panel is-hidden" data-panel="council">
+            <div class="panel-header">
+                <div>
+                    <h2>Stadtratskandidaten</h2>
+                    <p class="panel-hint">Filter nach Partei und direkte Rangvergleichbarkeit.</p>
+                </div>
+                <div class="party-filter" id="partyFilter"></div>
+            </div>
+            <div class="candidate-list" id="councilList"></div>
+        </section>
+    </main>
+
+    <script src="assets/app.js" defer></script>
+</body>
+
+</html>
