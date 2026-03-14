@@ -98,6 +98,7 @@ This file defines the terminology used for prompting and change requests.
 - Mayor and council area selections are independent.
 - Each area selection affects vote values and rank recalculation only within its own panel.
 - Party filter selection (if not `Alle Parteien`) is applied after ranking.
+- Candidate percentages are recalculated per current panel view (based on currently visible candidates) and shown inline with the vote label (`Stimmen (X %)`).
 
 ### 3.7 UI State Persistence
 - The frontend stores UI state in `localStorage`.
@@ -118,6 +119,8 @@ This file defines the terminology used for prompting and change requests.
   - Flop 3 Ortsteile by candidate rank
 - Ortsteil comparison uses `areas.options` except `all`.
 - `Briefwahl (gesamt)` is treated as one single comparison area.
+- The page uses the persisted area filter state from the main page (`selectedAreaMayor` / `selectedAreaCouncil`) to calculate current rank and percentage context.
+- Area rows show percentages inline with votes (`Stimmen (X %)`) for each area.
 - Includes a `Back Link` to return to the main page.
 
 ## 4. Prompt Terminology

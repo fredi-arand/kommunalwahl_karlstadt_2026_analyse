@@ -145,13 +145,21 @@ function rankedCandidatesForArea(candidates, areaKey) {
   const withAreaVotes = candidates.map((candidate) => ({
     ...candidate,
     votes: candidateVotesForArea(candidate, areaKey),
-    percent: areaKey === "all" ? candidate.percent : null,
   }));
 
   withAreaVotes.sort((left, right) => right.votes - left.votes);
   return withAreaVotes.map((candidate, index) => ({
     ...candidate,
     rank: index + 1,
+  }));
+}
+
+function addViewPercentages(candidates) {
+  const totalVotes = candidates.reduce((sum, candidate) => sum + Number(candidate.votes || 0), 0);
+
+  return candidates.map((candidate) => ({
+    ...candidate,
+    percent: totalVotes > 0 ? (Number(candidate.votes || 0) / totalVotes) * 100 : 0,
   }));
 }
 
@@ -175,11 +183,6 @@ function createCandidateCard(candidate, options = {}) {
   card.setAttribute("aria-label", `Details für ${candidate.name} öffnen`);
   card.style.borderLeftColor = options.color || "#b9a999";
 
-  const percentPart =
-    candidate.percent === null || candidate.percent === undefined
-      ? ""
-      : `<p class="vote-label">${formatPercent(candidate.percent)}</p>`;
-
   const partyText =
     options.partyRank === null || options.partyRank === undefined
       ? candidate.party
@@ -195,8 +198,7 @@ function createCandidateCard(candidate, options = {}) {
     </div>
     <div class="vote-column">
       <p class="vote-value">${formatInteger(candidate.votes)}</p>
-      <p class="vote-label">Stimmen</p>
-      ${percentPart}
+      <p class="vote-label">Stimmen (${formatPercent(candidate.percent)})</p>
     </div>
   `;
 
@@ -242,7 +244,7 @@ function renderSummary() {
 function renderMayorList() {
   mayorList.innerHTML = "";
   const candidates = state.data?.mayor?.candidates || [];
-  const ranked = rankedCandidatesForArea(candidates, state.selectedAreaMayor);
+  const ranked = addViewPercentages(rankedCandidatesForArea(candidates, state.selectedAreaMayor));
 
   if (!ranked.length) {
     mayorList.innerHTML = '<div class="empty-state">Keine Daten für Bürgermeisterkandidaten gefunden.</div>';
@@ -348,12 +350,14 @@ function renderCouncilList() {
       ? allCandidates
       : allCandidates.filter((candidate) => candidate.party === state.selectedParty);
 
-  if (!visibleCandidates.length) {
+  const visibleWithPercentages = addViewPercentages(visibleCandidates);
+
+  if (!visibleWithPercentages.length) {
     councilList.innerHTML = '<div class="empty-state">Keine Kandidaten für die gewählten Parteien.</div>';
     return;
   }
 
-  for (const candidate of visibleCandidates) {
+  for (const candidate of visibleWithPercentages) {
     const partyInfo = partyMap.get(candidate.party);
     councilList.appendChild(
       createCandidateCard(candidate, {
