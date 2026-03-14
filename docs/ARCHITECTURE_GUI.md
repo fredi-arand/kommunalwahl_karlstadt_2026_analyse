@@ -70,7 +70,7 @@ This file defines the terminology used for prompting and change requests.
 - Compact pill-style dropdown design.
 - List of all mayor candidates.
 - Each `Candidate Card` displays:
-  - `Rank Pill` (rank)
+  - `Rank Pill` (absolute rank number)
   - Name
   - Party
   - Votes
@@ -88,9 +88,9 @@ This file defines the terminology used for prompting and change requests.
 - On narrow screens, dropdowns wrap automatically to avoid overflow.
 - Filtered or unfiltered candidate list.
 - Each `Candidate Card` displays:
-  - `Rank Pill` (global rank across all council candidates)
+  - `Rank Pill` (global absolute rank number across all council candidates)
   - Name
-  - Party
+  - Party line (includes party-internal rank as `<Party>: <Platz>`, for example `SPD: 1`)
   - Votes
   - Click opens the `Candidate Detail Page`
 

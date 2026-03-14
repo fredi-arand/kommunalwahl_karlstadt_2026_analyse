@@ -144,13 +144,18 @@ function createCandidateCard(candidate, options = {}) {
       ? ""
       : `<p class="vote-label">${formatPercent(candidate.percent)}</p>`;
 
+  const partyText =
+    options.partyRank === null || options.partyRank === undefined
+      ? candidate.party
+      : `${candidate.party}: ${options.partyRank}`;
+
   card.innerHTML = `
     <div class="candidate-main">
       <div class="name-line">
-        <span class="rank-pill">Rang ${candidate.rank}</span>
+        <span class="rank-pill">${candidate.rank}</span>
         <h3 class="candidate-name">${candidate.name}</h3>
       </div>
-      <p class="candidate-party">${candidate.party}</p>
+      <p class="candidate-party">${partyText}</p>
     </div>
     <div class="vote-column">
       <p class="vote-value">${formatInteger(candidate.votes)}</p>
@@ -293,6 +298,14 @@ function renderCouncilList() {
 
   const allCandidates = rankedCandidatesForArea(state.data?.council?.candidates || []);
   const partyMap = new Map((state.data?.council?.parties || []).map((party) => [party.name, party]));
+  const partyRankCounter = new Map();
+  const partyRankByCandidate = new Map();
+
+  for (const candidate of allCandidates) {
+    const nextRank = (partyRankCounter.get(candidate.party) || 0) + 1;
+    partyRankCounter.set(candidate.party, nextRank);
+    partyRankByCandidate.set(`${candidate.party}::${candidate.name}`, nextRank);
+  }
 
   const visibleCandidates =
     state.selectedParty === "all"
@@ -310,6 +323,7 @@ function renderCouncilList() {
       createCandidateCard(candidate, {
         color: partyInfo?.color,
         scope: "council",
+        partyRank: partyRankByCandidate.get(`${candidate.party}::${candidate.name}`),
       })
     );
   }
