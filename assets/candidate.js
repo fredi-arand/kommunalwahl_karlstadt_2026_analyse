@@ -129,6 +129,7 @@ function readStoredUiState() {
 function rankedCandidatesForArea(candidates, areaKey) {
   const withVotes = candidates.map((candidate) => ({
     ...candidate,
+    totalVotes: Number(candidate.votes || 0),
     votes: voteCountForArea(candidate, areaKey),
   }));
 
@@ -223,7 +224,7 @@ function renderKpis(candidate, candidateCount) {
     },
     {
       label: "Stimmen gesamt",
-      value: formatInteger(candidate.votes),
+      value: formatInteger(candidate.totalVotes),
     },
     {
       label: "Kandidaten gesamt",
