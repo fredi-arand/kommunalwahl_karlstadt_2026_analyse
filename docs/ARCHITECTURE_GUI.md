@@ -63,6 +63,10 @@ This file defines the terminology used for prompting and change requests.
 - `Stadtrat` tab
 
 ### 3.4 Mayor Panel
+- `Area Filter` as a dropdown above the candidate list.
+  - Default: `Alle Stimmen`
+  - Ortsteil options: one option per `STIMMBEZIRK`
+  - `Briefwahl (gesamt)`: aggregate of all brief voting districts
 - List of all mayor candidates.
 - Each `Candidate Card` displays:
   - `Rank Pill` (rank)
@@ -88,6 +92,15 @@ This file defines the terminology used for prompting and change requests.
 - Area selection affects both mayor and council vote values.
 - Rank values are recalculated for the selected area.
 - Party filter is applied after ranking.
+
+### 3.7 UI State Persistence
+- The frontend stores UI state in `localStorage`.
+- Persisted values:
+  - active `Tab`
+  - selected `Party Filter` chips
+  - selected `Area Filter` value
+- On page reload, the previous view is restored.
+- Invalid persisted values are sanitized against current data (unknown party names are dropped, unknown tabs/areas fall back to defaults).
 
 ## 4. Prompt Terminology
 

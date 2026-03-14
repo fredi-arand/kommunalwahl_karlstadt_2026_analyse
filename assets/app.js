@@ -15,6 +15,56 @@ const partyFilter = document.getElementById("partyFilter");
 const areaSelectMayor = document.getElementById("areaSelectMayor");
 const areaSelectCouncil = document.getElementById("areaSelectCouncil");
 const areaSelects = [areaSelectMayor, areaSelectCouncil].filter(Boolean);
+const UI_STATE_STORAGE_KEY = "kommunalwahl.guiState.v1";
+
+function persistUiState() {
+  const snapshot = {
+    activeTab: state.activeTab,
+    selectedArea: state.selectedArea,
+    selectedParties: [...state.selectedParties],
+  };
+
+  try {
+    localStorage.setItem(UI_STATE_STORAGE_KEY, JSON.stringify(snapshot));
+  } catch (_error) {
+    // Ignore storage failures (private mode, blocked storage, quota limits).
+  }
+}
+
+function restoreUiState() {
+  try {
+    const raw = localStorage.getItem(UI_STATE_STORAGE_KEY);
+    if (!raw) {
+      return;
+    }
+
+    const parsed = JSON.parse(raw);
+    const validTabs = new Set(tabButtons.map((button) => button.dataset.tab).filter(Boolean));
+
+    if (typeof parsed?.activeTab === "string" && validTabs.has(parsed.activeTab)) {
+      state.activeTab = parsed.activeTab;
+    }
+
+    if (typeof parsed?.selectedArea === "string" && parsed.selectedArea.length > 0) {
+      state.selectedArea = parsed.selectedArea;
+    }
+
+    if (Array.isArray(parsed?.selectedParties)) {
+      state.selectedParties = new Set(
+        parsed.selectedParties.filter((partyName) => typeof partyName === "string" && partyName.length > 0)
+      );
+    }
+  } catch (_error) {
+    // Ignore malformed saved state.
+  }
+}
+
+function pruneSelectedParties() {
+  const validPartyNames = new Set((state.data?.council?.parties || []).map((party) => party.name));
+  state.selectedParties = new Set(
+    [...state.selectedParties].filter((partyName) => validPartyNames.has(partyName))
+  );
+}
 
 function formatInteger(value) {
   return Number(value || 0).toLocaleString("de-DE");
@@ -46,13 +96,16 @@ function formatGeneratedAt(isoText) {
 }
 
 function setActiveTab(tab) {
-  state.activeTab = tab;
+  const validTabs = new Set(tabButtons.map((button) => button.dataset.tab).filter(Boolean));
+  state.activeTab = validTabs.has(tab) ? tab : "mayor";
   for (const button of tabButtons) {
-    button.classList.toggle("is-active", button.dataset.tab === tab);
+    button.classList.toggle("is-active", button.dataset.tab === state.activeTab);
   }
   for (const panel of panels) {
-    panel.classList.toggle("is-hidden", panel.dataset.panel !== tab);
+    panel.classList.toggle("is-hidden", panel.dataset.panel !== state.activeTab);
   }
+
+  persistUiState();
 }
 
 function candidateVotesForArea(candidate) {
@@ -191,7 +244,9 @@ function renderPartyFilter() {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "filter-chip";
-    button.textContent = `${party.name} (${party.seats})`;
+    const seats = Number(party.seats || 0);
+    const seatLabel = seats === 1 ? "Stadtrat" : "Stadträte";
+    button.textContent = `${party.name} (${formatInteger(seats)} ${seatLabel})`;
 
     const selected = state.selectedParties.has(party.name);
     if (selected) {
@@ -205,6 +260,8 @@ function renderPartyFilter() {
       } else {
         state.selectedParties.add(party.name);
       }
+
+      persistUiState();
       renderPartyFilter();
       renderCouncilList();
     });
@@ -242,6 +299,7 @@ async function loadData() {
   }
 
   state.data = await response.json();
+  pruneSelectedParties();
   generatedAt.textContent = formatGeneratedAt(state.data?.meta?.generatedAt);
 
   renderSummary();
@@ -249,6 +307,7 @@ async function loadData() {
   renderMayorList();
   renderPartyFilter();
   renderCouncilList();
+  persistUiState();
 }
 
 function attachTabHandlers() {
@@ -268,6 +327,8 @@ function attachAreaHandler() {
       for (const peerSelect of areaSelects) {
         peerSelect.value = state.selectedArea;
       }
+
+      persistUiState();
       renderMayorList();
       renderCouncilList();
     });
@@ -275,9 +336,10 @@ function attachAreaHandler() {
 }
 
 async function bootstrap() {
+  restoreUiState();
   attachTabHandlers();
   attachAreaHandler();
-  setActiveTab("mayor");
+  setActiveTab(state.activeTab);
 
   try {
     await loadData();
