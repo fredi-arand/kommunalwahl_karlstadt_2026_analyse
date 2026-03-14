@@ -113,13 +113,14 @@ This file defines the terminology used for prompting and change requests.
 ### 3.8 Candidate Detail Page
 - Dedicated page per candidate (`candidate.html`).
 - Contains:
-  - Candidate name and party
+  - Candidate name and party (for council: includes `Listenplatz` in header subtitle)
   - `Gesamtrang` (total rank)
   - Full Ortsteil list sorted by candidate rank
 - Ortsteil comparison uses `areas.options` except `all`.
 - `Briefwahl (gesamt)` is treated as one single comparison area.
 - Candidate detail metrics are view-independent and based on the full scope dataset from `final_results.json`.
 - Area rows show percentages inline with votes (`Stimmen (X %)`) for each area, calculated as if that area filter were selected in the overview and with no party filter applied (full candidate set of the selected election scope).
+- Area row subtitle format: `Gesamt: <Rang>, <Partei>: <Partei-Rang-im-Bereich>`.
 - Area rows are clickable: clicking a row returns to the overview, opens the corresponding tab (`Bürgermeister` or `Stadtrat`), and applies the clicked area as panel area filter.
 - For council navigation from detail rows, the currently selected party filter is preserved.
 - Includes a `Back Link` to return to the main page.

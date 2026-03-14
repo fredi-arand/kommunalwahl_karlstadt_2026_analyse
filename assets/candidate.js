@@ -140,13 +140,23 @@ function buildAreaPerformance(candidate, candidates, areaOptions) {
         Number(rankedCandidate.percentInArea || 0),
       ])
     );
+    const partyRankByIdentity = new Map();
+    const partyCounter = new Map();
+    for (const rankedCandidate of rankedForArea) {
+      const partyName = rankedCandidate.party || "Unabhängig";
+      const nextPartyRank = (partyCounter.get(partyName) || 0) + 1;
+      partyCounter.set(partyName, nextPartyRank);
+      partyRankByIdentity.set(candidateIdentity(rankedCandidate), nextPartyRank);
+    }
 
     return {
       key: option.key,
       label: option.label,
+      party: candidate.party || "Unabhängig",
       votes: votesByIdentity.get(targetIdentity) || 0,
       percent: percentByIdentity.get(targetIdentity) || 0,
       rank: rankByIdentity.get(targetIdentity) || candidates.length,
+      partyRank: partyRankByIdentity.get(targetIdentity) || candidates.length,
       comparedCandidates: candidates.length,
     };
   });
@@ -157,6 +167,10 @@ function sortAreaPerformanceByRank(areaPerformance) {
     const rankDiff = left.rank - right.rank;
     if (rankDiff !== 0) {
       return rankDiff;
+    }
+    const percentDiff = right.percent - left.percent;
+    if (percentDiff !== 0) {
+      return percentDiff;
     }
     return right.votes - left.votes;
   });
@@ -278,7 +292,7 @@ function renderAreaRanking(container, entries, scope) {
 
     const subtitle = document.createElement("p");
     subtitle.className = "area-rank-subtitle";
-    subtitle.textContent = `Rang ${entry.rank} von ${entry.comparedCandidates}`;
+    subtitle.textContent = `Gesamt: ${entry.rank}, ${entry.party}: ${entry.partyRank}`;
 
     main.appendChild(title);
     main.appendChild(subtitle);
@@ -366,7 +380,12 @@ async function bootstrap() {
     const electionLabel = scope === "mayor" ? "Bürgermeister" : "Stadtrat";
     scopeLabel.textContent = `${data?.meta?.location || "Karlstadt"} • ${electionLabel}`;
     nameLabel.textContent = candidate.name;
-    partyLabel.textContent = candidate.party || "Unabhängig";
+    const headerPartyName = candidate.party || "Unabhängig";
+    const listPosition = Number(candidate.id || 0);
+    partyLabel.textContent =
+      scope === "council" && listPosition > 0
+        ? `${headerPartyName}, Listenplatz ${formatInteger(listPosition)}`
+        : headerPartyName;
     generatedAtLabel.textContent = formatGeneratedAt(data?.meta?.generatedAt);
 
     renderKpis(candidate, baseCandidates.length);
