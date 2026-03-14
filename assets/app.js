@@ -2,6 +2,7 @@ const state = {
   data: null,
   activeTab: "mayor",
   selectedParties: new Set(),
+  selectedArea: "all",
 };
 
 const tabButtons = [...document.querySelectorAll(".tab-button")];
@@ -11,6 +12,9 @@ const generatedAt = document.getElementById("generatedAt");
 const mayorList = document.getElementById("mayorList");
 const councilList = document.getElementById("councilList");
 const partyFilter = document.getElementById("partyFilter");
+const areaSelectMayor = document.getElementById("areaSelectMayor");
+const areaSelectCouncil = document.getElementById("areaSelectCouncil");
+const areaSelects = [areaSelectMayor, areaSelectCouncil].filter(Boolean);
 
 function formatInteger(value) {
   return Number(value || 0).toLocaleString("de-DE");
@@ -49,6 +53,27 @@ function setActiveTab(tab) {
   for (const panel of panels) {
     panel.classList.toggle("is-hidden", panel.dataset.panel !== tab);
   }
+}
+
+function candidateVotesForArea(candidate) {
+  if (state.selectedArea === "all") {
+    return Number(candidate.votes || 0);
+  }
+  return Number(candidate.areaVotes?.[state.selectedArea] || 0);
+}
+
+function rankedCandidatesForArea(candidates) {
+  const withAreaVotes = candidates.map((candidate) => ({
+    ...candidate,
+    votes: candidateVotesForArea(candidate),
+    percent: state.selectedArea === "all" ? candidate.percent : null,
+  }));
+
+  withAreaVotes.sort((left, right) => right.votes - left.votes);
+  return withAreaVotes.map((candidate, index) => ({
+    ...candidate,
+    rank: index + 1,
+  }));
 }
 
 function createCandidateCard(candidate, options = {}) {
@@ -118,14 +143,43 @@ function renderSummary() {
 function renderMayorList() {
   mayorList.innerHTML = "";
   const candidates = state.data?.mayor?.candidates || [];
+  const ranked = rankedCandidatesForArea(candidates);
 
-  if (!candidates.length) {
+  if (!ranked.length) {
     mayorList.innerHTML = '<div class="empty-state">Keine Daten fur Bürgermeisterkandidaten gefunden.</div>';
     return;
   }
 
-  for (const candidate of candidates) {
+  for (const candidate of ranked) {
     mayorList.appendChild(createCandidateCard(candidate));
+  }
+}
+
+function renderAreaFilter() {
+  if (!areaSelects.length) {
+    return;
+  }
+
+  const options = state.data?.areas?.options || [{ key: "all", label: "Alle Stimmen" }];
+
+  for (const selectElement of areaSelects) {
+    selectElement.innerHTML = "";
+    for (const option of options) {
+      const optionElement = document.createElement("option");
+      optionElement.value = option.key;
+      optionElement.textContent = option.label;
+      if (option.key === state.selectedArea) {
+        optionElement.selected = true;
+      }
+      selectElement.appendChild(optionElement);
+    }
+  }
+
+  if (!options.some((option) => option.key === state.selectedArea)) {
+    state.selectedArea = "all";
+    for (const selectElement of areaSelects) {
+      selectElement.value = "all";
+    }
   }
 }
 
@@ -162,7 +216,7 @@ function renderPartyFilter() {
 function renderCouncilList() {
   councilList.innerHTML = "";
 
-  const allCandidates = state.data?.council?.candidates || [];
+  const allCandidates = rankedCandidatesForArea(state.data?.council?.candidates || []);
   const partyMap = new Map((state.data?.council?.parties || []).map((party) => [party.name, party]));
 
   const visibleCandidates =
@@ -191,6 +245,7 @@ async function loadData() {
   generatedAt.textContent = formatGeneratedAt(state.data?.meta?.generatedAt);
 
   renderSummary();
+  renderAreaFilter();
   renderMayorList();
   renderPartyFilter();
   renderCouncilList();
@@ -202,8 +257,26 @@ function attachTabHandlers() {
   }
 }
 
+function attachAreaHandler() {
+  if (!areaSelects.length) {
+    return;
+  }
+
+  for (const selectElement of areaSelects) {
+    selectElement.addEventListener("change", () => {
+      state.selectedArea = selectElement.value || "all";
+      for (const peerSelect of areaSelects) {
+        peerSelect.value = state.selectedArea;
+      }
+      renderMayorList();
+      renderCouncilList();
+    });
+  }
+}
+
 async function bootstrap() {
   attachTabHandlers();
+  attachAreaHandler();
   setActiveTab("mayor");
 
   try {

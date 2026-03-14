@@ -182,6 +182,28 @@ h3 {
     gap: 0.45rem;
 }
 
+.area-filter {
+    display: grid;
+    gap: 0.3rem;
+}
+
+.area-filter-label {
+    font-size: 0.8rem;
+    color: #6b5f54;
+    font-weight: 600;
+}
+
+.area-select {
+    width: 100%;
+    border: 1px solid #c7b9a6;
+    border-radius: 10px;
+    padding: 0.5rem 0.65rem;
+    background: #fffaf1;
+    color: #4a3324;
+    font-size: 0.9rem;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
 .filter-chip {
     border: 1px solid #b8a895;
     border-radius: 999px;

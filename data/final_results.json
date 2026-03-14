@@ -2,7 +2,7 @@
   "meta": {
     "location": "Karlstadt",
     "year": "2026",
-    "generatedAt": "2026-03-14T13:07:41.051796+00:00",
+    "generatedAt": "2026-03-14T13:36:01.375170+00:00",
     "sources": {
       "mayorResults": "https://wahlen.osrz-akdb.de/uf-p/677148/1/20260308/buergermeisterwahl_gemeinde/ergebnisse.html",
       "councilResults": "https://wahlen.osrz-akdb.de/uf-p/677148/2/20260308/gemeinderatswahl_gemeinde/ergebnisse.html",
@@ -16,28 +16,140 @@
         "party": "CSU",
         "votes": 4232,
         "percent": 51.5,
-        "rank": 1
+        "rank": 1,
+        "areaVotes": {
+          "ortsteil:096771480001": 64,
+          "ortsteil:096771480002": 119,
+          "ortsteil:096771480003": 115,
+          "ortsteil:096771480004": 87,
+          "ortsteil:096771480005": 39,
+          "ortsteil:096771480006": 122,
+          "ortsteil:096771480007": 71,
+          "ortsteil:096771480008": 42,
+          "ortsteil:096771480009": 58,
+          "ortsteil:096771480010": 15,
+          "ortsteil:096771480011": 58,
+          "ortsteil:096771480012": 80,
+          "briefwahlbezirk:096771480021": 286,
+          "briefwahlbezirk:096771480022": 273,
+          "briefwahlbezirk:096771480023": 267,
+          "briefwahlbezirk:096771480024": 254,
+          "briefwahlbezirk:096771480025": 265,
+          "briefwahlbezirk:096771480026": 301,
+          "briefwahlbezirk:096771480027": 243,
+          "briefwahlbezirk:096771480028": 260,
+          "briefwahlbezirk:096771480029": 271,
+          "briefwahlbezirk:096771480030": 228,
+          "briefwahlbezirk:096771480031": 260,
+          "briefwahlbezirk:096771480032": 244,
+          "briefwahlbezirk:096771480033": 210,
+          "briefwahl-gesamt": 3362
+        }
       },
       {
         "name": "Hofmann Alex",
         "party": "FWG",
         "votes": 2203,
         "percent": 26.8,
-        "rank": 2
+        "rank": 2,
+        "areaVotes": {
+          "ortsteil:096771480001": 52,
+          "ortsteil:096771480002": 92,
+          "ortsteil:096771480003": 84,
+          "ortsteil:096771480004": 33,
+          "ortsteil:096771480005": 21,
+          "ortsteil:096771480006": 52,
+          "ortsteil:096771480007": 24,
+          "ortsteil:096771480008": 15,
+          "ortsteil:096771480009": 18,
+          "ortsteil:096771480010": 35,
+          "ortsteil:096771480011": 32,
+          "ortsteil:096771480012": 54,
+          "briefwahlbezirk:096771480021": 121,
+          "briefwahlbezirk:096771480022": 136,
+          "briefwahlbezirk:096771480023": 154,
+          "briefwahlbezirk:096771480024": 139,
+          "briefwahlbezirk:096771480025": 137,
+          "briefwahlbezirk:096771480026": 132,
+          "briefwahlbezirk:096771480027": 121,
+          "briefwahlbezirk:096771480028": 136,
+          "briefwahlbezirk:096771480029": 127,
+          "briefwahlbezirk:096771480030": 141,
+          "briefwahlbezirk:096771480031": 115,
+          "briefwahlbezirk:096771480032": 118,
+          "briefwahlbezirk:096771480033": 114,
+          "briefwahl-gesamt": 1691
+        }
       },
       {
         "name": "Rodi Jonas",
         "party": "GRÜNE",
         "votes": 960,
         "percent": 11.7,
-        "rank": 3
+        "rank": 3,
+        "areaVotes": {
+          "ortsteil:096771480001": 55,
+          "ortsteil:096771480002": 45,
+          "ortsteil:096771480003": 37,
+          "ortsteil:096771480004": 18,
+          "ortsteil:096771480005": 7,
+          "ortsteil:096771480006": 18,
+          "ortsteil:096771480007": 21,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 12,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 31,
+          "ortsteil:096771480012": 12,
+          "briefwahlbezirk:096771480021": 38,
+          "briefwahlbezirk:096771480022": 54,
+          "briefwahlbezirk:096771480023": 34,
+          "briefwahlbezirk:096771480024": 47,
+          "briefwahlbezirk:096771480025": 61,
+          "briefwahlbezirk:096771480026": 67,
+          "briefwahlbezirk:096771480027": 46,
+          "briefwahlbezirk:096771480028": 51,
+          "briefwahlbezirk:096771480029": 54,
+          "briefwahlbezirk:096771480030": 55,
+          "briefwahlbezirk:096771480031": 64,
+          "briefwahlbezirk:096771480032": 62,
+          "briefwahlbezirk:096771480033": 63,
+          "briefwahl-gesamt": 696
+        }
       },
       {
         "name": "Thesen Stefan",
         "party": "SPD",
         "votes": 828,
         "percent": 10.1,
-        "rank": 4
+        "rank": 4,
+        "areaVotes": {
+          "ortsteil:096771480001": 42,
+          "ortsteil:096771480002": 36,
+          "ortsteil:096771480003": 35,
+          "ortsteil:096771480004": 15,
+          "ortsteil:096771480005": 3,
+          "ortsteil:096771480006": 17,
+          "ortsteil:096771480007": 6,
+          "ortsteil:096771480008": 9,
+          "ortsteil:096771480009": 3,
+          "ortsteil:096771480010": 4,
+          "ortsteil:096771480011": 7,
+          "ortsteil:096771480012": 7,
+          "briefwahlbezirk:096771480021": 66,
+          "briefwahlbezirk:096771480022": 44,
+          "briefwahlbezirk:096771480023": 43,
+          "briefwahlbezirk:096771480024": 67,
+          "briefwahlbezirk:096771480025": 31,
+          "briefwahlbezirk:096771480026": 48,
+          "briefwahlbezirk:096771480027": 32,
+          "briefwahlbezirk:096771480028": 44,
+          "briefwahlbezirk:096771480029": 53,
+          "briefwahlbezirk:096771480030": 62,
+          "briefwahlbezirk:096771480031": 43,
+          "briefwahlbezirk:096771480032": 62,
+          "briefwahlbezirk:096771480033": 49,
+          "briefwahl-gesamt": 644
+        }
       }
     ]
   },
@@ -62,6 +174,21 @@
             "name": "Hombach Michael",
             "party": "CSU",
             "votes": 8143,
+            "areaVotes": {
+              "ortsteil:096771480001": 95,
+              "ortsteil:096771480002": 195,
+              "ortsteil:096771480003": 203,
+              "ortsteil:096771480004": 108,
+              "ortsteil:096771480005": 99,
+              "ortsteil:096771480006": 176,
+              "ortsteil:096771480007": 119,
+              "ortsteil:096771480008": 89,
+              "ortsteil:096771480009": 94,
+              "ortsteil:096771480010": 27,
+              "ortsteil:096771480011": 128,
+              "ortsteil:096771480012": 139,
+              "briefwahl-gesamt": 6671
+            },
             "rank": 1
           },
           {
@@ -69,6 +196,21 @@
             "name": "Gehrsitz Petra",
             "party": "CSU",
             "votes": 5521,
+            "areaVotes": {
+              "ortsteil:096771480001": 60,
+              "ortsteil:096771480002": 136,
+              "ortsteil:096771480003": 141,
+              "ortsteil:096771480004": 33,
+              "ortsteil:096771480005": 64,
+              "ortsteil:096771480006": 248,
+              "ortsteil:096771480007": 62,
+              "ortsteil:096771480008": 51,
+              "ortsteil:096771480009": 43,
+              "ortsteil:096771480010": 14,
+              "ortsteil:096771480011": 65,
+              "ortsteil:096771480012": 76,
+              "briefwahl-gesamt": 4528
+            },
             "rank": 2
           },
           {
@@ -76,6 +218,21 @@
             "name": "Burkard Florian",
             "party": "CSU",
             "votes": 3850,
+            "areaVotes": {
+              "ortsteil:096771480001": 48,
+              "ortsteil:096771480002": 83,
+              "ortsteil:096771480003": 95,
+              "ortsteil:096771480004": 28,
+              "ortsteil:096771480005": 112,
+              "ortsteil:096771480006": 55,
+              "ortsteil:096771480007": 42,
+              "ortsteil:096771480008": 23,
+              "ortsteil:096771480009": 13,
+              "ortsteil:096771480010": 13,
+              "ortsteil:096771480011": 212,
+              "ortsteil:096771480012": 31,
+              "briefwahl-gesamt": 3095
+            },
             "rank": 3
           },
           {
@@ -83,6 +240,21 @@
             "name": "Schäfer Rainer",
             "party": "CSU",
             "votes": 3475,
+            "areaVotes": {
+              "ortsteil:096771480001": 42,
+              "ortsteil:096771480002": 82,
+              "ortsteil:096771480003": 52,
+              "ortsteil:096771480004": 23,
+              "ortsteil:096771480005": 25,
+              "ortsteil:096771480006": 64,
+              "ortsteil:096771480007": 30,
+              "ortsteil:096771480008": 36,
+              "ortsteil:096771480009": 90,
+              "ortsteil:096771480010": 20,
+              "ortsteil:096771480011": 42,
+              "ortsteil:096771480012": 244,
+              "briefwahl-gesamt": 2725
+            },
             "rank": 4
           },
           {
@@ -90,6 +262,21 @@
             "name": "Mehling Uwe",
             "party": "CSU",
             "votes": 3302,
+            "areaVotes": {
+              "ortsteil:096771480001": 37,
+              "ortsteil:096771480002": 59,
+              "ortsteil:096771480003": 68,
+              "ortsteil:096771480004": 12,
+              "ortsteil:096771480005": 158,
+              "ortsteil:096771480006": 43,
+              "ortsteil:096771480007": 30,
+              "ortsteil:096771480008": 19,
+              "ortsteil:096771480009": 11,
+              "ortsteil:096771480010": 29,
+              "ortsteil:096771480011": 200,
+              "ortsteil:096771480012": 29,
+              "briefwahl-gesamt": 2607
+            },
             "rank": 5
           },
           {
@@ -97,6 +284,21 @@
             "name": "Rudolph Mathias",
             "party": "CSU",
             "votes": 3268,
+            "areaVotes": {
+              "ortsteil:096771480001": 31,
+              "ortsteil:096771480002": 85,
+              "ortsteil:096771480003": 69,
+              "ortsteil:096771480004": 71,
+              "ortsteil:096771480005": 39,
+              "ortsteil:096771480006": 200,
+              "ortsteil:096771480007": 36,
+              "ortsteil:096771480008": 26,
+              "ortsteil:096771480009": 6,
+              "ortsteil:096771480010": 11,
+              "ortsteil:096771480011": 24,
+              "ortsteil:096771480012": 35,
+              "briefwahl-gesamt": 2635
+            },
             "rank": 6
           },
           {
@@ -104,6 +306,21 @@
             "name": "Frohnapfel Isabel",
             "party": "CSU",
             "votes": 3193,
+            "areaVotes": {
+              "ortsteil:096771480001": 52,
+              "ortsteil:096771480002": 104,
+              "ortsteil:096771480003": 89,
+              "ortsteil:096771480004": 23,
+              "ortsteil:096771480005": 22,
+              "ortsteil:096771480006": 103,
+              "ortsteil:096771480007": 59,
+              "ortsteil:096771480008": 38,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 15,
+              "ortsteil:096771480011": 55,
+              "ortsteil:096771480012": 39,
+              "briefwahl-gesamt": 2586
+            },
             "rank": 7
           },
           {
@@ -111,6 +328,21 @@
             "name": "Endres Christian",
             "party": "CSU",
             "votes": 2945,
+            "areaVotes": {
+              "ortsteil:096771480001": 40,
+              "ortsteil:096771480002": 62,
+              "ortsteil:096771480003": 61,
+              "ortsteil:096771480004": 13,
+              "ortsteil:096771480005": 27,
+              "ortsteil:096771480006": 49,
+              "ortsteil:096771480007": 34,
+              "ortsteil:096771480008": 34,
+              "ortsteil:096771480009": 160,
+              "ortsteil:096771480010": 61,
+              "ortsteil:096771480011": 37,
+              "ortsteil:096771480012": 122,
+              "briefwahl-gesamt": 2245
+            },
             "rank": 8
           },
           {
@@ -118,6 +350,21 @@
             "name": "Winheim Gerhard",
             "party": "CSU",
             "votes": 2896,
+            "areaVotes": {
+              "ortsteil:096771480001": 40,
+              "ortsteil:096771480002": 64,
+              "ortsteil:096771480003": 77,
+              "ortsteil:096771480004": 262,
+              "ortsteil:096771480005": 12,
+              "ortsteil:096771480006": 31,
+              "ortsteil:096771480007": 31,
+              "ortsteil:096771480008": 26,
+              "ortsteil:096771480009": 10,
+              "ortsteil:096771480010": 8,
+              "ortsteil:096771480011": 31,
+              "ortsteil:096771480012": 27,
+              "briefwahl-gesamt": 2277
+            },
             "rank": 9
           },
           {
@@ -125,6 +372,21 @@
             "name": "Mühleck Maximilian",
             "party": "CSU",
             "votes": 2749,
+            "areaVotes": {
+              "ortsteil:096771480001": 31,
+              "ortsteil:096771480002": 61,
+              "ortsteil:096771480003": 71,
+              "ortsteil:096771480004": 11,
+              "ortsteil:096771480005": 6,
+              "ortsteil:096771480006": 235,
+              "ortsteil:096771480007": 31,
+              "ortsteil:096771480008": 21,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 6,
+              "ortsteil:096771480011": 29,
+              "ortsteil:096771480012": 28,
+              "briefwahl-gesamt": 2211
+            },
             "rank": 10
           },
           {
@@ -132,6 +394,21 @@
             "name": "Kohlmann Philipp",
             "party": "CSU",
             "votes": 2712,
+            "areaVotes": {
+              "ortsteil:096771480001": 27,
+              "ortsteil:096771480002": 76,
+              "ortsteil:096771480003": 45,
+              "ortsteil:096771480004": 264,
+              "ortsteil:096771480005": 24,
+              "ortsteil:096771480006": 22,
+              "ortsteil:096771480007": 25,
+              "ortsteil:096771480008": 26,
+              "ortsteil:096771480009": 1,
+              "ortsteil:096771480010": 9,
+              "ortsteil:096771480011": 29,
+              "ortsteil:096771480012": 21,
+              "briefwahl-gesamt": 2143
+            },
             "rank": 11
           },
           {
@@ -139,6 +416,21 @@
             "name": "Köhler Eugen",
             "party": "CSU",
             "votes": 2540,
+            "areaVotes": {
+              "ortsteil:096771480001": 27,
+              "ortsteil:096771480002": 72,
+              "ortsteil:096771480003": 42,
+              "ortsteil:096771480004": 10,
+              "ortsteil:096771480005": 32,
+              "ortsteil:096771480006": 138,
+              "ortsteil:096771480007": 26,
+              "ortsteil:096771480008": 16,
+              "ortsteil:096771480009": 4,
+              "ortsteil:096771480010": 25,
+              "ortsteil:096771480011": 44,
+              "ortsteil:096771480012": 22,
+              "briefwahl-gesamt": 2082
+            },
             "rank": 12
           },
           {
@@ -146,6 +438,21 @@
             "name": "Hammer Dominik",
             "party": "CSU",
             "votes": 2431,
+            "areaVotes": {
+              "ortsteil:096771480001": 29,
+              "ortsteil:096771480002": 68,
+              "ortsteil:096771480003": 91,
+              "ortsteil:096771480004": 17,
+              "ortsteil:096771480005": 11,
+              "ortsteil:096771480006": 70,
+              "ortsteil:096771480007": 26,
+              "ortsteil:096771480008": 13,
+              "ortsteil:096771480009": 5,
+              "ortsteil:096771480010": 5,
+              "ortsteil:096771480011": 41,
+              "ortsteil:096771480012": 18,
+              "briefwahl-gesamt": 2037
+            },
             "rank": 13
           },
           {
@@ -153,6 +460,21 @@
             "name": "Reinhard Björn",
             "party": "CSU",
             "votes": 2204,
+            "areaVotes": {
+              "ortsteil:096771480001": 34,
+              "ortsteil:096771480002": 63,
+              "ortsteil:096771480003": 57,
+              "ortsteil:096771480004": 15,
+              "ortsteil:096771480005": 6,
+              "ortsteil:096771480006": 34,
+              "ortsteil:096771480007": 160,
+              "ortsteil:096771480008": 24,
+              "ortsteil:096771480009": 14,
+              "ortsteil:096771480010": 21,
+              "ortsteil:096771480011": 30,
+              "ortsteil:096771480012": 25,
+              "briefwahl-gesamt": 1721
+            },
             "rank": 14
           },
           {
@@ -160,6 +482,21 @@
             "name": "Keller Christian",
             "party": "CSU",
             "votes": 2076,
+            "areaVotes": {
+              "ortsteil:096771480001": 28,
+              "ortsteil:096771480002": 83,
+              "ortsteil:096771480003": 89,
+              "ortsteil:096771480004": 12,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 28,
+              "ortsteil:096771480007": 26,
+              "ortsteil:096771480008": 19,
+              "ortsteil:096771480009": 5,
+              "ortsteil:096771480010": 5,
+              "ortsteil:096771480011": 54,
+              "ortsteil:096771480012": 26,
+              "briefwahl-gesamt": 1696
+            },
             "rank": 15
           },
           {
@@ -167,6 +504,21 @@
             "name": "Riedmann Thomas",
             "party": "CSU",
             "votes": 2045,
+            "areaVotes": {
+              "ortsteil:096771480001": 40,
+              "ortsteil:096771480002": 59,
+              "ortsteil:096771480003": 34,
+              "ortsteil:096771480004": 10,
+              "ortsteil:096771480005": 15,
+              "ortsteil:096771480006": 18,
+              "ortsteil:096771480007": 19,
+              "ortsteil:096771480008": 20,
+              "ortsteil:096771480009": 154,
+              "ortsteil:096771480010": 18,
+              "ortsteil:096771480011": 24,
+              "ortsteil:096771480012": 112,
+              "briefwahl-gesamt": 1522
+            },
             "rank": 16
           },
           {
@@ -174,6 +526,21 @@
             "name": "Becker Tobias",
             "party": "CSU",
             "votes": 2006,
+            "areaVotes": {
+              "ortsteil:096771480001": 44,
+              "ortsteil:096771480002": 94,
+              "ortsteil:096771480003": 63,
+              "ortsteil:096771480004": 20,
+              "ortsteil:096771480005": 14,
+              "ortsteil:096771480006": 38,
+              "ortsteil:096771480007": 45,
+              "ortsteil:096771480008": 34,
+              "ortsteil:096771480009": 16,
+              "ortsteil:096771480010": 101,
+              "ortsteil:096771480011": 38,
+              "ortsteil:096771480012": 42,
+              "briefwahl-gesamt": 1457
+            },
             "rank": 17
           },
           {
@@ -181,6 +548,21 @@
             "name": "Riedmann Florian",
             "party": "CSU",
             "votes": 1756,
+            "areaVotes": {
+              "ortsteil:096771480001": 25,
+              "ortsteil:096771480002": 64,
+              "ortsteil:096771480003": 48,
+              "ortsteil:096771480004": 11,
+              "ortsteil:096771480005": 15,
+              "ortsteil:096771480006": 27,
+              "ortsteil:096771480007": 24,
+              "ortsteil:096771480008": 15,
+              "ortsteil:096771480009": 17,
+              "ortsteil:096771480010": 12,
+              "ortsteil:096771480011": 41,
+              "ortsteil:096771480012": 128,
+              "briefwahl-gesamt": 1329
+            },
             "rank": 18
           },
           {
@@ -188,6 +570,21 @@
             "name": "Dr. Außenhofer Sebastian",
             "party": "CSU",
             "votes": 1613,
+            "areaVotes": {
+              "ortsteil:096771480001": 27,
+              "ortsteil:096771480002": 80,
+              "ortsteil:096771480003": 78,
+              "ortsteil:096771480004": 20,
+              "ortsteil:096771480005": 9,
+              "ortsteil:096771480006": 29,
+              "ortsteil:096771480007": 28,
+              "ortsteil:096771480008": 27,
+              "ortsteil:096771480009": 13,
+              "ortsteil:096771480010": 7,
+              "ortsteil:096771480011": 38,
+              "ortsteil:096771480012": 30,
+              "briefwahl-gesamt": 1227
+            },
             "rank": 19
           },
           {
@@ -195,6 +592,21 @@
             "name": "Schrama Bernadette",
             "party": "CSU",
             "votes": 1396,
+            "areaVotes": {
+              "ortsteil:096771480001": 38,
+              "ortsteil:096771480002": 63,
+              "ortsteil:096771480003": 62,
+              "ortsteil:096771480004": 10,
+              "ortsteil:096771480005": 9,
+              "ortsteil:096771480006": 29,
+              "ortsteil:096771480007": 22,
+              "ortsteil:096771480008": 14,
+              "ortsteil:096771480009": 3,
+              "ortsteil:096771480010": 8,
+              "ortsteil:096771480011": 24,
+              "ortsteil:096771480012": 22,
+              "briefwahl-gesamt": 1092
+            },
             "rank": 20
           },
           {
@@ -202,6 +614,21 @@
             "name": "Schlott Thomas",
             "party": "CSU",
             "votes": 1271,
+            "areaVotes": {
+              "ortsteil:096771480001": 32,
+              "ortsteil:096771480002": 65,
+              "ortsteil:096771480003": 76,
+              "ortsteil:096771480004": 11,
+              "ortsteil:096771480005": 23,
+              "ortsteil:096771480006": 21,
+              "ortsteil:096771480007": 29,
+              "ortsteil:096771480008": 15,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 6,
+              "ortsteil:096771480011": 31,
+              "ortsteil:096771480012": 21,
+              "briefwahl-gesamt": 933
+            },
             "rank": 21
           },
           {
@@ -209,6 +636,21 @@
             "name": "Ünaydin Cüneyt",
             "party": "CSU",
             "votes": 1124,
+            "areaVotes": {
+              "ortsteil:096771480001": 53,
+              "ortsteil:096771480002": 66,
+              "ortsteil:096771480003": 44,
+              "ortsteil:096771480004": 20,
+              "ortsteil:096771480005": 16,
+              "ortsteil:096771480006": 17,
+              "ortsteil:096771480007": 25,
+              "ortsteil:096771480008": 23,
+              "ortsteil:096771480009": 2,
+              "ortsteil:096771480010": 8,
+              "ortsteil:096771480011": 33,
+              "ortsteil:096771480012": 25,
+              "briefwahl-gesamt": 792
+            },
             "rank": 22
           },
           {
@@ -216,6 +658,21 @@
             "name": "Müller Michael",
             "party": "CSU",
             "votes": 1036,
+            "areaVotes": {
+              "ortsteil:096771480001": 30,
+              "ortsteil:096771480002": 65,
+              "ortsteil:096771480003": 50,
+              "ortsteil:096771480004": 10,
+              "ortsteil:096771480005": 7,
+              "ortsteil:096771480006": 30,
+              "ortsteil:096771480007": 24,
+              "ortsteil:096771480008": 21,
+              "ortsteil:096771480009": 1,
+              "ortsteil:096771480010": 10,
+              "ortsteil:096771480011": 24,
+              "ortsteil:096771480012": 12,
+              "briefwahl-gesamt": 752
+            },
             "rank": 23
           },
           {
@@ -223,6 +680,21 @@
             "name": "Bratjuk Janell",
             "party": "CSU",
             "votes": 770,
+            "areaVotes": {
+              "ortsteil:096771480001": 31,
+              "ortsteil:096771480002": 49,
+              "ortsteil:096771480003": 42,
+              "ortsteil:096771480004": 10,
+              "ortsteil:096771480005": 7,
+              "ortsteil:096771480006": 18,
+              "ortsteil:096771480007": 16,
+              "ortsteil:096771480008": 27,
+              "ortsteil:096771480009": 1,
+              "ortsteil:096771480010": 6,
+              "ortsteil:096771480011": 23,
+              "ortsteil:096771480012": 14,
+              "briefwahl-gesamt": 526
+            },
             "rank": 24
           }
         ]
@@ -240,6 +712,21 @@
             "name": "Baier Anja",
             "party": "GRÜNE",
             "votes": 5772,
+            "areaVotes": {
+              "ortsteil:096771480001": 179,
+              "ortsteil:096771480002": 215,
+              "ortsteil:096771480003": 210,
+              "ortsteil:096771480004": 31,
+              "ortsteil:096771480005": 53,
+              "ortsteil:096771480006": 105,
+              "ortsteil:096771480007": 51,
+              "ortsteil:096771480008": 32,
+              "ortsteil:096771480009": 36,
+              "ortsteil:096771480010": 16,
+              "ortsteil:096771480011": 68,
+              "ortsteil:096771480012": 43,
+              "briefwahl-gesamt": 4733
+            },
             "rank": 1
           },
           {
@@ -247,6 +734,21 @@
             "name": "Rodi Jonas",
             "party": "GRÜNE",
             "votes": 3461,
+            "areaVotes": {
+              "ortsteil:096771480001": 128,
+              "ortsteil:096771480002": 122,
+              "ortsteil:096771480003": 96,
+              "ortsteil:096771480004": 27,
+              "ortsteil:096771480005": 51,
+              "ortsteil:096771480006": 46,
+              "ortsteil:096771480007": 39,
+              "ortsteil:096771480008": 15,
+              "ortsteil:096771480009": 27,
+              "ortsteil:096771480010": 11,
+              "ortsteil:096771480011": 127,
+              "ortsteil:096771480012": 28,
+              "briefwahl-gesamt": 2744
+            },
             "rank": 2
           },
           {
@@ -254,6 +756,21 @@
             "name": "Wittstadt Horst",
             "party": "GRÜNE",
             "votes": 2496,
+            "areaVotes": {
+              "ortsteil:096771480001": 88,
+              "ortsteil:096771480002": 78,
+              "ortsteil:096771480003": 72,
+              "ortsteil:096771480004": 13,
+              "ortsteil:096771480005": 8,
+              "ortsteil:096771480006": 29,
+              "ortsteil:096771480007": 101,
+              "ortsteil:096771480008": 12,
+              "ortsteil:096771480009": 22,
+              "ortsteil:096771480010": 21,
+              "ortsteil:096771480011": 16,
+              "ortsteil:096771480012": 20,
+              "briefwahl-gesamt": 2016
+            },
             "rank": 3
           },
           {
@@ -261,6 +778,21 @@
             "name": "Naujoks Andrea",
             "party": "GRÜNE",
             "votes": 2287,
+            "areaVotes": {
+              "ortsteil:096771480001": 128,
+              "ortsteil:096771480002": 140,
+              "ortsteil:096771480003": 143,
+              "ortsteil:096771480004": 27,
+              "ortsteil:096771480005": 12,
+              "ortsteil:096771480006": 47,
+              "ortsteil:096771480007": 30,
+              "ortsteil:096771480008": 12,
+              "ortsteil:096771480009": 21,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 17,
+              "ortsteil:096771480012": 24,
+              "briefwahl-gesamt": 1686
+            },
             "rank": 4
           },
           {
@@ -268,6 +800,21 @@
             "name": "Hack Sybille",
             "party": "GRÜNE",
             "votes": 2217,
+            "areaVotes": {
+              "ortsteil:096771480001": 101,
+              "ortsteil:096771480002": 100,
+              "ortsteil:096771480003": 85,
+              "ortsteil:096771480004": 18,
+              "ortsteil:096771480005": 7,
+              "ortsteil:096771480006": 120,
+              "ortsteil:096771480007": 27,
+              "ortsteil:096771480008": 15,
+              "ortsteil:096771480009": 17,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 17,
+              "ortsteil:096771480012": 24,
+              "briefwahl-gesamt": 1686
+            },
             "rank": 5
           },
           {
@@ -275,6 +822,21 @@
             "name": "Weißhaar Barbara",
             "party": "GRÜNE",
             "votes": 2214,
+            "areaVotes": {
+              "ortsteil:096771480001": 114,
+              "ortsteil:096771480002": 114,
+              "ortsteil:096771480003": 98,
+              "ortsteil:096771480004": 29,
+              "ortsteil:096771480005": 10,
+              "ortsteil:096771480006": 37,
+              "ortsteil:096771480007": 25,
+              "ortsteil:096771480008": 17,
+              "ortsteil:096771480009": 14,
+              "ortsteil:096771480010": 3,
+              "ortsteil:096771480011": 13,
+              "ortsteil:096771480012": 15,
+              "briefwahl-gesamt": 1725
+            },
             "rank": 6
           },
           {
@@ -282,6 +844,21 @@
             "name": "Beck Armin",
             "party": "GRÜNE",
             "votes": 2034,
+            "areaVotes": {
+              "ortsteil:096771480001": 88,
+              "ortsteil:096771480002": 149,
+              "ortsteil:096771480003": 108,
+              "ortsteil:096771480004": 10,
+              "ortsteil:096771480005": 17,
+              "ortsteil:096771480006": 28,
+              "ortsteil:096771480007": 31,
+              "ortsteil:096771480008": 12,
+              "ortsteil:096771480009": 20,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 28,
+              "ortsteil:096771480012": 24,
+              "briefwahl-gesamt": 1519
+            },
             "rank": 7
           },
           {
@@ -289,6 +866,21 @@
             "name": "Kraft Gerhard",
             "party": "GRÜNE",
             "votes": 1935,
+            "areaVotes": {
+              "ortsteil:096771480001": 78,
+              "ortsteil:096771480002": 80,
+              "ortsteil:096771480003": 71,
+              "ortsteil:096771480004": 11,
+              "ortsteil:096771480005": 9,
+              "ortsteil:096771480006": 31,
+              "ortsteil:096771480007": 77,
+              "ortsteil:096771480008": 10,
+              "ortsteil:096771480009": 9,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 15,
+              "ortsteil:096771480012": 17,
+              "briefwahl-gesamt": 1527
+            },
             "rank": 8
           },
           {
@@ -296,6 +888,21 @@
             "name": "Frey Verena",
             "party": "GRÜNE",
             "votes": 1700,
+            "areaVotes": {
+              "ortsteil:096771480001": 68,
+              "ortsteil:096771480002": 94,
+              "ortsteil:096771480003": 91,
+              "ortsteil:096771480004": 18,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 42,
+              "ortsteil:096771480007": 27,
+              "ortsteil:096771480008": 17,
+              "ortsteil:096771480009": 15,
+              "ortsteil:096771480010": 5,
+              "ortsteil:096771480011": 10,
+              "ortsteil:096771480012": 17,
+              "briefwahl-gesamt": 1291
+            },
             "rank": 9
           },
           {
@@ -303,6 +910,21 @@
             "name": "Vetter Katja",
             "party": "GRÜNE",
             "votes": 1652,
+            "areaVotes": {
+              "ortsteil:096771480001": 53,
+              "ortsteil:096771480002": 45,
+              "ortsteil:096771480003": 31,
+              "ortsteil:096771480004": 147,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 16,
+              "ortsteil:096771480007": 16,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 2,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 17,
+              "ortsteil:096771480012": 4,
+              "briefwahl-gesamt": 1312
+            },
             "rank": 10
           },
           {
@@ -310,6 +932,21 @@
             "name": "Kretzinger Peter",
             "party": "GRÜNE",
             "votes": 1216,
+            "areaVotes": {
+              "ortsteil:096771480001": 49,
+              "ortsteil:096771480002": 43,
+              "ortsteil:096771480003": 37,
+              "ortsteil:096771480004": 8,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 13,
+              "ortsteil:096771480007": 78,
+              "ortsteil:096771480008": 15,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 2,
+              "ortsteil:096771480011": 12,
+              "ortsteil:096771480012": 6,
+              "briefwahl-gesamt": 940
+            },
             "rank": 11
           },
           {
@@ -317,6 +954,21 @@
             "name": "Rudolph Kerstin",
             "party": "GRÜNE",
             "votes": 899,
+            "areaVotes": {
+              "ortsteil:096771480001": 79,
+              "ortsteil:096771480002": 65,
+              "ortsteil:096771480003": 50,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 19,
+              "ortsteil:096771480007": 17,
+              "ortsteil:096771480008": 10,
+              "ortsteil:096771480009": 1,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 9,
+              "ortsteil:096771480012": 3,
+              "briefwahl-gesamt": 639
+            },
             "rank": 12
           },
           {
@@ -324,6 +976,21 @@
             "name": "Wächter Kristina",
             "party": "GRÜNE",
             "votes": 892,
+            "areaVotes": {
+              "ortsteil:096771480001": 58,
+              "ortsteil:096771480002": 52,
+              "ortsteil:096771480003": 38,
+              "ortsteil:096771480004": 16,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 22,
+              "ortsteil:096771480007": 17,
+              "ortsteil:096771480008": 9,
+              "ortsteil:096771480009": 11,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 17,
+              "ortsteil:096771480012": 12,
+              "briefwahl-gesamt": 635
+            },
             "rank": 13
           },
           {
@@ -331,6 +998,21 @@
             "name": "Eder Maria Magdalena",
             "party": "GRÜNE",
             "votes": 746,
+            "areaVotes": {
+              "ortsteil:096771480001": 71,
+              "ortsteil:096771480002": 52,
+              "ortsteil:096771480003": 60,
+              "ortsteil:096771480004": 11,
+              "ortsteil:096771480005": 8,
+              "ortsteil:096771480006": 20,
+              "ortsteil:096771480007": 14,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 4,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 10,
+              "ortsteil:096771480012": 8,
+              "briefwahl-gesamt": 480
+            },
             "rank": 14
           },
           {
@@ -338,6 +1020,21 @@
             "name": "Oßwald Marianne",
             "party": "GRÜNE",
             "votes": 730,
+            "areaVotes": {
+              "ortsteil:096771480001": 34,
+              "ortsteil:096771480002": 52,
+              "ortsteil:096771480003": 46,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 9,
+              "ortsteil:096771480007": 13,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 1,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 7,
+              "ortsteil:096771480012": 3,
+              "briefwahl-gesamt": 550
+            },
             "rank": 15
           },
           {
@@ -345,6 +1042,21 @@
             "name": "Scheblein Timo",
             "party": "GRÜNE",
             "votes": 727,
+            "areaVotes": {
+              "ortsteil:096771480001": 50,
+              "ortsteil:096771480002": 55,
+              "ortsteil:096771480003": 53,
+              "ortsteil:096771480004": 12,
+              "ortsteil:096771480005": 3,
+              "ortsteil:096771480006": 16,
+              "ortsteil:096771480007": 17,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 14,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 11,
+              "ortsteil:096771480012": 9,
+              "briefwahl-gesamt": 479
+            },
             "rank": 16
           },
           {
@@ -352,6 +1064,21 @@
             "name": "Gerhard Christiane",
             "party": "GRÜNE",
             "votes": 713,
+            "areaVotes": {
+              "ortsteil:096771480001": 28,
+              "ortsteil:096771480002": 33,
+              "ortsteil:096771480003": 29,
+              "ortsteil:096771480004": 8,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 14,
+              "ortsteil:096771480007": 15,
+              "ortsteil:096771480008": 6,
+              "ortsteil:096771480009": 2,
+              "ortsteil:096771480010": 3,
+              "ortsteil:096771480011": 27,
+              "ortsteil:096771480012": 7,
+              "briefwahl-gesamt": 539
+            },
             "rank": 17
           },
           {
@@ -359,6 +1086,21 @@
             "name": "Barthel Anne-Véronique",
             "party": "GRÜNE",
             "votes": 693,
+            "areaVotes": {
+              "ortsteil:096771480001": 41,
+              "ortsteil:096771480002": 39,
+              "ortsteil:096771480003": 40,
+              "ortsteil:096771480004": 8,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 15,
+              "ortsteil:096771480007": 14,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 2,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 11,
+              "ortsteil:096771480012": 7,
+              "briefwahl-gesamt": 507
+            },
             "rank": 18
           },
           {
@@ -366,6 +1108,21 @@
             "name": "Frey Kilian",
             "party": "GRÜNE",
             "votes": 650,
+            "areaVotes": {
+              "ortsteil:096771480001": 32,
+              "ortsteil:096771480002": 54,
+              "ortsteil:096771480003": 52,
+              "ortsteil:096771480004": 8,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 9,
+              "ortsteil:096771480007": 15,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 2,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 9,
+              "ortsteil:096771480012": 7,
+              "briefwahl-gesamt": 452
+            },
             "rank": 19
           },
           {
@@ -373,6 +1130,21 @@
             "name": "Frädrich Matthias",
             "party": "GRÜNE",
             "votes": 631,
+            "areaVotes": {
+              "ortsteil:096771480001": 40,
+              "ortsteil:096771480002": 34,
+              "ortsteil:096771480003": 34,
+              "ortsteil:096771480004": 7,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 10,
+              "ortsteil:096771480007": 14,
+              "ortsteil:096771480008": 12,
+              "ortsteil:096771480009": 3,
+              "ortsteil:096771480010": 3,
+              "ortsteil:096771480011": 7,
+              "ortsteil:096771480012": 5,
+              "briefwahl-gesamt": 461
+            },
             "rank": 20
           },
           {
@@ -380,6 +1152,21 @@
             "name": "Wirthmann Christian",
             "party": "GRÜNE",
             "votes": 617,
+            "areaVotes": {
+              "ortsteil:096771480001": 50,
+              "ortsteil:096771480002": 40,
+              "ortsteil:096771480003": 28,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 13,
+              "ortsteil:096771480007": 13,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 1,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 11,
+              "ortsteil:096771480012": 3,
+              "briefwahl-gesamt": 443
+            },
             "rank": 21
           },
           {
@@ -387,6 +1174,21 @@
             "name": "Göbel Christian",
             "party": "GRÜNE",
             "votes": 540,
+            "areaVotes": {
+              "ortsteil:096771480001": 41,
+              "ortsteil:096771480002": 49,
+              "ortsteil:096771480003": 45,
+              "ortsteil:096771480004": 9,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 14,
+              "ortsteil:096771480007": 14,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 5,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 11,
+              "ortsteil:096771480012": 4,
+              "briefwahl-gesamt": 339
+            },
             "rank": 22
           },
           {
@@ -394,6 +1196,21 @@
             "name": "Reinhard Elena",
             "party": "GRÜNE",
             "votes": 497,
+            "areaVotes": {
+              "ortsteil:096771480001": 33,
+              "ortsteil:096771480002": 29,
+              "ortsteil:096771480003": 34,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 3,
+              "ortsteil:096771480006": 16,
+              "ortsteil:096771480007": 13,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 5,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 6,
+              "ortsteil:096771480012": 4,
+              "briefwahl-gesamt": 340
+            },
             "rank": 23
           },
           {
@@ -401,6 +1218,21 @@
             "name": "Schmitt Christian",
             "party": "GRÜNE",
             "votes": 432,
+            "areaVotes": {
+              "ortsteil:096771480001": 35,
+              "ortsteil:096771480002": 31,
+              "ortsteil:096771480003": 27,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 14,
+              "ortsteil:096771480007": 12,
+              "ortsteil:096771480008": 10,
+              "ortsteil:096771480009": 1,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 7,
+              "ortsteil:096771480012": 5,
+              "briefwahl-gesamt": 283
+            },
             "rank": 24
           }
         ]
@@ -418,6 +1250,21 @@
             "name": "Rümmer Stefan",
             "party": "SPD",
             "votes": 3392,
+            "areaVotes": {
+              "ortsteil:096771480001": 79,
+              "ortsteil:096771480002": 87,
+              "ortsteil:096771480003": 101,
+              "ortsteil:096771480004": 11,
+              "ortsteil:096771480005": 22,
+              "ortsteil:096771480006": 40,
+              "ortsteil:096771480007": 33,
+              "ortsteil:096771480008": 19,
+              "ortsteil:096771480009": 11,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 23,
+              "ortsteil:096771480012": 24,
+              "briefwahl-gesamt": 2942
+            },
             "rank": 1
           },
           {
@@ -425,6 +1272,21 @@
             "name": "Bolkart-Mühlrath Martha",
             "party": "SPD",
             "votes": 2978,
+            "areaVotes": {
+              "ortsteil:096771480001": 47,
+              "ortsteil:096771480002": 60,
+              "ortsteil:096771480003": 59,
+              "ortsteil:096771480004": 202,
+              "ortsteil:096771480005": 4,
+              "ortsteil:096771480006": 29,
+              "ortsteil:096771480007": 23,
+              "ortsteil:096771480008": 21,
+              "ortsteil:096771480009": 20,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 14,
+              "ortsteil:096771480012": 9,
+              "briefwahl-gesamt": 2490
+            },
             "rank": 2
           },
           {
@@ -432,6 +1294,21 @@
             "name": "Thesen Stefan",
             "party": "SPD",
             "votes": 2608,
+            "areaVotes": {
+              "ortsteil:096771480001": 81,
+              "ortsteil:096771480002": 103,
+              "ortsteil:096771480003": 80,
+              "ortsteil:096771480004": 15,
+              "ortsteil:096771480005": 12,
+              "ortsteil:096771480006": 39,
+              "ortsteil:096771480007": 25,
+              "ortsteil:096771480008": 23,
+              "ortsteil:096771480009": 19,
+              "ortsteil:096771480010": 21,
+              "ortsteil:096771480011": 12,
+              "ortsteil:096771480012": 21,
+              "briefwahl-gesamt": 2157
+            },
             "rank": 3
           },
           {
@@ -439,6 +1316,21 @@
             "name": "Netrval Marco",
             "party": "SPD",
             "votes": 2412,
+            "areaVotes": {
+              "ortsteil:096771480001": 51,
+              "ortsteil:096771480002": 54,
+              "ortsteil:096771480003": 61,
+              "ortsteil:096771480004": 7,
+              "ortsteil:096771480005": 15,
+              "ortsteil:096771480006": 27,
+              "ortsteil:096771480007": 23,
+              "ortsteil:096771480008": 15,
+              "ortsteil:096771480009": 162,
+              "ortsteil:096771480010": 36,
+              "ortsteil:096771480011": 22,
+              "ortsteil:096771480012": 45,
+              "briefwahl-gesamt": 1894
+            },
             "rank": 4
           },
           {
@@ -446,6 +1338,21 @@
             "name": "Kohlmann Petra",
             "party": "SPD",
             "votes": 1836,
+            "areaVotes": {
+              "ortsteil:096771480001": 26,
+              "ortsteil:096771480002": 31,
+              "ortsteil:096771480003": 26,
+              "ortsteil:096771480004": 190,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 13,
+              "ortsteil:096771480007": 10,
+              "ortsteil:096771480008": 10,
+              "ortsteil:096771480009": 12,
+              "ortsteil:096771480010": 1,
+              "ortsteil:096771480011": 8,
+              "ortsteil:096771480012": 6,
+              "briefwahl-gesamt": 1501
+            },
             "rank": 5
           },
           {
@@ -453,6 +1360,21 @@
             "name": "Stahl Leon",
             "party": "SPD",
             "votes": 1793,
+            "areaVotes": {
+              "ortsteil:096771480001": 25,
+              "ortsteil:096771480002": 28,
+              "ortsteil:096771480003": 28,
+              "ortsteil:096771480004": 5,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 127,
+              "ortsteil:096771480007": 14,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 9,
+              "ortsteil:096771480011": 8,
+              "ortsteil:096771480012": 5,
+              "briefwahl-gesamt": 1528
+            },
             "rank": 6
           },
           {
@@ -460,6 +1382,21 @@
             "name": "Schneider Harald",
             "party": "SPD",
             "votes": 1619,
+            "areaVotes": {
+              "ortsteil:096771480001": 38,
+              "ortsteil:096771480002": 42,
+              "ortsteil:096771480003": 51,
+              "ortsteil:096771480004": 18,
+              "ortsteil:096771480005": 4,
+              "ortsteil:096771480006": 16,
+              "ortsteil:096771480007": 12,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 2,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 30,
+              "ortsteil:096771480012": 3,
+              "briefwahl-gesamt": 1396
+            },
             "rank": 7
           },
           {
@@ -467,6 +1404,21 @@
             "name": "Mahr Nina",
             "party": "SPD",
             "votes": 1485,
+            "areaVotes": {
+              "ortsteil:096771480001": 33,
+              "ortsteil:096771480002": 28,
+              "ortsteil:096771480003": 30,
+              "ortsteil:096771480004": 170,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 13,
+              "ortsteil:096771480007": 11,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 9,
+              "ortsteil:096771480010": 1,
+              "ortsteil:096771480011": 9,
+              "ortsteil:096771480012": 4,
+              "briefwahl-gesamt": 1168
+            },
             "rank": 8
           },
           {
@@ -474,6 +1426,21 @@
             "name": "Wingenfeld Karoline",
             "party": "SPD",
             "votes": 1297,
+            "areaVotes": {
+              "ortsteil:096771480001": 25,
+              "ortsteil:096771480002": 23,
+              "ortsteil:096771480003": 20,
+              "ortsteil:096771480004": 105,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 5,
+              "ortsteil:096771480007": 15,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 10,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 6,
+              "ortsteil:096771480012": 1,
+              "briefwahl-gesamt": 1079
+            },
             "rank": 9
           },
           {
@@ -481,6 +1448,21 @@
             "name": "Wright Heidi",
             "party": "SPD",
             "votes": 1156,
+            "areaVotes": {
+              "ortsteil:096771480001": 29,
+              "ortsteil:096771480002": 38,
+              "ortsteil:096771480003": 47,
+              "ortsteil:096771480004": 9,
+              "ortsteil:096771480005": 4,
+              "ortsteil:096771480006": 21,
+              "ortsteil:096771480007": 13,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 6,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 18,
+              "ortsteil:096771480012": 2,
+              "briefwahl-gesamt": 962
+            },
             "rank": 10
           },
           {
@@ -488,6 +1470,21 @@
             "name": "Arand Frederick",
             "party": "SPD",
             "votes": 1061,
+            "areaVotes": {
+              "ortsteil:096771480001": 53,
+              "ortsteil:096771480002": 32,
+              "ortsteil:096771480003": 44,
+              "ortsteil:096771480004": 9,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 24,
+              "ortsteil:096771480007": 11,
+              "ortsteil:096771480008": 11,
+              "ortsteil:096771480009": 6,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 6,
+              "ortsteil:096771480012": 8,
+              "briefwahl-gesamt": 856
+            },
             "rank": 11
           },
           {
@@ -495,6 +1492,21 @@
             "name": "Keller Stephan",
             "party": "SPD",
             "votes": 965,
+            "areaVotes": {
+              "ortsteil:096771480001": 27,
+              "ortsteil:096771480002": 42,
+              "ortsteil:096771480003": 38,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 3,
+              "ortsteil:096771480006": 21,
+              "ortsteil:096771480007": 12,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 7,
+              "ortsteil:096771480010": 2,
+              "ortsteil:096771480011": 6,
+              "ortsteil:096771480012": 1,
+              "briefwahl-gesamt": 792
+            },
             "rank": 12
           },
           {
@@ -502,6 +1514,21 @@
             "name": "Riedmann Jonas",
             "party": "SPD",
             "votes": 842,
+            "areaVotes": {
+              "ortsteil:096771480001": 29,
+              "ortsteil:096771480002": 22,
+              "ortsteil:096771480003": 19,
+              "ortsteil:096771480004": 3,
+              "ortsteil:096771480005": 8,
+              "ortsteil:096771480006": 5,
+              "ortsteil:096771480007": 8,
+              "ortsteil:096771480008": 6,
+              "ortsteil:096771480009": 100,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 11,
+              "ortsteil:096771480012": 10,
+              "briefwahl-gesamt": 621
+            },
             "rank": 13
           },
           {
@@ -509,6 +1536,21 @@
             "name": "Strohmenger Eva",
             "party": "SPD",
             "votes": 797,
+            "areaVotes": {
+              "ortsteil:096771480001": 41,
+              "ortsteil:096771480002": 29,
+              "ortsteil:096771480003": 39,
+              "ortsteil:096771480004": 23,
+              "ortsteil:096771480005": 7,
+              "ortsteil:096771480006": 26,
+              "ortsteil:096771480007": 12,
+              "ortsteil:096771480008": 10,
+              "ortsteil:096771480009": 11,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 8,
+              "ortsteil:096771480012": 4,
+              "briefwahl-gesamt": 587
+            },
             "rank": 14
           },
           {
@@ -516,6 +1558,21 @@
             "name": "Wurm Siegmar",
             "party": "SPD",
             "votes": 758,
+            "areaVotes": {
+              "ortsteil:096771480001": 20,
+              "ortsteil:096771480002": 20,
+              "ortsteil:096771480003": 17,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 8,
+              "ortsteil:096771480007": 7,
+              "ortsteil:096771480008": 6,
+              "ortsteil:096771480009": 3,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 49,
+              "ortsteil:096771480012": 1,
+              "briefwahl-gesamt": 620
+            },
             "rank": 15
           },
           {
@@ -523,6 +1580,21 @@
             "name": "Braun Margarete",
             "party": "SPD",
             "votes": 754,
+            "areaVotes": {
+              "ortsteil:096771480001": 34,
+              "ortsteil:096771480002": 24,
+              "ortsteil:096771480003": 28,
+              "ortsteil:096771480004": 4,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 8,
+              "ortsteil:096771480007": 14,
+              "ortsteil:096771480008": 4,
+              "ortsteil:096771480009": 7,
+              "ortsteil:096771480010": 1,
+              "ortsteil:096771480011": 8,
+              "ortsteil:096771480012": 1,
+              "briefwahl-gesamt": 619
+            },
             "rank": 16
           },
           {
@@ -530,6 +1602,21 @@
             "name": "Arand Devi",
             "party": "SPD",
             "votes": 696,
+            "areaVotes": {
+              "ortsteil:096771480001": 51,
+              "ortsteil:096771480002": 26,
+              "ortsteil:096771480003": 34,
+              "ortsteil:096771480004": 7,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 5,
+              "ortsteil:096771480007": 8,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 7,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 9,
+              "ortsteil:096771480012": 4,
+              "briefwahl-gesamt": 536
+            },
             "rank": 17
           },
           {
@@ -537,6 +1624,21 @@
             "name": "Duchnik Josef",
             "party": "SPD",
             "votes": 642,
+            "areaVotes": {
+              "ortsteil:096771480001": 38,
+              "ortsteil:096771480002": 17,
+              "ortsteil:096771480003": 18,
+              "ortsteil:096771480004": 3,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 14,
+              "ortsteil:096771480007": 21,
+              "ortsteil:096771480008": 4,
+              "ortsteil:096771480009": 3,
+              "ortsteil:096771480010": 1,
+              "ortsteil:096771480011": 7,
+              "ortsteil:096771480012": 4,
+              "briefwahl-gesamt": 511
+            },
             "rank": 18
           },
           {
@@ -544,6 +1646,21 @@
             "name": "Havla Annette",
             "party": "SPD",
             "votes": 558,
+            "areaVotes": {
+              "ortsteil:096771480001": 34,
+              "ortsteil:096771480002": 40,
+              "ortsteil:096771480003": 29,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 9,
+              "ortsteil:096771480007": 9,
+              "ortsteil:096771480008": 5,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 1,
+              "ortsteil:096771480011": 6,
+              "ortsteil:096771480012": 2,
+              "briefwahl-gesamt": 404
+            },
             "rank": 19
           },
           {
@@ -551,6 +1668,21 @@
             "name": "Wehner Justus",
             "party": "SPD",
             "votes": 551,
+            "areaVotes": {
+              "ortsteil:096771480001": 35,
+              "ortsteil:096771480002": 36,
+              "ortsteil:096771480003": 23,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 4,
+              "ortsteil:096771480006": 10,
+              "ortsteil:096771480007": 17,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 9,
+              "ortsteil:096771480010": 1,
+              "ortsteil:096771480011": 6,
+              "ortsteil:096771480012": 4,
+              "briefwahl-gesamt": 392
+            },
             "rank": 20
           },
           {
@@ -558,6 +1690,21 @@
             "name": "Ditterich Nina",
             "party": "SPD",
             "votes": 496,
+            "areaVotes": {
+              "ortsteil:096771480001": 34,
+              "ortsteil:096771480002": 35,
+              "ortsteil:096771480003": 27,
+              "ortsteil:096771480004": 6,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 15,
+              "ortsteil:096771480007": 9,
+              "ortsteil:096771480008": 5,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 9,
+              "ortsteil:096771480012": 3,
+              "briefwahl-gesamt": 344
+            },
             "rank": 21
           },
           {
@@ -565,6 +1712,21 @@
             "name": "Kleinwechter Bernd",
             "party": "SPD",
             "votes": 350,
+            "areaVotes": {
+              "ortsteil:096771480001": 20,
+              "ortsteil:096771480002": 23,
+              "ortsteil:096771480003": 23,
+              "ortsteil:096771480004": 4,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 6,
+              "ortsteil:096771480007": 7,
+              "ortsteil:096771480008": 4,
+              "ortsteil:096771480009": 2,
+              "ortsteil:096771480010": 1,
+              "ortsteil:096771480011": 5,
+              "ortsteil:096771480012": 1,
+              "briefwahl-gesamt": 252
+            },
             "rank": 22
           },
           {
@@ -572,6 +1734,21 @@
             "name": "Durak Vedat",
             "party": "SPD",
             "votes": 333,
+            "areaVotes": {
+              "ortsteil:096771480001": 30,
+              "ortsteil:096771480002": 31,
+              "ortsteil:096771480003": 24,
+              "ortsteil:096771480004": 4,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 5,
+              "ortsteil:096771480007": 7,
+              "ortsteil:096771480008": 10,
+              "ortsteil:096771480009": 4,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 6,
+              "ortsteil:096771480012": 1,
+              "briefwahl-gesamt": 210
+            },
             "rank": 23
           },
           {
@@ -579,6 +1756,21 @@
             "name": "Lux Steven",
             "party": "SPD",
             "votes": 241,
+            "areaVotes": {
+              "ortsteil:096771480001": 21,
+              "ortsteil:096771480002": 25,
+              "ortsteil:096771480003": 17,
+              "ortsteil:096771480004": 3,
+              "ortsteil:096771480005": 1,
+              "ortsteil:096771480006": 6,
+              "ortsteil:096771480007": 6,
+              "ortsteil:096771480008": 4,
+              "ortsteil:096771480009": 2,
+              "ortsteil:096771480010": 0,
+              "ortsteil:096771480011": 5,
+              "ortsteil:096771480012": 1,
+              "briefwahl-gesamt": 150
+            },
             "rank": 24
           }
         ]
@@ -596,6 +1788,21 @@
             "name": "Hofmann Alex",
             "party": "FWG",
             "votes": 5666,
+            "areaVotes": {
+              "ortsteil:096771480001": 97,
+              "ortsteil:096771480002": 183,
+              "ortsteil:096771480003": 178,
+              "ortsteil:096771480004": 32,
+              "ortsteil:096771480005": 66,
+              "ortsteil:096771480006": 97,
+              "ortsteil:096771480007": 29,
+              "ortsteil:096771480008": 25,
+              "ortsteil:096771480009": 25,
+              "ortsteil:096771480010": 77,
+              "ortsteil:096771480011": 74,
+              "ortsteil:096771480012": 120,
+              "briefwahl-gesamt": 4663
+            },
             "rank": 1
           },
           {
@@ -603,6 +1810,21 @@
             "name": "Kunz Sebastian",
             "party": "FWG",
             "votes": 3607,
+            "areaVotes": {
+              "ortsteil:096771480001": 67,
+              "ortsteil:096771480002": 100,
+              "ortsteil:096771480003": 131,
+              "ortsteil:096771480004": 22,
+              "ortsteil:096771480005": 27,
+              "ortsteil:096771480006": 62,
+              "ortsteil:096771480007": 17,
+              "ortsteil:096771480008": 27,
+              "ortsteil:096771480009": 9,
+              "ortsteil:096771480010": 30,
+              "ortsteil:096771480011": 26,
+              "ortsteil:096771480012": 31,
+              "briefwahl-gesamt": 3058
+            },
             "rank": 2
           },
           {
@@ -610,6 +1832,21 @@
             "name": "Heßdörfer Thorsten",
             "party": "FWG",
             "votes": 3282,
+            "areaVotes": {
+              "ortsteil:096771480001": 44,
+              "ortsteil:096771480002": 90,
+              "ortsteil:096771480003": 76,
+              "ortsteil:096771480004": 19,
+              "ortsteil:096771480005": 38,
+              "ortsteil:096771480006": 144,
+              "ortsteil:096771480007": 12,
+              "ortsteil:096771480008": 14,
+              "ortsteil:096771480009": 23,
+              "ortsteil:096771480010": 15,
+              "ortsteil:096771480011": 29,
+              "ortsteil:096771480012": 46,
+              "briefwahl-gesamt": 2732
+            },
             "rank": 3
           },
           {
@@ -617,6 +1854,21 @@
             "name": "Röder Ingo",
             "party": "FWG",
             "votes": 3267,
+            "areaVotes": {
+              "ortsteil:096771480001": 37,
+              "ortsteil:096771480002": 60,
+              "ortsteil:096771480003": 68,
+              "ortsteil:096771480004": 22,
+              "ortsteil:096771480005": 58,
+              "ortsteil:096771480006": 85,
+              "ortsteil:096771480007": 7,
+              "ortsteil:096771480008": 12,
+              "ortsteil:096771480009": 63,
+              "ortsteil:096771480010": 70,
+              "ortsteil:096771480011": 26,
+              "ortsteil:096771480012": 233,
+              "briefwahl-gesamt": 2526
+            },
             "rank": 4
           },
           {
@@ -624,6 +1876,21 @@
             "name": "Dr. Kaufmann Benedikt",
             "party": "FWG",
             "votes": 3260,
+            "areaVotes": {
+              "ortsteil:096771480001": 66,
+              "ortsteil:096771480002": 117,
+              "ortsteil:096771480003": 130,
+              "ortsteil:096771480004": 28,
+              "ortsteil:096771480005": 63,
+              "ortsteil:096771480006": 52,
+              "ortsteil:096771480007": 17,
+              "ortsteil:096771480008": 16,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 32,
+              "ortsteil:096771480011": 28,
+              "ortsteil:096771480012": 34,
+              "briefwahl-gesamt": 2669
+            },
             "rank": 5
           },
           {
@@ -631,6 +1898,21 @@
             "name": "Müller Tanja",
             "party": "FWG",
             "votes": 2780,
+            "areaVotes": {
+              "ortsteil:096771480001": 39,
+              "ortsteil:096771480002": 61,
+              "ortsteil:096771480003": 60,
+              "ortsteil:096771480004": 23,
+              "ortsteil:096771480005": 11,
+              "ortsteil:096771480006": 174,
+              "ortsteil:096771480007": 18,
+              "ortsteil:096771480008": 4,
+              "ortsteil:096771480009": 21,
+              "ortsteil:096771480010": 12,
+              "ortsteil:096771480011": 21,
+              "ortsteil:096771480012": 85,
+              "briefwahl-gesamt": 2251
+            },
             "rank": 6
           },
           {
@@ -638,6 +1920,21 @@
             "name": "Größler Benedikt",
             "party": "FWG",
             "votes": 2412,
+            "areaVotes": {
+              "ortsteil:096771480001": 33,
+              "ortsteil:096771480002": 55,
+              "ortsteil:096771480003": 57,
+              "ortsteil:096771480004": 25,
+              "ortsteil:096771480005": 6,
+              "ortsteil:096771480006": 229,
+              "ortsteil:096771480007": 11,
+              "ortsteil:096771480008": 3,
+              "ortsteil:096771480009": 10,
+              "ortsteil:096771480010": 7,
+              "ortsteil:096771480011": 13,
+              "ortsteil:096771480012": 22,
+              "briefwahl-gesamt": 1941
+            },
             "rank": 7
           },
           {
@@ -645,6 +1942,21 @@
             "name": "Schäfer Viktoria",
             "party": "FWG",
             "votes": 2296,
+            "areaVotes": {
+              "ortsteil:096771480001": 37,
+              "ortsteil:096771480002": 56,
+              "ortsteil:096771480003": 65,
+              "ortsteil:096771480004": 22,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 41,
+              "ortsteil:096771480007": 14,
+              "ortsteil:096771480008": 7,
+              "ortsteil:096771480009": 25,
+              "ortsteil:096771480010": 19,
+              "ortsteil:096771480011": 15,
+              "ortsteil:096771480012": 209,
+              "briefwahl-gesamt": 1781
+            },
             "rank": 8
           },
           {
@@ -652,6 +1964,21 @@
             "name": "Scheinhof Daniel",
             "party": "FWG",
             "votes": 2280,
+            "areaVotes": {
+              "ortsteil:096771480001": 39,
+              "ortsteil:096771480002": 80,
+              "ortsteil:096771480003": 60,
+              "ortsteil:096771480004": 27,
+              "ortsteil:096771480005": 6,
+              "ortsteil:096771480006": 32,
+              "ortsteil:096771480007": 53,
+              "ortsteil:096771480008": 51,
+              "ortsteil:096771480009": 15,
+              "ortsteil:096771480010": 62,
+              "ortsteil:096771480011": 23,
+              "ortsteil:096771480012": 53,
+              "briefwahl-gesamt": 1779
+            },
             "rank": 9
           },
           {
@@ -659,6 +1986,21 @@
             "name": "Kohlhepp Katharina",
             "party": "FWG",
             "votes": 2184,
+            "areaVotes": {
+              "ortsteil:096771480001": 34,
+              "ortsteil:096771480002": 61,
+              "ortsteil:096771480003": 51,
+              "ortsteil:096771480004": 22,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 33,
+              "ortsteil:096771480007": 11,
+              "ortsteil:096771480008": 10,
+              "ortsteil:096771480009": 29,
+              "ortsteil:096771480010": 21,
+              "ortsteil:096771480011": 16,
+              "ortsteil:096771480012": 222,
+              "briefwahl-gesamt": 1669
+            },
             "rank": 10
           },
           {
@@ -666,6 +2008,21 @@
             "name": "Scheiner Martin",
             "party": "FWG",
             "votes": 1776,
+            "areaVotes": {
+              "ortsteil:096771480001": 33,
+              "ortsteil:096771480002": 44,
+              "ortsteil:096771480003": 44,
+              "ortsteil:096771480004": 18,
+              "ortsteil:096771480005": 36,
+              "ortsteil:096771480006": 20,
+              "ortsteil:096771480007": 23,
+              "ortsteil:096771480008": 16,
+              "ortsteil:096771480009": 16,
+              "ortsteil:096771480010": 109,
+              "ortsteil:096771480011": 23,
+              "ortsteil:096771480012": 47,
+              "briefwahl-gesamt": 1347
+            },
             "rank": 11
           },
           {
@@ -673,6 +2030,21 @@
             "name": "Wicha Sabine",
             "party": "FWG",
             "votes": 1659,
+            "areaVotes": {
+              "ortsteil:096771480001": 41,
+              "ortsteil:096771480002": 106,
+              "ortsteil:096771480003": 80,
+              "ortsteil:096771480004": 26,
+              "ortsteil:096771480005": 7,
+              "ortsteil:096771480006": 41,
+              "ortsteil:096771480007": 12,
+              "ortsteil:096771480008": 12,
+              "ortsteil:096771480009": 10,
+              "ortsteil:096771480010": 19,
+              "ortsteil:096771480011": 14,
+              "ortsteil:096771480012": 46,
+              "briefwahl-gesamt": 1245
+            },
             "rank": 12
           },
           {
@@ -680,6 +2052,21 @@
             "name": "Dunst Christian",
             "party": "FWG",
             "votes": 1521,
+            "areaVotes": {
+              "ortsteil:096771480001": 58,
+              "ortsteil:096771480002": 77,
+              "ortsteil:096771480003": 82,
+              "ortsteil:096771480004": 24,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 25,
+              "ortsteil:096771480007": 10,
+              "ortsteil:096771480008": 8,
+              "ortsteil:096771480009": 11,
+              "ortsteil:096771480010": 7,
+              "ortsteil:096771480011": 16,
+              "ortsteil:096771480012": 26,
+              "briefwahl-gesamt": 1172
+            },
             "rank": 13
           },
           {
@@ -687,6 +2074,21 @@
             "name": "Schwarz Alina",
             "party": "FWG",
             "votes": 1500,
+            "areaVotes": {
+              "ortsteil:096771480001": 38,
+              "ortsteil:096771480002": 68,
+              "ortsteil:096771480003": 51,
+              "ortsteil:096771480004": 24,
+              "ortsteil:096771480005": 16,
+              "ortsteil:096771480006": 55,
+              "ortsteil:096771480007": 12,
+              "ortsteil:096771480008": 6,
+              "ortsteil:096771480009": 10,
+              "ortsteil:096771480010": 15,
+              "ortsteil:096771480011": 20,
+              "ortsteil:096771480012": 37,
+              "briefwahl-gesamt": 1148
+            },
             "rank": 14
           },
           {
@@ -694,6 +2096,21 @@
             "name": "Seubert Matthias",
             "party": "FWG",
             "votes": 1291,
+            "areaVotes": {
+              "ortsteil:096771480001": 32,
+              "ortsteil:096771480002": 46,
+              "ortsteil:096771480003": 39,
+              "ortsteil:096771480004": 21,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 75,
+              "ortsteil:096771480007": 7,
+              "ortsteil:096771480008": 6,
+              "ortsteil:096771480009": 7,
+              "ortsteil:096771480010": 5,
+              "ortsteil:096771480011": 11,
+              "ortsteil:096771480012": 18,
+              "briefwahl-gesamt": 1022
+            },
             "rank": 15
           },
           {
@@ -701,6 +2118,21 @@
             "name": "Taupp Tino",
             "party": "FWG",
             "votes": 1265,
+            "areaVotes": {
+              "ortsteil:096771480001": 38,
+              "ortsteil:096771480002": 60,
+              "ortsteil:096771480003": 63,
+              "ortsteil:096771480004": 26,
+              "ortsteil:096771480005": 6,
+              "ortsteil:096771480006": 37,
+              "ortsteil:096771480007": 11,
+              "ortsteil:096771480008": 3,
+              "ortsteil:096771480009": 7,
+              "ortsteil:096771480010": 5,
+              "ortsteil:096771480011": 27,
+              "ortsteil:096771480012": 17,
+              "briefwahl-gesamt": 965
+            },
             "rank": 16
           },
           {
@@ -708,6 +2140,21 @@
             "name": "Lippert Manfred",
             "party": "FWG",
             "votes": 1123,
+            "areaVotes": {
+              "ortsteil:096771480001": 29,
+              "ortsteil:096771480002": 41,
+              "ortsteil:096771480003": 47,
+              "ortsteil:096771480004": 18,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 55,
+              "ortsteil:096771480007": 13,
+              "ortsteil:096771480008": 6,
+              "ortsteil:096771480009": 6,
+              "ortsteil:096771480010": 4,
+              "ortsteil:096771480011": 19,
+              "ortsteil:096771480012": 21,
+              "briefwahl-gesamt": 862
+            },
             "rank": 17
           },
           {
@@ -715,6 +2162,21 @@
             "name": "Weyand Holger",
             "party": "FWG",
             "votes": 1050,
+            "areaVotes": {
+              "ortsteil:096771480001": 44,
+              "ortsteil:096771480002": 62,
+              "ortsteil:096771480003": 50,
+              "ortsteil:096771480004": 20,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 18,
+              "ortsteil:096771480007": 13,
+              "ortsteil:096771480008": 3,
+              "ortsteil:096771480009": 14,
+              "ortsteil:096771480010": 10,
+              "ortsteil:096771480011": 12,
+              "ortsteil:096771480012": 31,
+              "briefwahl-gesamt": 771
+            },
             "rank": 18
           },
           {
@@ -722,6 +2184,21 @@
             "name": "Wicha Willy",
             "party": "FWG",
             "votes": 1040,
+            "areaVotes": {
+              "ortsteil:096771480001": 30,
+              "ortsteil:096771480002": 60,
+              "ortsteil:096771480003": 55,
+              "ortsteil:096771480004": 18,
+              "ortsteil:096771480005": 6,
+              "ortsteil:096771480006": 17,
+              "ortsteil:096771480007": 14,
+              "ortsteil:096771480008": 6,
+              "ortsteil:096771480009": 7,
+              "ortsteil:096771480010": 15,
+              "ortsteil:096771480011": 14,
+              "ortsteil:096771480012": 19,
+              "briefwahl-gesamt": 779
+            },
             "rank": 19
           },
           {
@@ -729,6 +2206,21 @@
             "name": "Blisch Hanna",
             "party": "FWG",
             "votes": 1000,
+            "areaVotes": {
+              "ortsteil:096771480001": 31,
+              "ortsteil:096771480002": 54,
+              "ortsteil:096771480003": 51,
+              "ortsteil:096771480004": 19,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 34,
+              "ortsteil:096771480007": 11,
+              "ortsteil:096771480008": 16,
+              "ortsteil:096771480009": 8,
+              "ortsteil:096771480010": 7,
+              "ortsteil:096771480011": 10,
+              "ortsteil:096771480012": 19,
+              "briefwahl-gesamt": 738
+            },
             "rank": 20
           },
           {
@@ -736,6 +2228,21 @@
             "name": "Fischer Katharina",
             "party": "FWG",
             "votes": 990,
+            "areaVotes": {
+              "ortsteil:096771480001": 41,
+              "ortsteil:096771480002": 54,
+              "ortsteil:096771480003": 45,
+              "ortsteil:096771480004": 17,
+              "ortsteil:096771480005": 5,
+              "ortsteil:096771480006": 19,
+              "ortsteil:096771480007": 7,
+              "ortsteil:096771480008": 3,
+              "ortsteil:096771480009": 6,
+              "ortsteil:096771480010": 6,
+              "ortsteil:096771480011": 15,
+              "ortsteil:096771480012": 30,
+              "briefwahl-gesamt": 742
+            },
             "rank": 21
           },
           {
@@ -743,6 +2250,21 @@
             "name": "Zorlu Taylan",
             "party": "FWG",
             "votes": 716,
+            "areaVotes": {
+              "ortsteil:096771480001": 37,
+              "ortsteil:096771480002": 49,
+              "ortsteil:096771480003": 48,
+              "ortsteil:096771480004": 26,
+              "ortsteil:096771480005": 4,
+              "ortsteil:096771480006": 14,
+              "ortsteil:096771480007": 8,
+              "ortsteil:096771480008": 5,
+              "ortsteil:096771480009": 6,
+              "ortsteil:096771480010": 3,
+              "ortsteil:096771480011": 9,
+              "ortsteil:096771480012": 12,
+              "briefwahl-gesamt": 495
+            },
             "rank": 22
           },
           {
@@ -750,6 +2272,21 @@
             "name": "Stüttgen Oliver",
             "party": "FWG",
             "votes": 701,
+            "areaVotes": {
+              "ortsteil:096771480001": 34,
+              "ortsteil:096771480002": 42,
+              "ortsteil:096771480003": 41,
+              "ortsteil:096771480004": 20,
+              "ortsteil:096771480005": 2,
+              "ortsteil:096771480006": 21,
+              "ortsteil:096771480007": 7,
+              "ortsteil:096771480008": 4,
+              "ortsteil:096771480009": 7,
+              "ortsteil:096771480010": 3,
+              "ortsteil:096771480011": 11,
+              "ortsteil:096771480012": 16,
+              "briefwahl-gesamt": 493
+            },
             "rank": 23
           },
           {
@@ -757,6 +2294,21 @@
             "name": "Gümüshan Arzu",
             "party": "FWG",
             "votes": 620,
+            "areaVotes": {
+              "ortsteil:096771480001": 36,
+              "ortsteil:096771480002": 39,
+              "ortsteil:096771480003": 50,
+              "ortsteil:096771480004": 16,
+              "ortsteil:096771480005": 3,
+              "ortsteil:096771480006": 12,
+              "ortsteil:096771480007": 8,
+              "ortsteil:096771480008": 14,
+              "ortsteil:096771480009": 6,
+              "ortsteil:096771480010": 6,
+              "ortsteil:096771480011": 9,
+              "ortsteil:096771480012": 11,
+              "briefwahl-gesamt": 410
+            },
             "rank": 24
           }
         ]
@@ -768,6 +2320,21 @@
         "name": "Hombach Michael",
         "party": "CSU",
         "votes": 8143,
+        "areaVotes": {
+          "ortsteil:096771480001": 95,
+          "ortsteil:096771480002": 195,
+          "ortsteil:096771480003": 203,
+          "ortsteil:096771480004": 108,
+          "ortsteil:096771480005": 99,
+          "ortsteil:096771480006": 176,
+          "ortsteil:096771480007": 119,
+          "ortsteil:096771480008": 89,
+          "ortsteil:096771480009": 94,
+          "ortsteil:096771480010": 27,
+          "ortsteil:096771480011": 128,
+          "ortsteil:096771480012": 139,
+          "briefwahl-gesamt": 6671
+        },
         "rank": 1
       },
       {
@@ -775,6 +2342,21 @@
         "name": "Baier Anja",
         "party": "GRÜNE",
         "votes": 5772,
+        "areaVotes": {
+          "ortsteil:096771480001": 179,
+          "ortsteil:096771480002": 215,
+          "ortsteil:096771480003": 210,
+          "ortsteil:096771480004": 31,
+          "ortsteil:096771480005": 53,
+          "ortsteil:096771480006": 105,
+          "ortsteil:096771480007": 51,
+          "ortsteil:096771480008": 32,
+          "ortsteil:096771480009": 36,
+          "ortsteil:096771480010": 16,
+          "ortsteil:096771480011": 68,
+          "ortsteil:096771480012": 43,
+          "briefwahl-gesamt": 4733
+        },
         "rank": 2
       },
       {
@@ -782,6 +2364,21 @@
         "name": "Hofmann Alex",
         "party": "FWG",
         "votes": 5666,
+        "areaVotes": {
+          "ortsteil:096771480001": 97,
+          "ortsteil:096771480002": 183,
+          "ortsteil:096771480003": 178,
+          "ortsteil:096771480004": 32,
+          "ortsteil:096771480005": 66,
+          "ortsteil:096771480006": 97,
+          "ortsteil:096771480007": 29,
+          "ortsteil:096771480008": 25,
+          "ortsteil:096771480009": 25,
+          "ortsteil:096771480010": 77,
+          "ortsteil:096771480011": 74,
+          "ortsteil:096771480012": 120,
+          "briefwahl-gesamt": 4663
+        },
         "rank": 3
       },
       {
@@ -789,6 +2386,21 @@
         "name": "Gehrsitz Petra",
         "party": "CSU",
         "votes": 5521,
+        "areaVotes": {
+          "ortsteil:096771480001": 60,
+          "ortsteil:096771480002": 136,
+          "ortsteil:096771480003": 141,
+          "ortsteil:096771480004": 33,
+          "ortsteil:096771480005": 64,
+          "ortsteil:096771480006": 248,
+          "ortsteil:096771480007": 62,
+          "ortsteil:096771480008": 51,
+          "ortsteil:096771480009": 43,
+          "ortsteil:096771480010": 14,
+          "ortsteil:096771480011": 65,
+          "ortsteil:096771480012": 76,
+          "briefwahl-gesamt": 4528
+        },
         "rank": 4
       },
       {
@@ -796,6 +2408,21 @@
         "name": "Burkard Florian",
         "party": "CSU",
         "votes": 3850,
+        "areaVotes": {
+          "ortsteil:096771480001": 48,
+          "ortsteil:096771480002": 83,
+          "ortsteil:096771480003": 95,
+          "ortsteil:096771480004": 28,
+          "ortsteil:096771480005": 112,
+          "ortsteil:096771480006": 55,
+          "ortsteil:096771480007": 42,
+          "ortsteil:096771480008": 23,
+          "ortsteil:096771480009": 13,
+          "ortsteil:096771480010": 13,
+          "ortsteil:096771480011": 212,
+          "ortsteil:096771480012": 31,
+          "briefwahl-gesamt": 3095
+        },
         "rank": 5
       },
       {
@@ -803,6 +2430,21 @@
         "name": "Kunz Sebastian",
         "party": "FWG",
         "votes": 3607,
+        "areaVotes": {
+          "ortsteil:096771480001": 67,
+          "ortsteil:096771480002": 100,
+          "ortsteil:096771480003": 131,
+          "ortsteil:096771480004": 22,
+          "ortsteil:096771480005": 27,
+          "ortsteil:096771480006": 62,
+          "ortsteil:096771480007": 17,
+          "ortsteil:096771480008": 27,
+          "ortsteil:096771480009": 9,
+          "ortsteil:096771480010": 30,
+          "ortsteil:096771480011": 26,
+          "ortsteil:096771480012": 31,
+          "briefwahl-gesamt": 3058
+        },
         "rank": 6
       },
       {
@@ -810,6 +2452,21 @@
         "name": "Schäfer Rainer",
         "party": "CSU",
         "votes": 3475,
+        "areaVotes": {
+          "ortsteil:096771480001": 42,
+          "ortsteil:096771480002": 82,
+          "ortsteil:096771480003": 52,
+          "ortsteil:096771480004": 23,
+          "ortsteil:096771480005": 25,
+          "ortsteil:096771480006": 64,
+          "ortsteil:096771480007": 30,
+          "ortsteil:096771480008": 36,
+          "ortsteil:096771480009": 90,
+          "ortsteil:096771480010": 20,
+          "ortsteil:096771480011": 42,
+          "ortsteil:096771480012": 244,
+          "briefwahl-gesamt": 2725
+        },
         "rank": 7
       },
       {
@@ -817,6 +2474,21 @@
         "name": "Rodi Jonas",
         "party": "GRÜNE",
         "votes": 3461,
+        "areaVotes": {
+          "ortsteil:096771480001": 128,
+          "ortsteil:096771480002": 122,
+          "ortsteil:096771480003": 96,
+          "ortsteil:096771480004": 27,
+          "ortsteil:096771480005": 51,
+          "ortsteil:096771480006": 46,
+          "ortsteil:096771480007": 39,
+          "ortsteil:096771480008": 15,
+          "ortsteil:096771480009": 27,
+          "ortsteil:096771480010": 11,
+          "ortsteil:096771480011": 127,
+          "ortsteil:096771480012": 28,
+          "briefwahl-gesamt": 2744
+        },
         "rank": 8
       },
       {
@@ -824,6 +2496,21 @@
         "name": "Rümmer Stefan",
         "party": "SPD",
         "votes": 3392,
+        "areaVotes": {
+          "ortsteil:096771480001": 79,
+          "ortsteil:096771480002": 87,
+          "ortsteil:096771480003": 101,
+          "ortsteil:096771480004": 11,
+          "ortsteil:096771480005": 22,
+          "ortsteil:096771480006": 40,
+          "ortsteil:096771480007": 33,
+          "ortsteil:096771480008": 19,
+          "ortsteil:096771480009": 11,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 23,
+          "ortsteil:096771480012": 24,
+          "briefwahl-gesamt": 2942
+        },
         "rank": 9
       },
       {
@@ -831,6 +2518,21 @@
         "name": "Mehling Uwe",
         "party": "CSU",
         "votes": 3302,
+        "areaVotes": {
+          "ortsteil:096771480001": 37,
+          "ortsteil:096771480002": 59,
+          "ortsteil:096771480003": 68,
+          "ortsteil:096771480004": 12,
+          "ortsteil:096771480005": 158,
+          "ortsteil:096771480006": 43,
+          "ortsteil:096771480007": 30,
+          "ortsteil:096771480008": 19,
+          "ortsteil:096771480009": 11,
+          "ortsteil:096771480010": 29,
+          "ortsteil:096771480011": 200,
+          "ortsteil:096771480012": 29,
+          "briefwahl-gesamt": 2607
+        },
         "rank": 10
       },
       {
@@ -838,6 +2540,21 @@
         "name": "Heßdörfer Thorsten",
         "party": "FWG",
         "votes": 3282,
+        "areaVotes": {
+          "ortsteil:096771480001": 44,
+          "ortsteil:096771480002": 90,
+          "ortsteil:096771480003": 76,
+          "ortsteil:096771480004": 19,
+          "ortsteil:096771480005": 38,
+          "ortsteil:096771480006": 144,
+          "ortsteil:096771480007": 12,
+          "ortsteil:096771480008": 14,
+          "ortsteil:096771480009": 23,
+          "ortsteil:096771480010": 15,
+          "ortsteil:096771480011": 29,
+          "ortsteil:096771480012": 46,
+          "briefwahl-gesamt": 2732
+        },
         "rank": 11
       },
       {
@@ -845,6 +2562,21 @@
         "name": "Rudolph Mathias",
         "party": "CSU",
         "votes": 3268,
+        "areaVotes": {
+          "ortsteil:096771480001": 31,
+          "ortsteil:096771480002": 85,
+          "ortsteil:096771480003": 69,
+          "ortsteil:096771480004": 71,
+          "ortsteil:096771480005": 39,
+          "ortsteil:096771480006": 200,
+          "ortsteil:096771480007": 36,
+          "ortsteil:096771480008": 26,
+          "ortsteil:096771480009": 6,
+          "ortsteil:096771480010": 11,
+          "ortsteil:096771480011": 24,
+          "ortsteil:096771480012": 35,
+          "briefwahl-gesamt": 2635
+        },
         "rank": 12
       },
       {
@@ -852,6 +2584,21 @@
         "name": "Röder Ingo",
         "party": "FWG",
         "votes": 3267,
+        "areaVotes": {
+          "ortsteil:096771480001": 37,
+          "ortsteil:096771480002": 60,
+          "ortsteil:096771480003": 68,
+          "ortsteil:096771480004": 22,
+          "ortsteil:096771480005": 58,
+          "ortsteil:096771480006": 85,
+          "ortsteil:096771480007": 7,
+          "ortsteil:096771480008": 12,
+          "ortsteil:096771480009": 63,
+          "ortsteil:096771480010": 70,
+          "ortsteil:096771480011": 26,
+          "ortsteil:096771480012": 233,
+          "briefwahl-gesamt": 2526
+        },
         "rank": 13
       },
       {
@@ -859,6 +2606,21 @@
         "name": "Dr. Kaufmann Benedikt",
         "party": "FWG",
         "votes": 3260,
+        "areaVotes": {
+          "ortsteil:096771480001": 66,
+          "ortsteil:096771480002": 117,
+          "ortsteil:096771480003": 130,
+          "ortsteil:096771480004": 28,
+          "ortsteil:096771480005": 63,
+          "ortsteil:096771480006": 52,
+          "ortsteil:096771480007": 17,
+          "ortsteil:096771480008": 16,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 32,
+          "ortsteil:096771480011": 28,
+          "ortsteil:096771480012": 34,
+          "briefwahl-gesamt": 2669
+        },
         "rank": 14
       },
       {
@@ -866,6 +2628,21 @@
         "name": "Frohnapfel Isabel",
         "party": "CSU",
         "votes": 3193,
+        "areaVotes": {
+          "ortsteil:096771480001": 52,
+          "ortsteil:096771480002": 104,
+          "ortsteil:096771480003": 89,
+          "ortsteil:096771480004": 23,
+          "ortsteil:096771480005": 22,
+          "ortsteil:096771480006": 103,
+          "ortsteil:096771480007": 59,
+          "ortsteil:096771480008": 38,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 15,
+          "ortsteil:096771480011": 55,
+          "ortsteil:096771480012": 39,
+          "briefwahl-gesamt": 2586
+        },
         "rank": 15
       },
       {
@@ -873,6 +2650,21 @@
         "name": "Bolkart-Mühlrath Martha",
         "party": "SPD",
         "votes": 2978,
+        "areaVotes": {
+          "ortsteil:096771480001": 47,
+          "ortsteil:096771480002": 60,
+          "ortsteil:096771480003": 59,
+          "ortsteil:096771480004": 202,
+          "ortsteil:096771480005": 4,
+          "ortsteil:096771480006": 29,
+          "ortsteil:096771480007": 23,
+          "ortsteil:096771480008": 21,
+          "ortsteil:096771480009": 20,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 14,
+          "ortsteil:096771480012": 9,
+          "briefwahl-gesamt": 2490
+        },
         "rank": 16
       },
       {
@@ -880,6 +2672,21 @@
         "name": "Endres Christian",
         "party": "CSU",
         "votes": 2945,
+        "areaVotes": {
+          "ortsteil:096771480001": 40,
+          "ortsteil:096771480002": 62,
+          "ortsteil:096771480003": 61,
+          "ortsteil:096771480004": 13,
+          "ortsteil:096771480005": 27,
+          "ortsteil:096771480006": 49,
+          "ortsteil:096771480007": 34,
+          "ortsteil:096771480008": 34,
+          "ortsteil:096771480009": 160,
+          "ortsteil:096771480010": 61,
+          "ortsteil:096771480011": 37,
+          "ortsteil:096771480012": 122,
+          "briefwahl-gesamt": 2245
+        },
         "rank": 17
       },
       {
@@ -887,6 +2694,21 @@
         "name": "Winheim Gerhard",
         "party": "CSU",
         "votes": 2896,
+        "areaVotes": {
+          "ortsteil:096771480001": 40,
+          "ortsteil:096771480002": 64,
+          "ortsteil:096771480003": 77,
+          "ortsteil:096771480004": 262,
+          "ortsteil:096771480005": 12,
+          "ortsteil:096771480006": 31,
+          "ortsteil:096771480007": 31,
+          "ortsteil:096771480008": 26,
+          "ortsteil:096771480009": 10,
+          "ortsteil:096771480010": 8,
+          "ortsteil:096771480011": 31,
+          "ortsteil:096771480012": 27,
+          "briefwahl-gesamt": 2277
+        },
         "rank": 18
       },
       {
@@ -894,6 +2716,21 @@
         "name": "Müller Tanja",
         "party": "FWG",
         "votes": 2780,
+        "areaVotes": {
+          "ortsteil:096771480001": 39,
+          "ortsteil:096771480002": 61,
+          "ortsteil:096771480003": 60,
+          "ortsteil:096771480004": 23,
+          "ortsteil:096771480005": 11,
+          "ortsteil:096771480006": 174,
+          "ortsteil:096771480007": 18,
+          "ortsteil:096771480008": 4,
+          "ortsteil:096771480009": 21,
+          "ortsteil:096771480010": 12,
+          "ortsteil:096771480011": 21,
+          "ortsteil:096771480012": 85,
+          "briefwahl-gesamt": 2251
+        },
         "rank": 19
       },
       {
@@ -901,6 +2738,21 @@
         "name": "Mühleck Maximilian",
         "party": "CSU",
         "votes": 2749,
+        "areaVotes": {
+          "ortsteil:096771480001": 31,
+          "ortsteil:096771480002": 61,
+          "ortsteil:096771480003": 71,
+          "ortsteil:096771480004": 11,
+          "ortsteil:096771480005": 6,
+          "ortsteil:096771480006": 235,
+          "ortsteil:096771480007": 31,
+          "ortsteil:096771480008": 21,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 6,
+          "ortsteil:096771480011": 29,
+          "ortsteil:096771480012": 28,
+          "briefwahl-gesamt": 2211
+        },
         "rank": 20
       },
       {
@@ -908,6 +2760,21 @@
         "name": "Kohlmann Philipp",
         "party": "CSU",
         "votes": 2712,
+        "areaVotes": {
+          "ortsteil:096771480001": 27,
+          "ortsteil:096771480002": 76,
+          "ortsteil:096771480003": 45,
+          "ortsteil:096771480004": 264,
+          "ortsteil:096771480005": 24,
+          "ortsteil:096771480006": 22,
+          "ortsteil:096771480007": 25,
+          "ortsteil:096771480008": 26,
+          "ortsteil:096771480009": 1,
+          "ortsteil:096771480010": 9,
+          "ortsteil:096771480011": 29,
+          "ortsteil:096771480012": 21,
+          "briefwahl-gesamt": 2143
+        },
         "rank": 21
       },
       {
@@ -915,6 +2782,21 @@
         "name": "Thesen Stefan",
         "party": "SPD",
         "votes": 2608,
+        "areaVotes": {
+          "ortsteil:096771480001": 81,
+          "ortsteil:096771480002": 103,
+          "ortsteil:096771480003": 80,
+          "ortsteil:096771480004": 15,
+          "ortsteil:096771480005": 12,
+          "ortsteil:096771480006": 39,
+          "ortsteil:096771480007": 25,
+          "ortsteil:096771480008": 23,
+          "ortsteil:096771480009": 19,
+          "ortsteil:096771480010": 21,
+          "ortsteil:096771480011": 12,
+          "ortsteil:096771480012": 21,
+          "briefwahl-gesamt": 2157
+        },
         "rank": 22
       },
       {
@@ -922,6 +2804,21 @@
         "name": "Köhler Eugen",
         "party": "CSU",
         "votes": 2540,
+        "areaVotes": {
+          "ortsteil:096771480001": 27,
+          "ortsteil:096771480002": 72,
+          "ortsteil:096771480003": 42,
+          "ortsteil:096771480004": 10,
+          "ortsteil:096771480005": 32,
+          "ortsteil:096771480006": 138,
+          "ortsteil:096771480007": 26,
+          "ortsteil:096771480008": 16,
+          "ortsteil:096771480009": 4,
+          "ortsteil:096771480010": 25,
+          "ortsteil:096771480011": 44,
+          "ortsteil:096771480012": 22,
+          "briefwahl-gesamt": 2082
+        },
         "rank": 23
       },
       {
@@ -929,6 +2826,21 @@
         "name": "Wittstadt Horst",
         "party": "GRÜNE",
         "votes": 2496,
+        "areaVotes": {
+          "ortsteil:096771480001": 88,
+          "ortsteil:096771480002": 78,
+          "ortsteil:096771480003": 72,
+          "ortsteil:096771480004": 13,
+          "ortsteil:096771480005": 8,
+          "ortsteil:096771480006": 29,
+          "ortsteil:096771480007": 101,
+          "ortsteil:096771480008": 12,
+          "ortsteil:096771480009": 22,
+          "ortsteil:096771480010": 21,
+          "ortsteil:096771480011": 16,
+          "ortsteil:096771480012": 20,
+          "briefwahl-gesamt": 2016
+        },
         "rank": 24
       },
       {
@@ -936,6 +2848,21 @@
         "name": "Hammer Dominik",
         "party": "CSU",
         "votes": 2431,
+        "areaVotes": {
+          "ortsteil:096771480001": 29,
+          "ortsteil:096771480002": 68,
+          "ortsteil:096771480003": 91,
+          "ortsteil:096771480004": 17,
+          "ortsteil:096771480005": 11,
+          "ortsteil:096771480006": 70,
+          "ortsteil:096771480007": 26,
+          "ortsteil:096771480008": 13,
+          "ortsteil:096771480009": 5,
+          "ortsteil:096771480010": 5,
+          "ortsteil:096771480011": 41,
+          "ortsteil:096771480012": 18,
+          "briefwahl-gesamt": 2037
+        },
         "rank": 25
       },
       {
@@ -943,6 +2870,21 @@
         "name": "Netrval Marco",
         "party": "SPD",
         "votes": 2412,
+        "areaVotes": {
+          "ortsteil:096771480001": 51,
+          "ortsteil:096771480002": 54,
+          "ortsteil:096771480003": 61,
+          "ortsteil:096771480004": 7,
+          "ortsteil:096771480005": 15,
+          "ortsteil:096771480006": 27,
+          "ortsteil:096771480007": 23,
+          "ortsteil:096771480008": 15,
+          "ortsteil:096771480009": 162,
+          "ortsteil:096771480010": 36,
+          "ortsteil:096771480011": 22,
+          "ortsteil:096771480012": 45,
+          "briefwahl-gesamt": 1894
+        },
         "rank": 26
       },
       {
@@ -950,6 +2892,21 @@
         "name": "Größler Benedikt",
         "party": "FWG",
         "votes": 2412,
+        "areaVotes": {
+          "ortsteil:096771480001": 33,
+          "ortsteil:096771480002": 55,
+          "ortsteil:096771480003": 57,
+          "ortsteil:096771480004": 25,
+          "ortsteil:096771480005": 6,
+          "ortsteil:096771480006": 229,
+          "ortsteil:096771480007": 11,
+          "ortsteil:096771480008": 3,
+          "ortsteil:096771480009": 10,
+          "ortsteil:096771480010": 7,
+          "ortsteil:096771480011": 13,
+          "ortsteil:096771480012": 22,
+          "briefwahl-gesamt": 1941
+        },
         "rank": 27
       },
       {
@@ -957,6 +2914,21 @@
         "name": "Schäfer Viktoria",
         "party": "FWG",
         "votes": 2296,
+        "areaVotes": {
+          "ortsteil:096771480001": 37,
+          "ortsteil:096771480002": 56,
+          "ortsteil:096771480003": 65,
+          "ortsteil:096771480004": 22,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 41,
+          "ortsteil:096771480007": 14,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 25,
+          "ortsteil:096771480010": 19,
+          "ortsteil:096771480011": 15,
+          "ortsteil:096771480012": 209,
+          "briefwahl-gesamt": 1781
+        },
         "rank": 28
       },
       {
@@ -964,6 +2936,21 @@
         "name": "Naujoks Andrea",
         "party": "GRÜNE",
         "votes": 2287,
+        "areaVotes": {
+          "ortsteil:096771480001": 128,
+          "ortsteil:096771480002": 140,
+          "ortsteil:096771480003": 143,
+          "ortsteil:096771480004": 27,
+          "ortsteil:096771480005": 12,
+          "ortsteil:096771480006": 47,
+          "ortsteil:096771480007": 30,
+          "ortsteil:096771480008": 12,
+          "ortsteil:096771480009": 21,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 17,
+          "ortsteil:096771480012": 24,
+          "briefwahl-gesamt": 1686
+        },
         "rank": 29
       },
       {
@@ -971,6 +2958,21 @@
         "name": "Scheinhof Daniel",
         "party": "FWG",
         "votes": 2280,
+        "areaVotes": {
+          "ortsteil:096771480001": 39,
+          "ortsteil:096771480002": 80,
+          "ortsteil:096771480003": 60,
+          "ortsteil:096771480004": 27,
+          "ortsteil:096771480005": 6,
+          "ortsteil:096771480006": 32,
+          "ortsteil:096771480007": 53,
+          "ortsteil:096771480008": 51,
+          "ortsteil:096771480009": 15,
+          "ortsteil:096771480010": 62,
+          "ortsteil:096771480011": 23,
+          "ortsteil:096771480012": 53,
+          "briefwahl-gesamt": 1779
+        },
         "rank": 30
       },
       {
@@ -978,6 +2980,21 @@
         "name": "Hack Sybille",
         "party": "GRÜNE",
         "votes": 2217,
+        "areaVotes": {
+          "ortsteil:096771480001": 101,
+          "ortsteil:096771480002": 100,
+          "ortsteil:096771480003": 85,
+          "ortsteil:096771480004": 18,
+          "ortsteil:096771480005": 7,
+          "ortsteil:096771480006": 120,
+          "ortsteil:096771480007": 27,
+          "ortsteil:096771480008": 15,
+          "ortsteil:096771480009": 17,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 17,
+          "ortsteil:096771480012": 24,
+          "briefwahl-gesamt": 1686
+        },
         "rank": 31
       },
       {
@@ -985,6 +3002,21 @@
         "name": "Weißhaar Barbara",
         "party": "GRÜNE",
         "votes": 2214,
+        "areaVotes": {
+          "ortsteil:096771480001": 114,
+          "ortsteil:096771480002": 114,
+          "ortsteil:096771480003": 98,
+          "ortsteil:096771480004": 29,
+          "ortsteil:096771480005": 10,
+          "ortsteil:096771480006": 37,
+          "ortsteil:096771480007": 25,
+          "ortsteil:096771480008": 17,
+          "ortsteil:096771480009": 14,
+          "ortsteil:096771480010": 3,
+          "ortsteil:096771480011": 13,
+          "ortsteil:096771480012": 15,
+          "briefwahl-gesamt": 1725
+        },
         "rank": 32
       },
       {
@@ -992,6 +3024,21 @@
         "name": "Reinhard Björn",
         "party": "CSU",
         "votes": 2204,
+        "areaVotes": {
+          "ortsteil:096771480001": 34,
+          "ortsteil:096771480002": 63,
+          "ortsteil:096771480003": 57,
+          "ortsteil:096771480004": 15,
+          "ortsteil:096771480005": 6,
+          "ortsteil:096771480006": 34,
+          "ortsteil:096771480007": 160,
+          "ortsteil:096771480008": 24,
+          "ortsteil:096771480009": 14,
+          "ortsteil:096771480010": 21,
+          "ortsteil:096771480011": 30,
+          "ortsteil:096771480012": 25,
+          "briefwahl-gesamt": 1721
+        },
         "rank": 33
       },
       {
@@ -999,6 +3046,21 @@
         "name": "Kohlhepp Katharina",
         "party": "FWG",
         "votes": 2184,
+        "areaVotes": {
+          "ortsteil:096771480001": 34,
+          "ortsteil:096771480002": 61,
+          "ortsteil:096771480003": 51,
+          "ortsteil:096771480004": 22,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 33,
+          "ortsteil:096771480007": 11,
+          "ortsteil:096771480008": 10,
+          "ortsteil:096771480009": 29,
+          "ortsteil:096771480010": 21,
+          "ortsteil:096771480011": 16,
+          "ortsteil:096771480012": 222,
+          "briefwahl-gesamt": 1669
+        },
         "rank": 34
       },
       {
@@ -1006,6 +3068,21 @@
         "name": "Keller Christian",
         "party": "CSU",
         "votes": 2076,
+        "areaVotes": {
+          "ortsteil:096771480001": 28,
+          "ortsteil:096771480002": 83,
+          "ortsteil:096771480003": 89,
+          "ortsteil:096771480004": 12,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 28,
+          "ortsteil:096771480007": 26,
+          "ortsteil:096771480008": 19,
+          "ortsteil:096771480009": 5,
+          "ortsteil:096771480010": 5,
+          "ortsteil:096771480011": 54,
+          "ortsteil:096771480012": 26,
+          "briefwahl-gesamt": 1696
+        },
         "rank": 35
       },
       {
@@ -1013,6 +3090,21 @@
         "name": "Riedmann Thomas",
         "party": "CSU",
         "votes": 2045,
+        "areaVotes": {
+          "ortsteil:096771480001": 40,
+          "ortsteil:096771480002": 59,
+          "ortsteil:096771480003": 34,
+          "ortsteil:096771480004": 10,
+          "ortsteil:096771480005": 15,
+          "ortsteil:096771480006": 18,
+          "ortsteil:096771480007": 19,
+          "ortsteil:096771480008": 20,
+          "ortsteil:096771480009": 154,
+          "ortsteil:096771480010": 18,
+          "ortsteil:096771480011": 24,
+          "ortsteil:096771480012": 112,
+          "briefwahl-gesamt": 1522
+        },
         "rank": 36
       },
       {
@@ -1020,6 +3112,21 @@
         "name": "Beck Armin",
         "party": "GRÜNE",
         "votes": 2034,
+        "areaVotes": {
+          "ortsteil:096771480001": 88,
+          "ortsteil:096771480002": 149,
+          "ortsteil:096771480003": 108,
+          "ortsteil:096771480004": 10,
+          "ortsteil:096771480005": 17,
+          "ortsteil:096771480006": 28,
+          "ortsteil:096771480007": 31,
+          "ortsteil:096771480008": 12,
+          "ortsteil:096771480009": 20,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 28,
+          "ortsteil:096771480012": 24,
+          "briefwahl-gesamt": 1519
+        },
         "rank": 37
       },
       {
@@ -1027,6 +3134,21 @@
         "name": "Becker Tobias",
         "party": "CSU",
         "votes": 2006,
+        "areaVotes": {
+          "ortsteil:096771480001": 44,
+          "ortsteil:096771480002": 94,
+          "ortsteil:096771480003": 63,
+          "ortsteil:096771480004": 20,
+          "ortsteil:096771480005": 14,
+          "ortsteil:096771480006": 38,
+          "ortsteil:096771480007": 45,
+          "ortsteil:096771480008": 34,
+          "ortsteil:096771480009": 16,
+          "ortsteil:096771480010": 101,
+          "ortsteil:096771480011": 38,
+          "ortsteil:096771480012": 42,
+          "briefwahl-gesamt": 1457
+        },
         "rank": 38
       },
       {
@@ -1034,6 +3156,21 @@
         "name": "Kraft Gerhard",
         "party": "GRÜNE",
         "votes": 1935,
+        "areaVotes": {
+          "ortsteil:096771480001": 78,
+          "ortsteil:096771480002": 80,
+          "ortsteil:096771480003": 71,
+          "ortsteil:096771480004": 11,
+          "ortsteil:096771480005": 9,
+          "ortsteil:096771480006": 31,
+          "ortsteil:096771480007": 77,
+          "ortsteil:096771480008": 10,
+          "ortsteil:096771480009": 9,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 15,
+          "ortsteil:096771480012": 17,
+          "briefwahl-gesamt": 1527
+        },
         "rank": 39
       },
       {
@@ -1041,6 +3178,21 @@
         "name": "Kohlmann Petra",
         "party": "SPD",
         "votes": 1836,
+        "areaVotes": {
+          "ortsteil:096771480001": 26,
+          "ortsteil:096771480002": 31,
+          "ortsteil:096771480003": 26,
+          "ortsteil:096771480004": 190,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 13,
+          "ortsteil:096771480007": 10,
+          "ortsteil:096771480008": 10,
+          "ortsteil:096771480009": 12,
+          "ortsteil:096771480010": 1,
+          "ortsteil:096771480011": 8,
+          "ortsteil:096771480012": 6,
+          "briefwahl-gesamt": 1501
+        },
         "rank": 40
       },
       {
@@ -1048,6 +3200,21 @@
         "name": "Stahl Leon",
         "party": "SPD",
         "votes": 1793,
+        "areaVotes": {
+          "ortsteil:096771480001": 25,
+          "ortsteil:096771480002": 28,
+          "ortsteil:096771480003": 28,
+          "ortsteil:096771480004": 5,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 127,
+          "ortsteil:096771480007": 14,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 9,
+          "ortsteil:096771480011": 8,
+          "ortsteil:096771480012": 5,
+          "briefwahl-gesamt": 1528
+        },
         "rank": 41
       },
       {
@@ -1055,6 +3222,21 @@
         "name": "Scheiner Martin",
         "party": "FWG",
         "votes": 1776,
+        "areaVotes": {
+          "ortsteil:096771480001": 33,
+          "ortsteil:096771480002": 44,
+          "ortsteil:096771480003": 44,
+          "ortsteil:096771480004": 18,
+          "ortsteil:096771480005": 36,
+          "ortsteil:096771480006": 20,
+          "ortsteil:096771480007": 23,
+          "ortsteil:096771480008": 16,
+          "ortsteil:096771480009": 16,
+          "ortsteil:096771480010": 109,
+          "ortsteil:096771480011": 23,
+          "ortsteil:096771480012": 47,
+          "briefwahl-gesamt": 1347
+        },
         "rank": 42
       },
       {
@@ -1062,6 +3244,21 @@
         "name": "Riedmann Florian",
         "party": "CSU",
         "votes": 1756,
+        "areaVotes": {
+          "ortsteil:096771480001": 25,
+          "ortsteil:096771480002": 64,
+          "ortsteil:096771480003": 48,
+          "ortsteil:096771480004": 11,
+          "ortsteil:096771480005": 15,
+          "ortsteil:096771480006": 27,
+          "ortsteil:096771480007": 24,
+          "ortsteil:096771480008": 15,
+          "ortsteil:096771480009": 17,
+          "ortsteil:096771480010": 12,
+          "ortsteil:096771480011": 41,
+          "ortsteil:096771480012": 128,
+          "briefwahl-gesamt": 1329
+        },
         "rank": 43
       },
       {
@@ -1069,6 +3266,21 @@
         "name": "Frey Verena",
         "party": "GRÜNE",
         "votes": 1700,
+        "areaVotes": {
+          "ortsteil:096771480001": 68,
+          "ortsteil:096771480002": 94,
+          "ortsteil:096771480003": 91,
+          "ortsteil:096771480004": 18,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 42,
+          "ortsteil:096771480007": 27,
+          "ortsteil:096771480008": 17,
+          "ortsteil:096771480009": 15,
+          "ortsteil:096771480010": 5,
+          "ortsteil:096771480011": 10,
+          "ortsteil:096771480012": 17,
+          "briefwahl-gesamt": 1291
+        },
         "rank": 44
       },
       {
@@ -1076,6 +3288,21 @@
         "name": "Wicha Sabine",
         "party": "FWG",
         "votes": 1659,
+        "areaVotes": {
+          "ortsteil:096771480001": 41,
+          "ortsteil:096771480002": 106,
+          "ortsteil:096771480003": 80,
+          "ortsteil:096771480004": 26,
+          "ortsteil:096771480005": 7,
+          "ortsteil:096771480006": 41,
+          "ortsteil:096771480007": 12,
+          "ortsteil:096771480008": 12,
+          "ortsteil:096771480009": 10,
+          "ortsteil:096771480010": 19,
+          "ortsteil:096771480011": 14,
+          "ortsteil:096771480012": 46,
+          "briefwahl-gesamt": 1245
+        },
         "rank": 45
       },
       {
@@ -1083,6 +3310,21 @@
         "name": "Vetter Katja",
         "party": "GRÜNE",
         "votes": 1652,
+        "areaVotes": {
+          "ortsteil:096771480001": 53,
+          "ortsteil:096771480002": 45,
+          "ortsteil:096771480003": 31,
+          "ortsteil:096771480004": 147,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 16,
+          "ortsteil:096771480007": 16,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 2,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 17,
+          "ortsteil:096771480012": 4,
+          "briefwahl-gesamt": 1312
+        },
         "rank": 46
       },
       {
@@ -1090,6 +3332,21 @@
         "name": "Schneider Harald",
         "party": "SPD",
         "votes": 1619,
+        "areaVotes": {
+          "ortsteil:096771480001": 38,
+          "ortsteil:096771480002": 42,
+          "ortsteil:096771480003": 51,
+          "ortsteil:096771480004": 18,
+          "ortsteil:096771480005": 4,
+          "ortsteil:096771480006": 16,
+          "ortsteil:096771480007": 12,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 2,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 30,
+          "ortsteil:096771480012": 3,
+          "briefwahl-gesamt": 1396
+        },
         "rank": 47
       },
       {
@@ -1097,6 +3354,21 @@
         "name": "Dr. Außenhofer Sebastian",
         "party": "CSU",
         "votes": 1613,
+        "areaVotes": {
+          "ortsteil:096771480001": 27,
+          "ortsteil:096771480002": 80,
+          "ortsteil:096771480003": 78,
+          "ortsteil:096771480004": 20,
+          "ortsteil:096771480005": 9,
+          "ortsteil:096771480006": 29,
+          "ortsteil:096771480007": 28,
+          "ortsteil:096771480008": 27,
+          "ortsteil:096771480009": 13,
+          "ortsteil:096771480010": 7,
+          "ortsteil:096771480011": 38,
+          "ortsteil:096771480012": 30,
+          "briefwahl-gesamt": 1227
+        },
         "rank": 48
       },
       {
@@ -1104,6 +3376,21 @@
         "name": "Dunst Christian",
         "party": "FWG",
         "votes": 1521,
+        "areaVotes": {
+          "ortsteil:096771480001": 58,
+          "ortsteil:096771480002": 77,
+          "ortsteil:096771480003": 82,
+          "ortsteil:096771480004": 24,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 25,
+          "ortsteil:096771480007": 10,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 11,
+          "ortsteil:096771480010": 7,
+          "ortsteil:096771480011": 16,
+          "ortsteil:096771480012": 26,
+          "briefwahl-gesamt": 1172
+        },
         "rank": 49
       },
       {
@@ -1111,6 +3398,21 @@
         "name": "Schwarz Alina",
         "party": "FWG",
         "votes": 1500,
+        "areaVotes": {
+          "ortsteil:096771480001": 38,
+          "ortsteil:096771480002": 68,
+          "ortsteil:096771480003": 51,
+          "ortsteil:096771480004": 24,
+          "ortsteil:096771480005": 16,
+          "ortsteil:096771480006": 55,
+          "ortsteil:096771480007": 12,
+          "ortsteil:096771480008": 6,
+          "ortsteil:096771480009": 10,
+          "ortsteil:096771480010": 15,
+          "ortsteil:096771480011": 20,
+          "ortsteil:096771480012": 37,
+          "briefwahl-gesamt": 1148
+        },
         "rank": 50
       },
       {
@@ -1118,6 +3420,21 @@
         "name": "Mahr Nina",
         "party": "SPD",
         "votes": 1485,
+        "areaVotes": {
+          "ortsteil:096771480001": 33,
+          "ortsteil:096771480002": 28,
+          "ortsteil:096771480003": 30,
+          "ortsteil:096771480004": 170,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 13,
+          "ortsteil:096771480007": 11,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 9,
+          "ortsteil:096771480010": 1,
+          "ortsteil:096771480011": 9,
+          "ortsteil:096771480012": 4,
+          "briefwahl-gesamt": 1168
+        },
         "rank": 51
       },
       {
@@ -1125,6 +3442,21 @@
         "name": "Schrama Bernadette",
         "party": "CSU",
         "votes": 1396,
+        "areaVotes": {
+          "ortsteil:096771480001": 38,
+          "ortsteil:096771480002": 63,
+          "ortsteil:096771480003": 62,
+          "ortsteil:096771480004": 10,
+          "ortsteil:096771480005": 9,
+          "ortsteil:096771480006": 29,
+          "ortsteil:096771480007": 22,
+          "ortsteil:096771480008": 14,
+          "ortsteil:096771480009": 3,
+          "ortsteil:096771480010": 8,
+          "ortsteil:096771480011": 24,
+          "ortsteil:096771480012": 22,
+          "briefwahl-gesamt": 1092
+        },
         "rank": 52
       },
       {
@@ -1132,6 +3464,21 @@
         "name": "Wingenfeld Karoline",
         "party": "SPD",
         "votes": 1297,
+        "areaVotes": {
+          "ortsteil:096771480001": 25,
+          "ortsteil:096771480002": 23,
+          "ortsteil:096771480003": 20,
+          "ortsteil:096771480004": 105,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 5,
+          "ortsteil:096771480007": 15,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 10,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 6,
+          "ortsteil:096771480012": 1,
+          "briefwahl-gesamt": 1079
+        },
         "rank": 53
       },
       {
@@ -1139,6 +3486,21 @@
         "name": "Seubert Matthias",
         "party": "FWG",
         "votes": 1291,
+        "areaVotes": {
+          "ortsteil:096771480001": 32,
+          "ortsteil:096771480002": 46,
+          "ortsteil:096771480003": 39,
+          "ortsteil:096771480004": 21,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 75,
+          "ortsteil:096771480007": 7,
+          "ortsteil:096771480008": 6,
+          "ortsteil:096771480009": 7,
+          "ortsteil:096771480010": 5,
+          "ortsteil:096771480011": 11,
+          "ortsteil:096771480012": 18,
+          "briefwahl-gesamt": 1022
+        },
         "rank": 54
       },
       {
@@ -1146,6 +3508,21 @@
         "name": "Schlott Thomas",
         "party": "CSU",
         "votes": 1271,
+        "areaVotes": {
+          "ortsteil:096771480001": 32,
+          "ortsteil:096771480002": 65,
+          "ortsteil:096771480003": 76,
+          "ortsteil:096771480004": 11,
+          "ortsteil:096771480005": 23,
+          "ortsteil:096771480006": 21,
+          "ortsteil:096771480007": 29,
+          "ortsteil:096771480008": 15,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 6,
+          "ortsteil:096771480011": 31,
+          "ortsteil:096771480012": 21,
+          "briefwahl-gesamt": 933
+        },
         "rank": 55
       },
       {
@@ -1153,6 +3530,21 @@
         "name": "Taupp Tino",
         "party": "FWG",
         "votes": 1265,
+        "areaVotes": {
+          "ortsteil:096771480001": 38,
+          "ortsteil:096771480002": 60,
+          "ortsteil:096771480003": 63,
+          "ortsteil:096771480004": 26,
+          "ortsteil:096771480005": 6,
+          "ortsteil:096771480006": 37,
+          "ortsteil:096771480007": 11,
+          "ortsteil:096771480008": 3,
+          "ortsteil:096771480009": 7,
+          "ortsteil:096771480010": 5,
+          "ortsteil:096771480011": 27,
+          "ortsteil:096771480012": 17,
+          "briefwahl-gesamt": 965
+        },
         "rank": 56
       },
       {
@@ -1160,6 +3552,21 @@
         "name": "Kretzinger Peter",
         "party": "GRÜNE",
         "votes": 1216,
+        "areaVotes": {
+          "ortsteil:096771480001": 49,
+          "ortsteil:096771480002": 43,
+          "ortsteil:096771480003": 37,
+          "ortsteil:096771480004": 8,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 13,
+          "ortsteil:096771480007": 78,
+          "ortsteil:096771480008": 15,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 2,
+          "ortsteil:096771480011": 12,
+          "ortsteil:096771480012": 6,
+          "briefwahl-gesamt": 940
+        },
         "rank": 57
       },
       {
@@ -1167,6 +3574,21 @@
         "name": "Wright Heidi",
         "party": "SPD",
         "votes": 1156,
+        "areaVotes": {
+          "ortsteil:096771480001": 29,
+          "ortsteil:096771480002": 38,
+          "ortsteil:096771480003": 47,
+          "ortsteil:096771480004": 9,
+          "ortsteil:096771480005": 4,
+          "ortsteil:096771480006": 21,
+          "ortsteil:096771480007": 13,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 6,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 18,
+          "ortsteil:096771480012": 2,
+          "briefwahl-gesamt": 962
+        },
         "rank": 58
       },
       {
@@ -1174,6 +3596,21 @@
         "name": "Ünaydin Cüneyt",
         "party": "CSU",
         "votes": 1124,
+        "areaVotes": {
+          "ortsteil:096771480001": 53,
+          "ortsteil:096771480002": 66,
+          "ortsteil:096771480003": 44,
+          "ortsteil:096771480004": 20,
+          "ortsteil:096771480005": 16,
+          "ortsteil:096771480006": 17,
+          "ortsteil:096771480007": 25,
+          "ortsteil:096771480008": 23,
+          "ortsteil:096771480009": 2,
+          "ortsteil:096771480010": 8,
+          "ortsteil:096771480011": 33,
+          "ortsteil:096771480012": 25,
+          "briefwahl-gesamt": 792
+        },
         "rank": 59
       },
       {
@@ -1181,6 +3618,21 @@
         "name": "Lippert Manfred",
         "party": "FWG",
         "votes": 1123,
+        "areaVotes": {
+          "ortsteil:096771480001": 29,
+          "ortsteil:096771480002": 41,
+          "ortsteil:096771480003": 47,
+          "ortsteil:096771480004": 18,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 55,
+          "ortsteil:096771480007": 13,
+          "ortsteil:096771480008": 6,
+          "ortsteil:096771480009": 6,
+          "ortsteil:096771480010": 4,
+          "ortsteil:096771480011": 19,
+          "ortsteil:096771480012": 21,
+          "briefwahl-gesamt": 862
+        },
         "rank": 60
       },
       {
@@ -1188,6 +3640,21 @@
         "name": "Arand Frederick",
         "party": "SPD",
         "votes": 1061,
+        "areaVotes": {
+          "ortsteil:096771480001": 53,
+          "ortsteil:096771480002": 32,
+          "ortsteil:096771480003": 44,
+          "ortsteil:096771480004": 9,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 24,
+          "ortsteil:096771480007": 11,
+          "ortsteil:096771480008": 11,
+          "ortsteil:096771480009": 6,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 6,
+          "ortsteil:096771480012": 8,
+          "briefwahl-gesamt": 856
+        },
         "rank": 61
       },
       {
@@ -1195,6 +3662,21 @@
         "name": "Weyand Holger",
         "party": "FWG",
         "votes": 1050,
+        "areaVotes": {
+          "ortsteil:096771480001": 44,
+          "ortsteil:096771480002": 62,
+          "ortsteil:096771480003": 50,
+          "ortsteil:096771480004": 20,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 18,
+          "ortsteil:096771480007": 13,
+          "ortsteil:096771480008": 3,
+          "ortsteil:096771480009": 14,
+          "ortsteil:096771480010": 10,
+          "ortsteil:096771480011": 12,
+          "ortsteil:096771480012": 31,
+          "briefwahl-gesamt": 771
+        },
         "rank": 62
       },
       {
@@ -1202,6 +3684,21 @@
         "name": "Wicha Willy",
         "party": "FWG",
         "votes": 1040,
+        "areaVotes": {
+          "ortsteil:096771480001": 30,
+          "ortsteil:096771480002": 60,
+          "ortsteil:096771480003": 55,
+          "ortsteil:096771480004": 18,
+          "ortsteil:096771480005": 6,
+          "ortsteil:096771480006": 17,
+          "ortsteil:096771480007": 14,
+          "ortsteil:096771480008": 6,
+          "ortsteil:096771480009": 7,
+          "ortsteil:096771480010": 15,
+          "ortsteil:096771480011": 14,
+          "ortsteil:096771480012": 19,
+          "briefwahl-gesamt": 779
+        },
         "rank": 63
       },
       {
@@ -1209,6 +3706,21 @@
         "name": "Müller Michael",
         "party": "CSU",
         "votes": 1036,
+        "areaVotes": {
+          "ortsteil:096771480001": 30,
+          "ortsteil:096771480002": 65,
+          "ortsteil:096771480003": 50,
+          "ortsteil:096771480004": 10,
+          "ortsteil:096771480005": 7,
+          "ortsteil:096771480006": 30,
+          "ortsteil:096771480007": 24,
+          "ortsteil:096771480008": 21,
+          "ortsteil:096771480009": 1,
+          "ortsteil:096771480010": 10,
+          "ortsteil:096771480011": 24,
+          "ortsteil:096771480012": 12,
+          "briefwahl-gesamt": 752
+        },
         "rank": 64
       },
       {
@@ -1216,6 +3728,21 @@
         "name": "Blisch Hanna",
         "party": "FWG",
         "votes": 1000,
+        "areaVotes": {
+          "ortsteil:096771480001": 31,
+          "ortsteil:096771480002": 54,
+          "ortsteil:096771480003": 51,
+          "ortsteil:096771480004": 19,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 34,
+          "ortsteil:096771480007": 11,
+          "ortsteil:096771480008": 16,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 7,
+          "ortsteil:096771480011": 10,
+          "ortsteil:096771480012": 19,
+          "briefwahl-gesamt": 738
+        },
         "rank": 65
       },
       {
@@ -1223,6 +3750,21 @@
         "name": "Fischer Katharina",
         "party": "FWG",
         "votes": 990,
+        "areaVotes": {
+          "ortsteil:096771480001": 41,
+          "ortsteil:096771480002": 54,
+          "ortsteil:096771480003": 45,
+          "ortsteil:096771480004": 17,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 19,
+          "ortsteil:096771480007": 7,
+          "ortsteil:096771480008": 3,
+          "ortsteil:096771480009": 6,
+          "ortsteil:096771480010": 6,
+          "ortsteil:096771480011": 15,
+          "ortsteil:096771480012": 30,
+          "briefwahl-gesamt": 742
+        },
         "rank": 66
       },
       {
@@ -1230,6 +3772,21 @@
         "name": "Keller Stephan",
         "party": "SPD",
         "votes": 965,
+        "areaVotes": {
+          "ortsteil:096771480001": 27,
+          "ortsteil:096771480002": 42,
+          "ortsteil:096771480003": 38,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 3,
+          "ortsteil:096771480006": 21,
+          "ortsteil:096771480007": 12,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 7,
+          "ortsteil:096771480010": 2,
+          "ortsteil:096771480011": 6,
+          "ortsteil:096771480012": 1,
+          "briefwahl-gesamt": 792
+        },
         "rank": 67
       },
       {
@@ -1237,6 +3794,21 @@
         "name": "Rudolph Kerstin",
         "party": "GRÜNE",
         "votes": 899,
+        "areaVotes": {
+          "ortsteil:096771480001": 79,
+          "ortsteil:096771480002": 65,
+          "ortsteil:096771480003": 50,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 19,
+          "ortsteil:096771480007": 17,
+          "ortsteil:096771480008": 10,
+          "ortsteil:096771480009": 1,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 9,
+          "ortsteil:096771480012": 3,
+          "briefwahl-gesamt": 639
+        },
         "rank": 68
       },
       {
@@ -1244,6 +3816,21 @@
         "name": "Wächter Kristina",
         "party": "GRÜNE",
         "votes": 892,
+        "areaVotes": {
+          "ortsteil:096771480001": 58,
+          "ortsteil:096771480002": 52,
+          "ortsteil:096771480003": 38,
+          "ortsteil:096771480004": 16,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 22,
+          "ortsteil:096771480007": 17,
+          "ortsteil:096771480008": 9,
+          "ortsteil:096771480009": 11,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 17,
+          "ortsteil:096771480012": 12,
+          "briefwahl-gesamt": 635
+        },
         "rank": 69
       },
       {
@@ -1251,6 +3838,21 @@
         "name": "Riedmann Jonas",
         "party": "SPD",
         "votes": 842,
+        "areaVotes": {
+          "ortsteil:096771480001": 29,
+          "ortsteil:096771480002": 22,
+          "ortsteil:096771480003": 19,
+          "ortsteil:096771480004": 3,
+          "ortsteil:096771480005": 8,
+          "ortsteil:096771480006": 5,
+          "ortsteil:096771480007": 8,
+          "ortsteil:096771480008": 6,
+          "ortsteil:096771480009": 100,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 11,
+          "ortsteil:096771480012": 10,
+          "briefwahl-gesamt": 621
+        },
         "rank": 70
       },
       {
@@ -1258,6 +3860,21 @@
         "name": "Strohmenger Eva",
         "party": "SPD",
         "votes": 797,
+        "areaVotes": {
+          "ortsteil:096771480001": 41,
+          "ortsteil:096771480002": 29,
+          "ortsteil:096771480003": 39,
+          "ortsteil:096771480004": 23,
+          "ortsteil:096771480005": 7,
+          "ortsteil:096771480006": 26,
+          "ortsteil:096771480007": 12,
+          "ortsteil:096771480008": 10,
+          "ortsteil:096771480009": 11,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 8,
+          "ortsteil:096771480012": 4,
+          "briefwahl-gesamt": 587
+        },
         "rank": 71
       },
       {
@@ -1265,6 +3882,21 @@
         "name": "Bratjuk Janell",
         "party": "CSU",
         "votes": 770,
+        "areaVotes": {
+          "ortsteil:096771480001": 31,
+          "ortsteil:096771480002": 49,
+          "ortsteil:096771480003": 42,
+          "ortsteil:096771480004": 10,
+          "ortsteil:096771480005": 7,
+          "ortsteil:096771480006": 18,
+          "ortsteil:096771480007": 16,
+          "ortsteil:096771480008": 27,
+          "ortsteil:096771480009": 1,
+          "ortsteil:096771480010": 6,
+          "ortsteil:096771480011": 23,
+          "ortsteil:096771480012": 14,
+          "briefwahl-gesamt": 526
+        },
         "rank": 72
       },
       {
@@ -1272,6 +3904,21 @@
         "name": "Wurm Siegmar",
         "party": "SPD",
         "votes": 758,
+        "areaVotes": {
+          "ortsteil:096771480001": 20,
+          "ortsteil:096771480002": 20,
+          "ortsteil:096771480003": 17,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 8,
+          "ortsteil:096771480007": 7,
+          "ortsteil:096771480008": 6,
+          "ortsteil:096771480009": 3,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 49,
+          "ortsteil:096771480012": 1,
+          "briefwahl-gesamt": 620
+        },
         "rank": 73
       },
       {
@@ -1279,6 +3926,21 @@
         "name": "Braun Margarete",
         "party": "SPD",
         "votes": 754,
+        "areaVotes": {
+          "ortsteil:096771480001": 34,
+          "ortsteil:096771480002": 24,
+          "ortsteil:096771480003": 28,
+          "ortsteil:096771480004": 4,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 8,
+          "ortsteil:096771480007": 14,
+          "ortsteil:096771480008": 4,
+          "ortsteil:096771480009": 7,
+          "ortsteil:096771480010": 1,
+          "ortsteil:096771480011": 8,
+          "ortsteil:096771480012": 1,
+          "briefwahl-gesamt": 619
+        },
         "rank": 74
       },
       {
@@ -1286,6 +3948,21 @@
         "name": "Eder Maria Magdalena",
         "party": "GRÜNE",
         "votes": 746,
+        "areaVotes": {
+          "ortsteil:096771480001": 71,
+          "ortsteil:096771480002": 52,
+          "ortsteil:096771480003": 60,
+          "ortsteil:096771480004": 11,
+          "ortsteil:096771480005": 8,
+          "ortsteil:096771480006": 20,
+          "ortsteil:096771480007": 14,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 4,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 10,
+          "ortsteil:096771480012": 8,
+          "briefwahl-gesamt": 480
+        },
         "rank": 75
       },
       {
@@ -1293,6 +3970,21 @@
         "name": "Oßwald Marianne",
         "party": "GRÜNE",
         "votes": 730,
+        "areaVotes": {
+          "ortsteil:096771480001": 34,
+          "ortsteil:096771480002": 52,
+          "ortsteil:096771480003": 46,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 9,
+          "ortsteil:096771480007": 13,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 1,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 7,
+          "ortsteil:096771480012": 3,
+          "briefwahl-gesamt": 550
+        },
         "rank": 76
       },
       {
@@ -1300,6 +3992,21 @@
         "name": "Scheblein Timo",
         "party": "GRÜNE",
         "votes": 727,
+        "areaVotes": {
+          "ortsteil:096771480001": 50,
+          "ortsteil:096771480002": 55,
+          "ortsteil:096771480003": 53,
+          "ortsteil:096771480004": 12,
+          "ortsteil:096771480005": 3,
+          "ortsteil:096771480006": 16,
+          "ortsteil:096771480007": 17,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 14,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 11,
+          "ortsteil:096771480012": 9,
+          "briefwahl-gesamt": 479
+        },
         "rank": 77
       },
       {
@@ -1307,6 +4014,21 @@
         "name": "Zorlu Taylan",
         "party": "FWG",
         "votes": 716,
+        "areaVotes": {
+          "ortsteil:096771480001": 37,
+          "ortsteil:096771480002": 49,
+          "ortsteil:096771480003": 48,
+          "ortsteil:096771480004": 26,
+          "ortsteil:096771480005": 4,
+          "ortsteil:096771480006": 14,
+          "ortsteil:096771480007": 8,
+          "ortsteil:096771480008": 5,
+          "ortsteil:096771480009": 6,
+          "ortsteil:096771480010": 3,
+          "ortsteil:096771480011": 9,
+          "ortsteil:096771480012": 12,
+          "briefwahl-gesamt": 495
+        },
         "rank": 78
       },
       {
@@ -1314,6 +4036,21 @@
         "name": "Gerhard Christiane",
         "party": "GRÜNE",
         "votes": 713,
+        "areaVotes": {
+          "ortsteil:096771480001": 28,
+          "ortsteil:096771480002": 33,
+          "ortsteil:096771480003": 29,
+          "ortsteil:096771480004": 8,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 14,
+          "ortsteil:096771480007": 15,
+          "ortsteil:096771480008": 6,
+          "ortsteil:096771480009": 2,
+          "ortsteil:096771480010": 3,
+          "ortsteil:096771480011": 27,
+          "ortsteil:096771480012": 7,
+          "briefwahl-gesamt": 539
+        },
         "rank": 79
       },
       {
@@ -1321,6 +4058,21 @@
         "name": "Stüttgen Oliver",
         "party": "FWG",
         "votes": 701,
+        "areaVotes": {
+          "ortsteil:096771480001": 34,
+          "ortsteil:096771480002": 42,
+          "ortsteil:096771480003": 41,
+          "ortsteil:096771480004": 20,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 21,
+          "ortsteil:096771480007": 7,
+          "ortsteil:096771480008": 4,
+          "ortsteil:096771480009": 7,
+          "ortsteil:096771480010": 3,
+          "ortsteil:096771480011": 11,
+          "ortsteil:096771480012": 16,
+          "briefwahl-gesamt": 493
+        },
         "rank": 80
       },
       {
@@ -1328,6 +4080,21 @@
         "name": "Arand Devi",
         "party": "SPD",
         "votes": 696,
+        "areaVotes": {
+          "ortsteil:096771480001": 51,
+          "ortsteil:096771480002": 26,
+          "ortsteil:096771480003": 34,
+          "ortsteil:096771480004": 7,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 5,
+          "ortsteil:096771480007": 8,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 7,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 9,
+          "ortsteil:096771480012": 4,
+          "briefwahl-gesamt": 536
+        },
         "rank": 81
       },
       {
@@ -1335,6 +4102,21 @@
         "name": "Barthel Anne-Véronique",
         "party": "GRÜNE",
         "votes": 693,
+        "areaVotes": {
+          "ortsteil:096771480001": 41,
+          "ortsteil:096771480002": 39,
+          "ortsteil:096771480003": 40,
+          "ortsteil:096771480004": 8,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 15,
+          "ortsteil:096771480007": 14,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 2,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 11,
+          "ortsteil:096771480012": 7,
+          "briefwahl-gesamt": 507
+        },
         "rank": 82
       },
       {
@@ -1342,6 +4124,21 @@
         "name": "Frey Kilian",
         "party": "GRÜNE",
         "votes": 650,
+        "areaVotes": {
+          "ortsteil:096771480001": 32,
+          "ortsteil:096771480002": 54,
+          "ortsteil:096771480003": 52,
+          "ortsteil:096771480004": 8,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 9,
+          "ortsteil:096771480007": 15,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 2,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 9,
+          "ortsteil:096771480012": 7,
+          "briefwahl-gesamt": 452
+        },
         "rank": 83
       },
       {
@@ -1349,6 +4146,21 @@
         "name": "Duchnik Josef",
         "party": "SPD",
         "votes": 642,
+        "areaVotes": {
+          "ortsteil:096771480001": 38,
+          "ortsteil:096771480002": 17,
+          "ortsteil:096771480003": 18,
+          "ortsteil:096771480004": 3,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 14,
+          "ortsteil:096771480007": 21,
+          "ortsteil:096771480008": 4,
+          "ortsteil:096771480009": 3,
+          "ortsteil:096771480010": 1,
+          "ortsteil:096771480011": 7,
+          "ortsteil:096771480012": 4,
+          "briefwahl-gesamt": 511
+        },
         "rank": 84
       },
       {
@@ -1356,6 +4168,21 @@
         "name": "Frädrich Matthias",
         "party": "GRÜNE",
         "votes": 631,
+        "areaVotes": {
+          "ortsteil:096771480001": 40,
+          "ortsteil:096771480002": 34,
+          "ortsteil:096771480003": 34,
+          "ortsteil:096771480004": 7,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 10,
+          "ortsteil:096771480007": 14,
+          "ortsteil:096771480008": 12,
+          "ortsteil:096771480009": 3,
+          "ortsteil:096771480010": 3,
+          "ortsteil:096771480011": 7,
+          "ortsteil:096771480012": 5,
+          "briefwahl-gesamt": 461
+        },
         "rank": 85
       },
       {
@@ -1363,6 +4190,21 @@
         "name": "Gümüshan Arzu",
         "party": "FWG",
         "votes": 620,
+        "areaVotes": {
+          "ortsteil:096771480001": 36,
+          "ortsteil:096771480002": 39,
+          "ortsteil:096771480003": 50,
+          "ortsteil:096771480004": 16,
+          "ortsteil:096771480005": 3,
+          "ortsteil:096771480006": 12,
+          "ortsteil:096771480007": 8,
+          "ortsteil:096771480008": 14,
+          "ortsteil:096771480009": 6,
+          "ortsteil:096771480010": 6,
+          "ortsteil:096771480011": 9,
+          "ortsteil:096771480012": 11,
+          "briefwahl-gesamt": 410
+        },
         "rank": 86
       },
       {
@@ -1370,6 +4212,21 @@
         "name": "Wirthmann Christian",
         "party": "GRÜNE",
         "votes": 617,
+        "areaVotes": {
+          "ortsteil:096771480001": 50,
+          "ortsteil:096771480002": 40,
+          "ortsteil:096771480003": 28,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 13,
+          "ortsteil:096771480007": 13,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 1,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 11,
+          "ortsteil:096771480012": 3,
+          "briefwahl-gesamt": 443
+        },
         "rank": 87
       },
       {
@@ -1377,6 +4234,21 @@
         "name": "Havla Annette",
         "party": "SPD",
         "votes": 558,
+        "areaVotes": {
+          "ortsteil:096771480001": 34,
+          "ortsteil:096771480002": 40,
+          "ortsteil:096771480003": 29,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 5,
+          "ortsteil:096771480006": 9,
+          "ortsteil:096771480007": 9,
+          "ortsteil:096771480008": 5,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 1,
+          "ortsteil:096771480011": 6,
+          "ortsteil:096771480012": 2,
+          "briefwahl-gesamt": 404
+        },
         "rank": 88
       },
       {
@@ -1384,6 +4256,21 @@
         "name": "Wehner Justus",
         "party": "SPD",
         "votes": 551,
+        "areaVotes": {
+          "ortsteil:096771480001": 35,
+          "ortsteil:096771480002": 36,
+          "ortsteil:096771480003": 23,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 4,
+          "ortsteil:096771480006": 10,
+          "ortsteil:096771480007": 17,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 9,
+          "ortsteil:096771480010": 1,
+          "ortsteil:096771480011": 6,
+          "ortsteil:096771480012": 4,
+          "briefwahl-gesamt": 392
+        },
         "rank": 89
       },
       {
@@ -1391,6 +4278,21 @@
         "name": "Göbel Christian",
         "party": "GRÜNE",
         "votes": 540,
+        "areaVotes": {
+          "ortsteil:096771480001": 41,
+          "ortsteil:096771480002": 49,
+          "ortsteil:096771480003": 45,
+          "ortsteil:096771480004": 9,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 14,
+          "ortsteil:096771480007": 14,
+          "ortsteil:096771480008": 7,
+          "ortsteil:096771480009": 5,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 11,
+          "ortsteil:096771480012": 4,
+          "briefwahl-gesamt": 339
+        },
         "rank": 90
       },
       {
@@ -1398,6 +4300,21 @@
         "name": "Reinhard Elena",
         "party": "GRÜNE",
         "votes": 497,
+        "areaVotes": {
+          "ortsteil:096771480001": 33,
+          "ortsteil:096771480002": 29,
+          "ortsteil:096771480003": 34,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 3,
+          "ortsteil:096771480006": 16,
+          "ortsteil:096771480007": 13,
+          "ortsteil:096771480008": 8,
+          "ortsteil:096771480009": 5,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 6,
+          "ortsteil:096771480012": 4,
+          "briefwahl-gesamt": 340
+        },
         "rank": 91
       },
       {
@@ -1405,6 +4322,21 @@
         "name": "Ditterich Nina",
         "party": "SPD",
         "votes": 496,
+        "areaVotes": {
+          "ortsteil:096771480001": 34,
+          "ortsteil:096771480002": 35,
+          "ortsteil:096771480003": 27,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 15,
+          "ortsteil:096771480007": 9,
+          "ortsteil:096771480008": 5,
+          "ortsteil:096771480009": 8,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 9,
+          "ortsteil:096771480012": 3,
+          "briefwahl-gesamt": 344
+        },
         "rank": 92
       },
       {
@@ -1412,6 +4344,21 @@
         "name": "Schmitt Christian",
         "party": "GRÜNE",
         "votes": 432,
+        "areaVotes": {
+          "ortsteil:096771480001": 35,
+          "ortsteil:096771480002": 31,
+          "ortsteil:096771480003": 27,
+          "ortsteil:096771480004": 6,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 14,
+          "ortsteil:096771480007": 12,
+          "ortsteil:096771480008": 10,
+          "ortsteil:096771480009": 1,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 7,
+          "ortsteil:096771480012": 5,
+          "briefwahl-gesamt": 283
+        },
         "rank": 93
       },
       {
@@ -1419,6 +4366,21 @@
         "name": "Kleinwechter Bernd",
         "party": "SPD",
         "votes": 350,
+        "areaVotes": {
+          "ortsteil:096771480001": 20,
+          "ortsteil:096771480002": 23,
+          "ortsteil:096771480003": 23,
+          "ortsteil:096771480004": 4,
+          "ortsteil:096771480005": 2,
+          "ortsteil:096771480006": 6,
+          "ortsteil:096771480007": 7,
+          "ortsteil:096771480008": 4,
+          "ortsteil:096771480009": 2,
+          "ortsteil:096771480010": 1,
+          "ortsteil:096771480011": 5,
+          "ortsteil:096771480012": 1,
+          "briefwahl-gesamt": 252
+        },
         "rank": 94
       },
       {
@@ -1426,6 +4388,21 @@
         "name": "Durak Vedat",
         "party": "SPD",
         "votes": 333,
+        "areaVotes": {
+          "ortsteil:096771480001": 30,
+          "ortsteil:096771480002": 31,
+          "ortsteil:096771480003": 24,
+          "ortsteil:096771480004": 4,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 5,
+          "ortsteil:096771480007": 7,
+          "ortsteil:096771480008": 10,
+          "ortsteil:096771480009": 4,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 6,
+          "ortsteil:096771480012": 1,
+          "briefwahl-gesamt": 210
+        },
         "rank": 95
       },
       {
@@ -1433,7 +4410,82 @@
         "name": "Lux Steven",
         "party": "SPD",
         "votes": 241,
+        "areaVotes": {
+          "ortsteil:096771480001": 21,
+          "ortsteil:096771480002": 25,
+          "ortsteil:096771480003": 17,
+          "ortsteil:096771480004": 3,
+          "ortsteil:096771480005": 1,
+          "ortsteil:096771480006": 6,
+          "ortsteil:096771480007": 6,
+          "ortsteil:096771480008": 4,
+          "ortsteil:096771480009": 2,
+          "ortsteil:096771480010": 0,
+          "ortsteil:096771480011": 5,
+          "ortsteil:096771480012": 1,
+          "briefwahl-gesamt": 150
+        },
         "rank": 96
+      }
+    ]
+  },
+  "areas": {
+    "options": [
+      {
+        "key": "all",
+        "label": "Alle Stimmen"
+      },
+      {
+        "key": "ortsteil:096771480001",
+        "label": "Altstadt"
+      },
+      {
+        "key": "ortsteil:096771480002",
+        "label": "Siedlung I"
+      },
+      {
+        "key": "ortsteil:096771480003",
+        "label": "Siedlung II"
+      },
+      {
+        "key": "ortsteil:096771480004",
+        "label": "Gambach"
+      },
+      {
+        "key": "ortsteil:096771480005",
+        "label": "Heßlar"
+      },
+      {
+        "key": "ortsteil:096771480006",
+        "label": "Karlburg"
+      },
+      {
+        "key": "ortsteil:096771480007",
+        "label": "Laudenbach"
+      },
+      {
+        "key": "ortsteil:096771480008",
+        "label": "Mühlbach"
+      },
+      {
+        "key": "ortsteil:096771480009",
+        "label": "Rohrbach"
+      },
+      {
+        "key": "ortsteil:096771480010",
+        "label": "Stadelhofen"
+      },
+      {
+        "key": "ortsteil:096771480011",
+        "label": "Stetten"
+      },
+      {
+        "key": "ortsteil:096771480012",
+        "label": "Wiesenfeld"
+      },
+      {
+        "key": "briefwahl-gesamt",
+        "label": "Briefwahl (gesamt)"
       }
     ]
   }

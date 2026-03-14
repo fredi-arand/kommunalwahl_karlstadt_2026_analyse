@@ -19,6 +19,9 @@ MAYOR_RESULTS_URL = (
     "https://wahlen.osrz-akdb.de/uf-p/677148/1/20260308/"
     "buergermeisterwahl_gemeinde/ergebnisse.html"
 )
+MAYOR_RESULTS_BASE_URL = (
+    "https://wahlen.osrz-akdb.de/uf-p/677148/1/20260308/" "buergermeisterwahl_gemeinde/"
+)
 COUNCIL_RESULTS_URL = (
     "https://wahlen.osrz-akdb.de/uf-p/677148/2/20260308/"
     "gemeinderatswahl_gemeinde/ergebnisse.html"
@@ -78,7 +81,7 @@ def with_rank(
     return ranked
 
 
-def parse_mayor_candidates(html: str) -> list[dict[str, Any]]:
+def parse_mayor_table_entries(html: str) -> list[dict[str, Any]]:
     soup = BeautifulSoup(html, "html.parser")
     table = soup.find("table", attrs={"data-tablejigsaw-downloadable": True})
     if table is None:
@@ -133,6 +136,150 @@ def parse_mayor_candidates(html: str) -> list[dict[str, Any]]:
                 "percent": percent,
             }
         )
+
+    return candidates
+
+
+def parse_mayor_candidates(html: str) -> list[dict[str, Any]]:
+    return with_rank(parse_mayor_table_entries(html))
+
+
+def parse_council_csv_rows(
+    csv_text: str,
+) -> tuple[dict[str, str], list[dict[str, Any]]]:
+    rows = list(csv.DictReader(io.StringIO(csv_text), delimiter=";"))
+    if not rows:
+        raise ValueError("Council CSV is empty")
+
+    municipality_row = rows[0]
+    for row in rows:
+        if normalize_text(row.get("Gebietsart", "")).upper() == "GEMEINDE":
+            municipality_row = row
+            break
+
+    area_rows: list[dict[str, Any]] = []
+    for row in rows:
+        area_type = normalize_text(row.get("Gebietsart", "")).upper()
+        if area_type not in {"STIMMBEZIRK", "BRIEFWAHLBEZIRK"}:
+            continue
+        code = normalize_text(row.get("Gebietsnummer", ""))
+        name = normalize_text(row.get("Gebietsname", ""))
+        if not code or not name:
+            continue
+        area_rows.append(
+            {
+                "type": area_type,
+                "code": code,
+                "name": name,
+                "row": row,
+            }
+        )
+
+    return municipality_row, area_rows
+
+
+def area_key(area_type: str, code: str) -> str:
+    if area_type == "STIMMBEZIRK":
+        return f"ortsteil:{code}"
+    return f"briefwahlbezirk:{code}"
+
+
+def build_area_options(area_rows: list[dict[str, Any]]) -> list[dict[str, str]]:
+    options: list[dict[str, str]] = [{"key": "all", "label": "Alle Stimmen"}]
+
+    for area in area_rows:
+        if area["type"] != "STIMMBEZIRK":
+            continue
+        options.append(
+            {
+                "key": area_key(area["type"], area["code"]),
+                "label": area["name"],
+            }
+        )
+
+    if any(area["type"] == "BRIEFWAHLBEZIRK" for area in area_rows):
+        options.append({"key": "briefwahl-gesamt", "label": "Briefwahl (gesamt)"})
+
+    return options
+
+
+def mayor_area_url_for_row(area_row: dict[str, Any]) -> str:
+    if area_row["type"] == "STIMMBEZIRK":
+        return (
+            f"{MAYOR_RESULTS_BASE_URL}"
+            f"ergebnisse_stimmbezirk_{area_row['code']}.html"
+        )
+    return (
+        f"{MAYOR_RESULTS_BASE_URL}"
+        f"ergebnisse_briefwahlbezirk_{area_row['code']}.html"
+    )
+
+
+def parse_mayor_candidate_area_votes(
+    area_rows: list[dict[str, Any]],
+) -> dict[str, dict[str, int]]:
+    votes_by_candidate: dict[str, dict[str, int]] = {}
+    brief_aggregate: dict[str, int] = {}
+
+    for area in area_rows:
+        try:
+            html = fetch_text(mayor_area_url_for_row(area))
+            entries = parse_mayor_table_entries(html)
+        except Exception:
+            continue
+
+        key = area_key(area["type"], area["code"])
+        for entry in entries:
+            name = str(entry["name"])
+            votes = int(entry["votes"])
+            votes_by_candidate.setdefault(name, {})[key] = votes
+            if area["type"] == "BRIEFWAHLBEZIRK":
+                brief_aggregate[name] = brief_aggregate.get(name, 0) + votes
+
+    for name, votes in brief_aggregate.items():
+        votes_by_candidate.setdefault(name, {})["briefwahl-gesamt"] = votes
+
+    return votes_by_candidate
+
+
+def parse_council_candidate_area_votes(
+    area_rows: list[dict[str, Any]], mapping_payload: dict[str, Any]
+) -> dict[str, dict[str, int]]:
+    mapping_parties = mapping_payload.get("parties", {})
+    if not isinstance(mapping_parties, dict):
+        return {}
+
+    votes_by_candidate: dict[str, dict[str, int]] = {}
+    for party_name, mapping_info in mapping_parties.items():
+        if not isinstance(mapping_info, dict):
+            continue
+
+        block_name = str(mapping_info.get("block") or "").strip().upper()
+        candidate_names = mapping_info.get("candidates", [])
+        if not block_name or not isinstance(candidate_names, list):
+            continue
+
+        for index, name in enumerate(candidate_names, start=1):
+            clean_name = normalize_text(str(name))
+            if not clean_name:
+                continue
+
+            candidate_key = f"{party_name}|{clean_name}"
+            candidate_votes: dict[str, int] = {}
+            brief_total = 0
+
+            for area in area_rows:
+                row = area["row"]
+                value = parse_votes(row.get(f"{block_name}_{index}", ""))
+                if area["type"] == "STIMMBEZIRK":
+                    candidate_votes[area_key(area["type"], area["code"])] = value
+                else:
+                    brief_total += value
+
+            candidate_votes["briefwahl-gesamt"] = brief_total
+            votes_by_candidate[candidate_key] = candidate_votes
+
+    return votes_by_candidate
 
     return with_rank(candidates)
 
@@ -206,15 +353,8 @@ def parse_council_party_overview(
 
 
 def parse_municipality_row(csv_text: str) -> dict[str, str]:
-    rows = list(csv.DictReader(io.StringIO(csv_text), delimiter=";"))
-    if not rows:
-        raise ValueError("Council CSV is empty")
-
-    for row in rows:
-        if normalize_text(row.get("Gebietsart", "")).upper() == "GEMEINDE":
-            return row
-
-    return rows[0]
+    municipality_row, _ = parse_council_csv_rows(csv_text)
+    return municipality_row
 
 
 def parse_turnout(municipality_row: dict[str, str]) -> dict[str, Any]:
@@ -256,6 +396,7 @@ def parse_council_candidates(
     mapping_payload: dict[str, Any],
     party_meta: dict[str, dict[str, Any]],
     seat_meta: dict[str, int],
+    council_area_votes: dict[str, dict[str, int]],
 ) -> dict[str, Any]:
     municipality_row = parse_municipality_row(csv_text)
     turnout = parse_turnout(municipality_row)
@@ -290,6 +431,9 @@ def parse_council_candidates(
                     "name": clean_name,
                     "party": party_name,
                     "votes": candidate_votes,
+                    "areaVotes": council_area_votes.get(
+                        f"{party_name}|{clean_name}", {}
+                    ),
                 }
             )
 
@@ -327,13 +471,22 @@ def build_payload() -> dict[str, Any]:
     with MAPPING_PATH.open("r", encoding="utf-8") as handle:
         mapping_payload = json.load(handle)
 
+    _, area_rows = parse_council_csv_rows(council_csv)
+    area_options = build_area_options(area_rows)
+
     mayor_candidates = parse_mayor_candidates(mayor_html)
+    mayor_area_votes = parse_mayor_candidate_area_votes(area_rows)
+    for candidate in mayor_candidates:
+        candidate["areaVotes"] = mayor_area_votes.get(candidate["name"], {})
+
     party_meta, seat_meta = parse_council_party_overview(council_html)
+    council_area_votes = parse_council_candidate_area_votes(area_rows, mapping_payload)
     council_data = parse_council_candidates(
         csv_text=council_csv,
         mapping_payload=mapping_payload,
         party_meta=party_meta,
         seat_meta=seat_meta,
+        council_area_votes=council_area_votes,
     )
 
     return {
@@ -351,6 +504,9 @@ def build_payload() -> dict[str, Any]:
             "candidates": mayor_candidates,
         },
         "council": council_data,
+        "areas": {
+            "options": area_options,
+        },
     }
 
 

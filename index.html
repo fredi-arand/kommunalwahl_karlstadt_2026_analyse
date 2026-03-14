@@ -39,6 +39,10 @@
         <section class="panel" data-panel="mayor">
             <h2>Bürgermeisterkandidaten</h2>
             <p class="panel-hint">Sortiert nach Stimmenzahl, inklusive Rang.</p>
+            <div class="area-filter">
+                <label class="area-filter-label" for="areaSelectMayor">Stimmenbereich</label>
+                <select id="areaSelectMayor" class="area-select" aria-label="Stimmenbereich auswählen"></select>
+            </div>
             <div class="candidate-list" id="mayorList"></div>
         </section>
 
@@ -49,6 +53,10 @@
                     <p class="panel-hint">Filter nach Partei und direkte Rangvergleichbarkeit.</p>
                 </div>
                 <div class="party-filter" id="partyFilter"></div>
+                <div class="area-filter">
+                    <label class="area-filter-label" for="areaSelectCouncil">Stimmenbereich</label>
+                    <select id="areaSelectCouncil" class="area-select" aria-label="Stimmenbereich auswählen"></select>
+                </div>
             </div>
             <div class="candidate-list" id="councilList"></div>
         </section>

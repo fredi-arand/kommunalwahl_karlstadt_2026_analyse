@@ -73,12 +73,21 @@ This file defines the terminology used for prompting and change requests.
 
 ### 3.5 Council Panel
 - `Party Filter` with chip buttons.
+- `Area Filter` as a dropdown below the party filter.
+  - Default: `Alle Stimmen`
+  - Ortsteil options: one option per `STIMMBEZIRK`
+  - `Briefwahl (gesamt)`: aggregate of all brief voting districts
 - Filtered or unfiltered candidate list.
 - Each `Candidate Card` displays:
   - `Rank Pill` (global rank across all council candidates)
   - Name
   - Party
   - Votes
+
+### 3.6 Area Selection Behavior
+- Area selection affects both mayor and council vote values.
+- Rank values are recalculated for the selected area.
+- Party filter is applied after ranking.
 
 ## 4. Prompt Terminology
 
