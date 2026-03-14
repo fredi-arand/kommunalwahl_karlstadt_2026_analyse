@@ -95,8 +95,8 @@ This file defines the terminology used for prompting and change requests.
   - Click opens the `Candidate Detail Page`
 
 ### 3.6 Area Selection Behavior
-- Area selection affects both mayor and council vote values.
-- Rank values are recalculated for the selected area.
+- Mayor and council area selections are independent.
+- Each area selection affects vote values and rank recalculation only within its own panel.
 - Party filter selection (if not `Alle Parteien`) is applied after ranking.
 
 ### 3.7 UI State Persistence
@@ -104,9 +104,10 @@ This file defines the terminology used for prompting and change requests.
 - Persisted values:
   - active `Tab`
   - selected `Party Filter` dropdown value
-  - selected `Area Filter` value
+  - selected mayor `Area Filter` value
+  - selected council `Area Filter` value
 - On page reload, the previous view is restored.
-- Invalid persisted values are sanitized against current data (unknown party/tab/area values fall back to defaults).
+- If persisted state is invalid (malformed JSON or unknown tab/party/area values), UI state is reset to defaults and the stored client state is cleared.
 
 ### 3.8 Candidate Detail Page
 - Dedicated page per candidate (`candidate.html`).

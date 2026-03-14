@@ -1,8 +1,16 @@
-const state = {
-  data: null,
+const DEFAULT_UI_STATE = Object.freeze({
   activeTab: "mayor",
   selectedParty: "all",
-  selectedArea: "all",
+  selectedAreaMayor: "all",
+  selectedAreaCouncil: "all",
+});
+
+const state = {
+  data: null,
+  activeTab: DEFAULT_UI_STATE.activeTab,
+  selectedParty: DEFAULT_UI_STATE.selectedParty,
+  selectedAreaMayor: DEFAULT_UI_STATE.selectedAreaMayor,
+  selectedAreaCouncil: DEFAULT_UI_STATE.selectedAreaCouncil,
 };
 
 const tabButtons = [...document.querySelectorAll(".tab-button")];
@@ -13,13 +21,32 @@ const councilList = document.getElementById("councilList");
 const partyFilter = document.getElementById("partyFilter");
 const areaSelectMayor = document.getElementById("areaSelectMayor");
 const areaSelectCouncil = document.getElementById("areaSelectCouncil");
-const areaSelects = [areaSelectMayor, areaSelectCouncil].filter(Boolean);
 const UI_STATE_STORAGE_KEY = "kommunalwahl.guiState.v1";
+
+function resetUiState(clearStoredState = true) {
+  state.activeTab = DEFAULT_UI_STATE.activeTab;
+  state.selectedParty = DEFAULT_UI_STATE.selectedParty;
+  state.selectedAreaMayor = DEFAULT_UI_STATE.selectedAreaMayor;
+  state.selectedAreaCouncil = DEFAULT_UI_STATE.selectedAreaCouncil;
+
+  if (clearStoredState) {
+    try {
+      localStorage.removeItem(UI_STATE_STORAGE_KEY);
+    } catch (_error) {
+      // Ignore storage failures (private mode, blocked storage).
+    }
+  }
+}
+
+function getAreaOptions() {
+  return state.data?.areas?.options || [{ key: "all", label: "Alle Stimmen" }];
+}
 
 function persistUiState() {
   const snapshot = {
     activeTab: state.activeTab,
-    selectedArea: state.selectedArea,
+    selectedAreaMayor: state.selectedAreaMayor,
+    selectedAreaCouncil: state.selectedAreaCouncil,
     selectedParty: state.selectedParty,
   };
 
@@ -31,6 +58,8 @@ function persistUiState() {
 }
 
 function restoreUiState() {
+  const validTabs = new Set(tabButtons.map((button) => button.dataset.tab).filter(Boolean));
+
   try {
     const raw = localStorage.getItem(UI_STATE_STORAGE_KEY);
     if (!raw) {
@@ -38,37 +67,44 @@ function restoreUiState() {
     }
 
     const parsed = JSON.parse(raw);
-    const validTabs = new Set(tabButtons.map((button) => button.dataset.tab).filter(Boolean));
+    const isValidSnapshot =
+      typeof parsed?.activeTab === "string" &&
+      validTabs.has(parsed.activeTab) &&
+      typeof parsed?.selectedParty === "string" &&
+      parsed.selectedParty.length > 0 &&
+      typeof parsed?.selectedAreaMayor === "string" &&
+      parsed.selectedAreaMayor.length > 0 &&
+      typeof parsed?.selectedAreaCouncil === "string" &&
+      parsed.selectedAreaCouncil.length > 0;
 
-    if (typeof parsed?.activeTab === "string" && validTabs.has(parsed.activeTab)) {
-      state.activeTab = parsed.activeTab;
+    if (!isValidSnapshot) {
+      resetUiState(true);
+      return;
     }
 
-    if (typeof parsed?.selectedArea === "string" && parsed.selectedArea.length > 0) {
-      state.selectedArea = parsed.selectedArea;
-    }
-
-    if (typeof parsed?.selectedParty === "string" && parsed.selectedParty.length > 0) {
-      state.selectedParty = parsed.selectedParty;
-    } else if (Array.isArray(parsed?.selectedParties) && parsed.selectedParties.length > 0) {
-      // Backward compatibility for older multi-select snapshots.
-      const firstValidParty = parsed.selectedParties.find(
-        (partyName) => typeof partyName === "string" && partyName.length > 0
-      );
-      if (firstValidParty) {
-        state.selectedParty = firstValidParty;
-      }
-    }
+    state.activeTab = parsed.activeTab;
+    state.selectedParty = parsed.selectedParty;
+    state.selectedAreaMayor = parsed.selectedAreaMayor;
+    state.selectedAreaCouncil = parsed.selectedAreaCouncil;
   } catch (_error) {
-    // Ignore malformed saved state.
+    resetUiState(true);
   }
 }
 
-function pruneSelectedParty() {
+function validateUiStateAgainstData() {
+  const validAreaKeys = new Set(getAreaOptions().map((option) => option.key));
   const validPartyNames = new Set((state.data?.council?.parties || []).map((party) => party.name));
-  if (state.selectedParty !== "all" && !validPartyNames.has(state.selectedParty)) {
-    state.selectedParty = "all";
+
+  const hasValidAreas =
+    validAreaKeys.has(state.selectedAreaMayor) && validAreaKeys.has(state.selectedAreaCouncil);
+  const hasValidParty = state.selectedParty === "all" || validPartyNames.has(state.selectedParty);
+
+  if (!hasValidAreas || !hasValidParty) {
+    resetUiState(true);
+    return false;
   }
+
+  return true;
 }
 
 function formatInteger(value) {
@@ -98,18 +134,18 @@ function setActiveTab(tab) {
   persistUiState();
 }
 
-function candidateVotesForArea(candidate) {
-  if (state.selectedArea === "all") {
+function candidateVotesForArea(candidate, areaKey) {
+  if (areaKey === "all") {
     return Number(candidate.votes || 0);
   }
-  return Number(candidate.areaVotes?.[state.selectedArea] || 0);
+  return Number(candidate.areaVotes?.[areaKey] || 0);
 }
 
-function rankedCandidatesForArea(candidates) {
+function rankedCandidatesForArea(candidates, areaKey) {
   const withAreaVotes = candidates.map((candidate) => ({
     ...candidate,
-    votes: candidateVotesForArea(candidate),
-    percent: state.selectedArea === "all" ? candidate.percent : null,
+    votes: candidateVotesForArea(candidate, areaKey),
+    percent: areaKey === "all" ? candidate.percent : null,
   }));
 
   withAreaVotes.sort((left, right) => right.votes - left.votes);
@@ -206,7 +242,7 @@ function renderSummary() {
 function renderMayorList() {
   mayorList.innerHTML = "";
   const candidates = state.data?.mayor?.candidates || [];
-  const ranked = rankedCandidatesForArea(candidates);
+  const ranked = rankedCandidatesForArea(candidates, state.selectedAreaMayor);
 
   if (!ranked.length) {
     mayorList.innerHTML = '<div class="empty-state">Keine Daten für Bürgermeisterkandidaten gefunden.</div>';
@@ -219,31 +255,31 @@ function renderMayorList() {
 }
 
 function renderAreaFilter() {
-  if (!areaSelects.length) {
+  if (!areaSelectMayor && !areaSelectCouncil) {
     return;
   }
 
-  const options = state.data?.areas?.options || [{ key: "all", label: "Alle Stimmen" }];
+  const options = getAreaOptions();
 
-  for (const selectElement of areaSelects) {
+  const fillSelect = (selectElement, selectedValue) => {
+    if (!selectElement) {
+      return;
+    }
+
     selectElement.innerHTML = "";
     for (const option of options) {
       const optionElement = document.createElement("option");
       optionElement.value = option.key;
       optionElement.textContent = option.label;
-      if (option.key === state.selectedArea) {
+      if (option.key === selectedValue) {
         optionElement.selected = true;
       }
       selectElement.appendChild(optionElement);
     }
-  }
+  };
 
-  if (!options.some((option) => option.key === state.selectedArea)) {
-    state.selectedArea = "all";
-    for (const selectElement of areaSelects) {
-      selectElement.value = "all";
-    }
-  }
+  fillSelect(areaSelectMayor, state.selectedAreaMayor);
+  fillSelect(areaSelectCouncil, state.selectedAreaCouncil);
 }
 
 function renderPartyFilter() {
@@ -281,7 +317,7 @@ function renderPartyFilter() {
   selectElement.value = state.selectedParty;
 
   selectElement.addEventListener("change", () => {
-    state.selectedParty = selectElement.value || "all";
+    state.selectedParty = selectElement.value;
     const nextPartyColor = partyMap.get(state.selectedParty)?.color || "transparent";
     wrapper.style.setProperty("--party-dot-color", nextPartyColor);
     persistUiState();
@@ -296,7 +332,7 @@ function renderPartyFilter() {
 function renderCouncilList() {
   councilList.innerHTML = "";
 
-  const allCandidates = rankedCandidatesForArea(state.data?.council?.candidates || []);
+  const allCandidates = rankedCandidatesForArea(state.data?.council?.candidates || [], state.selectedAreaCouncil);
   const partyMap = new Map((state.data?.council?.parties || []).map((party) => [party.name, party]));
   const partyRankCounter = new Map();
   const partyRankByCandidate = new Map();
@@ -336,7 +372,7 @@ async function loadData() {
   }
 
   state.data = await response.json();
-  pruneSelectedParty();
+  validateUiStateAgainstData();
 
   renderSummary();
   renderAreaFilter();
@@ -353,19 +389,18 @@ function attachTabHandlers() {
 }
 
 function attachAreaHandler() {
-  if (!areaSelects.length) {
-    return;
-  }
-
-  for (const selectElement of areaSelects) {
-    selectElement.addEventListener("change", () => {
-      state.selectedArea = selectElement.value || "all";
-      for (const peerSelect of areaSelects) {
-        peerSelect.value = state.selectedArea;
-      }
-
+  if (areaSelectMayor) {
+    areaSelectMayor.addEventListener("change", () => {
+      state.selectedAreaMayor = areaSelectMayor.value;
       persistUiState();
       renderMayorList();
+    });
+  }
+
+  if (areaSelectCouncil) {
+    areaSelectCouncil.addEventListener("change", () => {
+      state.selectedAreaCouncil = areaSelectCouncil.value;
+      persistUiState();
       renderCouncilList();
     });
   }
