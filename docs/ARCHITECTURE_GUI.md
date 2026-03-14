@@ -50,7 +50,7 @@ This file defines the terminology used for prompting and change requests.
 ## 3. GUI Structure and Naming
 
 ### 3.1 Hero
-- Top entry section with title, context, and data timestamp.
+- Top entry section with title and context.
 
 ### 3.2 Summary Cards
 - Three KPI cards:
@@ -67,6 +67,7 @@ This file defines the terminology used for prompting and change requests.
   - Default: `Alle Stimmen`
   - Ortsteil options: one option per `STIMMBEZIRK`
   - `Briefwahl (gesamt)`: aggregate of all brief voting districts
+- Compact pill-style dropdown design.
 - List of all mayor candidates.
 - Each `Candidate Card` displays:
   - `Rank Pill` (rank)
@@ -77,11 +78,14 @@ This file defines the terminology used for prompting and change requests.
   - Click opens the `Candidate Detail Page`
 
 ### 3.5 Council Panel
-- `Party Filter` with chip buttons.
-- `Area Filter` as a dropdown below the party filter.
+- `Area Filter` as a dropdown.
   - Default: `Alle Stimmen`
   - Ortsteil options: one option per `STIMMBEZIRK`
   - `Briefwahl (gesamt)`: aggregate of all brief voting districts
+- `Party Filter` as an exclusive dropdown (`Alle Parteien` + one party).
+  - Includes a colored dot indicator for the selected party.
+- Both dropdowns are placed in one responsive row when space allows.
+- On narrow screens, dropdowns wrap automatically to avoid overflow.
 - Filtered or unfiltered candidate list.
 - Each `Candidate Card` displays:
   - `Rank Pill` (global rank across all council candidates)
@@ -93,16 +97,16 @@ This file defines the terminology used for prompting and change requests.
 ### 3.6 Area Selection Behavior
 - Area selection affects both mayor and council vote values.
 - Rank values are recalculated for the selected area.
-- Party filter is applied after ranking.
+- Party filter selection (if not `Alle Parteien`) is applied after ranking.
 
 ### 3.7 UI State Persistence
 - The frontend stores UI state in `localStorage`.
 - Persisted values:
   - active `Tab`
-  - selected `Party Filter` chips
+  - selected `Party Filter` dropdown value
   - selected `Area Filter` value
 - On page reload, the previous view is restored.
-- Invalid persisted values are sanitized against current data (unknown party names are dropped, unknown tabs/areas fall back to defaults).
+- Invalid persisted values are sanitized against current data (unknown party/tab/area values fall back to defaults).
 
 ### 3.8 Candidate Detail Page
 - Dedicated page per candidate (`candidate.html`).
@@ -123,7 +127,8 @@ Use these terms so requirements stay unambiguous:
 - "Summary Card" = single KPI card
 - "Tab" = Bürgermeister/Stadtrat switch
 - "Panel" = content area of a tab
-- "Party Filter" = chip row in the Stadtrat panel
+- "Party Filter" = party dropdown in the Stadtrat panel
+- "Filter Row" = responsive row containing Party Filter and Area Filter in the Stadtrat panel
 - "Candidate Card" = candidate entry in a list
 - "Rank Pill" = visual rank element inside each Candidate Card
 - "Candidate Detail Page" = dedicated detail view for one candidate

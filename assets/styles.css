@@ -176,15 +176,42 @@ h3 {
     gap: 0.8rem;
 }
 
-.party-filter {
+.filter-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
+    gap: 0.55rem;
+}
+
+.party-filter {
+    display: grid;
+    flex: 1 1 230px;
+    min-width: 200px;
+}
+
+.party-select-wrap {
+    --party-dot-color: transparent;
+    position: relative;
+    width: 100%;
+}
+
+.party-select-dot {
+    position: absolute;
+    left: 0.82rem;
+    top: 50%;
+    width: 0.58rem;
+    height: 0.58rem;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: var(--party-dot-color);
+    border: 1px solid rgba(54, 39, 28, 0.2);
+    pointer-events: none;
 }
 
 .area-filter {
     display: grid;
-    gap: 0.3rem;
+    gap: 0;
+    flex: 1 1 230px;
+    min-width: 200px;
 }
 
 .area-filter-label {
@@ -193,15 +220,37 @@ h3 {
     font-weight: 600;
 }
 
-.area-select {
+.area-select,
+.filter-select {
+    appearance: none;
     width: 100%;
-    border: 1px solid #c7b9a6;
-    border-radius: 10px;
-    padding: 0.5rem 0.65rem;
-    background: #fffaf1;
+    max-width: 100%;
+    border: 1px solid #b8a895;
+    border-radius: 999px;
+    padding: 0.45rem 2rem 0.45rem 0.82rem;
+    background-color: #fff8ee;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #6b4a33 50%),
+        linear-gradient(135deg, #6b4a33 50%, transparent 50%);
+    background-position:
+        calc(100% - 1.1rem) calc(50% - 2px),
+        calc(100% - 0.8rem) calc(50% - 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
     color: #4a3324;
-    font-size: 0.9rem;
+    font-size: 0.83rem;
+    font-weight: 700;
     font-family: "IBM Plex Sans", sans-serif;
+}
+
+.party-select-wrap .filter-select {
+    padding-left: 1.65rem;
+}
+
+.area-select:focus-visible,
+.filter-select:focus-visible {
+    outline: 2px solid #1f2937;
+    outline-offset: 2px;
 }
 
 .filter-chip {
@@ -447,5 +496,14 @@ h3 {
 
     .panel {
         padding: 1.15rem;
+    }
+
+    .area-filter,
+    .party-filter {
+        max-width: 320px;
+    }
+
+    .filter-row {
+        align-items: center;
     }
 }

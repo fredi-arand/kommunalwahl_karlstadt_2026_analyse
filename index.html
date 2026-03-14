@@ -21,12 +21,6 @@
         <header class="hero">
             <p class="eyebrow">Karlstadt • Kommunalwahl 2026</p>
             <h1>Wahlanalyse</h1>
-            <p class="subtitle">
-                Finale Ergebnisse fur Bürgermeisterwahl und Stadtrat.
-            </p>
-            <div class="meta-row">
-                <span id="generatedAt">Lade Daten...</span>
-            </div>
         </header>
 
         <section class="summary-cards" id="summaryCards"></section>
@@ -38,10 +32,8 @@
 
         <section class="panel" data-panel="mayor">
             <h2>Bürgermeisterkandidaten</h2>
-            <p class="panel-hint">Sortiert nach Stimmenzahl, inklusive Rang.</p>
             <div class="area-filter">
-                <label class="area-filter-label" for="areaSelectMayor">Stimmenbereich</label>
-                <select id="areaSelectMayor" class="area-select" aria-label="Stimmenbereich auswählen"></select>
+                <select id="areaSelectMayor" class="area-select" aria-label="Bereich auswählen"></select>
             </div>
             <div class="candidate-list" id="mayorList"></div>
         </section>
@@ -50,12 +42,12 @@
             <div class="panel-header">
                 <div>
                     <h2>Stadtratskandidaten</h2>
-                    <p class="panel-hint">Filter nach Partei und direkte Rangvergleichbarkeit.</p>
                 </div>
-                <div class="party-filter" id="partyFilter"></div>
-                <div class="area-filter">
-                    <label class="area-filter-label" for="areaSelectCouncil">Stimmenbereich</label>
-                    <select id="areaSelectCouncil" class="area-select" aria-label="Stimmenbereich auswählen"></select>
+                <div class="filter-row">
+                    <div class="area-filter">
+                        <select id="areaSelectCouncil" class="area-select" aria-label="Bereich auswählen"></select>
+                    </div>
+                    <div class="party-filter" id="partyFilter"></div>
                 </div>
             </div>
             <div class="candidate-list" id="councilList"></div>

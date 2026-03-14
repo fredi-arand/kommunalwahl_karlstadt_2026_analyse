@@ -1,14 +1,13 @@
 const state = {
   data: null,
   activeTab: "mayor",
-  selectedParties: new Set(),
+  selectedParty: "all",
   selectedArea: "all",
 };
 
 const tabButtons = [...document.querySelectorAll(".tab-button")];
 const panels = [...document.querySelectorAll("[data-panel]")];
 const summaryCards = document.getElementById("summaryCards");
-const generatedAt = document.getElementById("generatedAt");
 const mayorList = document.getElementById("mayorList");
 const councilList = document.getElementById("councilList");
 const partyFilter = document.getElementById("partyFilter");
@@ -21,7 +20,7 @@ function persistUiState() {
   const snapshot = {
     activeTab: state.activeTab,
     selectedArea: state.selectedArea,
-    selectedParties: [...state.selectedParties],
+    selectedParty: state.selectedParty,
   };
 
   try {
@@ -49,21 +48,27 @@ function restoreUiState() {
       state.selectedArea = parsed.selectedArea;
     }
 
-    if (Array.isArray(parsed?.selectedParties)) {
-      state.selectedParties = new Set(
-        parsed.selectedParties.filter((partyName) => typeof partyName === "string" && partyName.length > 0)
+    if (typeof parsed?.selectedParty === "string" && parsed.selectedParty.length > 0) {
+      state.selectedParty = parsed.selectedParty;
+    } else if (Array.isArray(parsed?.selectedParties) && parsed.selectedParties.length > 0) {
+      // Backward compatibility for older multi-select snapshots.
+      const firstValidParty = parsed.selectedParties.find(
+        (partyName) => typeof partyName === "string" && partyName.length > 0
       );
+      if (firstValidParty) {
+        state.selectedParty = firstValidParty;
+      }
     }
   } catch (_error) {
     // Ignore malformed saved state.
   }
 }
 
-function pruneSelectedParties() {
+function pruneSelectedParty() {
   const validPartyNames = new Set((state.data?.council?.parties || []).map((party) => party.name));
-  state.selectedParties = new Set(
-    [...state.selectedParties].filter((partyName) => validPartyNames.has(partyName))
-  );
+  if (state.selectedParty !== "all" && !validPartyNames.has(state.selectedParty)) {
+    state.selectedParty = "all";
+  }
 }
 
 function formatInteger(value) {
@@ -78,21 +83,6 @@ function formatPercent(value) {
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   })} %`;
-}
-
-function formatGeneratedAt(isoText) {
-  if (!isoText) {
-    return "Stand: unbekannt";
-  }
-  const date = new Date(isoText);
-  return `Stand: ${date.toLocaleString("de-DE", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "Europe/Berlin",
-  })}`;
 }
 
 function setActiveTab(tab) {
@@ -254,35 +244,48 @@ function renderAreaFilter() {
 function renderPartyFilter() {
   partyFilter.innerHTML = "";
   const parties = state.data?.council?.parties || [];
+  const partyMap = new Map(parties.map((party) => [party.name, party]));
+  const selectedPartyColor = partyMap.get(state.selectedParty)?.color || "transparent";
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "party-select-wrap";
+  wrapper.style.setProperty("--party-dot-color", selectedPartyColor);
+
+  const dot = document.createElement("span");
+  dot.className = "party-select-dot";
+  dot.setAttribute("aria-hidden", "true");
+
+  const selectElement = document.createElement("select");
+  selectElement.className = "filter-select";
+  selectElement.setAttribute("aria-label", "Partei auswählen");
+
+  const allOption = document.createElement("option");
+  allOption.value = "all";
+  allOption.textContent = "Alle Parteien";
+  selectElement.appendChild(allOption);
 
   for (const party of parties) {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "filter-chip";
+    const option = document.createElement("option");
+    option.value = party.name;
     const seats = Number(party.seats || 0);
     const seatLabel = seats === 1 ? "Stadtrat" : "Stadträte";
-    button.textContent = `${party.name} (${formatInteger(seats)} ${seatLabel})`;
-
-    const selected = state.selectedParties.has(party.name);
-    if (selected) {
-      button.classList.add("is-selected");
-      button.style.backgroundColor = party.color;
-    }
-
-    button.addEventListener("click", () => {
-      if (state.selectedParties.has(party.name)) {
-        state.selectedParties.delete(party.name);
-      } else {
-        state.selectedParties.add(party.name);
-      }
-
-      persistUiState();
-      renderPartyFilter();
-      renderCouncilList();
-    });
-
-    partyFilter.appendChild(button);
+    option.textContent = `${party.name} (${formatInteger(seats)} ${seatLabel})`;
+    selectElement.appendChild(option);
   }
+
+  selectElement.value = state.selectedParty;
+
+  selectElement.addEventListener("change", () => {
+    state.selectedParty = selectElement.value || "all";
+    const nextPartyColor = partyMap.get(state.selectedParty)?.color || "transparent";
+    wrapper.style.setProperty("--party-dot-color", nextPartyColor);
+    persistUiState();
+    renderCouncilList();
+  });
+
+  wrapper.appendChild(dot);
+  wrapper.appendChild(selectElement);
+  partyFilter.appendChild(wrapper);
 }
 
 function renderCouncilList() {
@@ -292,9 +295,9 @@ function renderCouncilList() {
   const partyMap = new Map((state.data?.council?.parties || []).map((party) => [party.name, party]));
 
   const visibleCandidates =
-    state.selectedParties.size === 0
+    state.selectedParty === "all"
       ? allCandidates
-      : allCandidates.filter((candidate) => state.selectedParties.has(candidate.party));
+      : allCandidates.filter((candidate) => candidate.party === state.selectedParty);
 
   if (!visibleCandidates.length) {
     councilList.innerHTML = '<div class="empty-state">Keine Kandidaten für die gewählten Parteien.</div>';
@@ -319,8 +322,7 @@ async function loadData() {
   }
 
   state.data = await response.json();
-  pruneSelectedParties();
-  generatedAt.textContent = formatGeneratedAt(state.data?.meta?.generatedAt);
+  pruneSelectedParty();
 
   renderSummary();
   renderAreaFilter();
