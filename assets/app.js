@@ -163,6 +163,14 @@ function addViewPercentages(candidates) {
   }));
 }
 
+function getRankPillLabel(areaKey) {
+  if (areaKey === "all") {
+    return "Gesamt";
+  }
+  const option = getAreaOptions().find((opt) => opt.key === areaKey);
+  return option?.label || areaKey;
+}
+
 function buildCandidateHref(candidate, scope) {
   const params = new URLSearchParams({
     scope,
@@ -188,10 +196,13 @@ function createCandidateCard(candidate, options = {}) {
       ? candidate.party
       : `${candidate.party}: ${options.partyRank}`;
 
+  // \u00a0 is a non-breaking space to keep the label and number on one line inside the pill.
+  const rankText = options.rankLabel !== undefined ? `${options.rankLabel}:\u00a0${candidate.rank}` : candidate.rank;
+
   card.innerHTML = `
     <div class="candidate-main">
       <div class="name-line">
-        <span class="rank-pill">${candidate.rank}</span>
+        <span class="rank-pill">${rankText}</span>
         <h3 class="candidate-name">${candidate.name}</h3>
       </div>
       <p class="candidate-party">${partyText}</p>
@@ -252,7 +263,7 @@ function renderMayorList() {
   }
 
   for (const candidate of ranked) {
-    mayorList.appendChild(createCandidateCard(candidate, { scope: "mayor" }));
+    mayorList.appendChild(createCandidateCard(candidate, { scope: "mayor", rankLabel: getRankPillLabel(state.selectedAreaMayor) }));
   }
 }
 
@@ -364,6 +375,7 @@ function renderCouncilList() {
         color: partyInfo?.color,
         scope: "council",
         partyRank: partyRankByCandidate.get(`${candidate.party}::${candidate.name}`),
+        rankLabel: getRankPillLabel(state.selectedAreaCouncil),
       })
     );
   }

@@ -325,6 +325,7 @@ h3 {
     padding: 0.23rem 0.5rem;
     background: var(--accent-soft);
     color: #8a2a00;
+    white-space: nowrap;
 }
 
 .candidate-name {
