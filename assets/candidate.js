@@ -176,10 +176,25 @@ function sortAreaPerformanceByRank(areaPerformance) {
   });
 }
 
-function renderKpis(candidate, candidateCount) {
+function buildPartyRankByIdentity(candidates, areaKey = "all") {
+  const ranked = sortCandidatesByArea(candidates, areaKey);
+  const partyRankByIdentity = new Map();
+  const partyCounter = new Map();
+
+  for (const rankedCandidate of ranked) {
+    const partyName = rankedCandidate.party || "Unabhängig";
+    const nextPartyRank = (partyCounter.get(partyName) || 0) + 1;
+    partyCounter.set(partyName, nextPartyRank);
+    partyRankByIdentity.set(candidateIdentity(rankedCandidate), nextPartyRank);
+  }
+
+  return partyRankByIdentity;
+}
+
+function renderKpis(candidate, candidateCount, scope, partyRankAllAreas) {
   const items = [
     {
-      label: "Gesamtrang",
+      label: "Gesamt",
       value: `#${formatInteger(candidate.rank)}`,
     },
     {
@@ -191,6 +206,13 @@ function renderKpis(candidate, candidateCount) {
       value: formatInteger(candidateCount),
     },
   ];
+
+  if (scope === "council" && Number.isFinite(Number(partyRankAllAreas))) {
+    items.push({
+      label: `${candidate.party || "Unabhängig"}`,
+      value: `#${formatInteger(partyRankAllAreas)}`,
+    });
+  }
 
   if (candidate.percent !== null && candidate.percent !== undefined) {
     items.push({
@@ -373,6 +395,8 @@ async function bootstrap() {
 
     const areaOptions = data?.areas?.options || [{ key: "all", label: "Alle Stimmen" }];
     const areaPerformanceOptions = areaOptions.filter((option) => option?.key && option.key !== "all");
+    const partyRankByIdentityAllAreas = buildPartyRankByIdentity(baseCandidates, "all");
+    const partyRankAllAreas = partyRankByIdentityAllAreas.get(candidateIdentity(candidate)) || null;
 
     const areaPerformance = buildAreaPerformance(candidate, baseCandidates, areaPerformanceOptions);
     const rankedAreas = sortAreaPerformanceByRank(areaPerformance);
@@ -388,7 +412,7 @@ async function bootstrap() {
         : headerPartyName;
     generatedAtLabel.textContent = formatGeneratedAt(data?.meta?.generatedAt);
 
-    renderKpis(candidate, baseCandidates.length);
+    renderKpis(candidate, baseCandidates.length, scope, partyRankAllAreas);
     renderAreaRanking(areaRanksContainer, rankedAreas, scope);
   } catch (error) {
     showError(error.message || "Fehler beim Laden der Kandidatendaten.");
