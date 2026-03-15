@@ -310,23 +310,6 @@ h3 {
     min-width: 0;
 }
 
-.name-line {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.rank-pill {
-    min-width: 2.35rem;
-    text-align: center;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 800;
-    padding: 0.23rem 0.5rem;
-    background: var(--accent-soft);
-    color: #8a2a00;
-}
-
 .candidate-name {
     margin: 0;
     font-weight: 700;
