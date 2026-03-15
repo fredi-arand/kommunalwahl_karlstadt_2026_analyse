@@ -167,9 +167,6 @@ function getRankPillLabel(areaKey) {
   if (areaKey === "all") {
     return "Gesamt";
   }
-  if (areaKey === "briefwahl-gesamt") {
-    return "Briefwahl";
-  }
   const option = getAreaOptions().find((opt) => opt.key === areaKey);
   return option?.label || areaKey;
 }
@@ -194,21 +191,21 @@ function createCandidateCard(candidate, options = {}) {
   card.setAttribute("aria-label", `Details für ${candidate.name} öffnen`);
   card.style.borderLeftColor = options.color || "#b9a999";
 
-  const partyText =
+  // \u00a0 is a non-breaking space; \u00b7 is the middle dot separator.
+  const partyBase =
     options.partyRank === null || options.partyRank === undefined
       ? candidate.party
-      : `${candidate.party}: ${options.partyRank}`;
+      : `${candidate.party}:\u00a0${options.partyRank}`;
 
-  // \u00a0 is a non-breaking space to keep the label and number on one line inside the pill.
-  const rankText = options.rankLabel !== undefined ? `${options.rankLabel}:\u00a0${candidate.rank}` : candidate.rank;
+  const subtitle =
+    options.rankLabel !== undefined
+      ? `${options.rankLabel}:\u00a0${candidate.rank}\u00a0\u00b7\u00a0${partyBase}`
+      : partyBase;
 
   card.innerHTML = `
     <div class="candidate-main">
-      <div class="name-line">
-        <span class="rank-pill">${rankText}</span>
-        <h3 class="candidate-name">${candidate.name}</h3>
-      </div>
-      <p class="candidate-party">${partyText}</p>
+      <h3 class="candidate-name">${candidate.name}</h3>
+      <p class="candidate-party">${subtitle}</p>
     </div>
     <div class="vote-column">
       <p class="vote-value">${formatInteger(candidate.votes)}</p>

@@ -198,7 +198,7 @@ def build_area_options(area_rows: list[dict[str, Any]]) -> list[dict[str, str]]:
         )
 
     if any(area["type"] == "BRIEFWAHLBEZIRK" for area in area_rows):
-        options.append({"key": "briefwahl-gesamt", "label": "Briefwahl (gesamt)"})
+        options.append({"key": "briefwahl-gesamt", "label": "Briefwahl"})
 
     return options
 
