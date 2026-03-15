@@ -6,6 +6,8 @@ const partyLabel = document.getElementById("candidateParty");
 const generatedAtLabel = document.getElementById("candidateGeneratedAt");
 const kpiContainer = document.getElementById("candidateKpis");
 const areaRanksContainer = document.getElementById("areaRanks");
+const similarCandidatesSection = document.getElementById("similarCandidatesSection");
+const similarCandidatesContainer = document.getElementById("similarCandidates");
 const backLink = document.getElementById("backToOverview");
 const candidateError = document.getElementById("candidateError");
 const candidateContent = [...document.querySelectorAll(".candidate-content")];
@@ -174,6 +176,137 @@ function sortAreaPerformanceByRank(areaPerformance) {
     }
     return right.votes - left.votes;
   });
+}
+
+function collectAreaKeysForSimilarity(candidates) {
+  const keys = new Set();
+  for (const candidate of candidates) {
+    const areaVotes = candidate?.areaVotes || {};
+    for (const areaKey of Object.keys(areaVotes)) {
+      keys.add(areaKey);
+    }
+  }
+  return [...keys].sort((left, right) => left.localeCompare(right, "de"));
+}
+
+function buildAreaVoteVector(candidate, areaKeys) {
+  return areaKeys.map((areaKey) => Number(candidate?.areaVotes?.[areaKey] || 0));
+}
+
+function cosineSimilarity(vectorA, vectorB) {
+  let dotProduct = 0;
+  let magnitudeA = 0;
+  let magnitudeB = 0;
+
+  for (let index = 0; index < vectorA.length; index += 1) {
+    const valueA = Number(vectorA[index] || 0);
+    const valueB = Number(vectorB[index] || 0);
+    dotProduct += valueA * valueB;
+    magnitudeA += valueA * valueA;
+    magnitudeB += valueB * valueB;
+  }
+
+  if (magnitudeA === 0 || magnitudeB === 0) {
+    return 0;
+  }
+
+  return dotProduct / (Math.sqrt(magnitudeA) * Math.sqrt(magnitudeB));
+}
+
+function buildSimilarCandidates(targetCandidate, candidates, maxItems = 10) {
+  const areaKeys = collectAreaKeysForSimilarity(candidates);
+  const targetVector = buildAreaVoteVector(targetCandidate, areaKeys);
+  const targetKey = candidateIdentity(targetCandidate);
+
+  const rankedCandidates = candidates
+    .filter((candidate) => candidateIdentity(candidate) !== targetKey)
+    .map((candidate) => {
+      const similarity = cosineSimilarity(targetVector, buildAreaVoteVector(candidate, areaKeys));
+      const cosineDistance = 1 - similarity;
+      return {
+        ...candidate,
+        similarity,
+        cosineDistance,
+      };
+    })
+    .sort((left, right) => {
+      const similarityDiff = right.similarity - left.similarity;
+      if (similarityDiff !== 0) {
+        return similarityDiff;
+      }
+
+      const voteDiff = Number(right.votes || 0) - Number(left.votes || 0);
+      if (voteDiff !== 0) {
+        return voteDiff;
+      }
+
+      return (left.name || "").localeCompare(right.name || "", "de");
+    })
+    .slice(0, maxItems);
+
+  console.table(
+    rankedCandidates.map((candidate) => ({
+      name: candidate.name,
+      party: candidate.party,
+      cosineSimilarity: Number(candidate.similarity.toFixed(6)),
+      oneMinusCosineSimilarity: Number(candidate.cosineDistance.toFixed(6)),
+    }))
+  );
+
+  return rankedCandidates;
+}
+
+function formatSimilarity(value) {
+  return Number(value || 0).toLocaleString("de-DE", {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  });
+}
+
+function candidateDetailHref(scope, candidate) {
+  const query = new URLSearchParams({
+    scope,
+    name: candidate.name || "",
+    party: candidate.party || "",
+  });
+  return `candidate.html?${query.toString()}`;
+}
+
+function renderSimilarCandidates(container, entries, scope) {
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = "";
+
+  if (!entries.length) {
+    container.innerHTML = '<div class="empty-state">Keine ähnlichen Kandidaten gefunden.</div>';
+    return;
+  }
+
+  for (const entry of entries) {
+    const rowLink = document.createElement("a");
+    rowLink.className = "area-rank-row area-rank-row-clickable similar-candidate-link";
+    rowLink.href = candidateDetailHref(scope, entry);
+    rowLink.setAttribute("aria-label", `${entry.name} öffnen`);
+
+    const main = document.createElement("div");
+    main.className = "area-rank-main";
+
+    const title = document.createElement("h3");
+    title.className = "area-rank-title";
+    title.textContent = entry.name || "Unbekannt";
+
+    const subtitle = document.createElement("p");
+    subtitle.className = "area-rank-subtitle";
+    subtitle.textContent = `${entry.party || "Unabhängig"} • Gesamt #${formatInteger(entry.rank)}`;
+
+    main.appendChild(title);
+    main.appendChild(subtitle);
+
+    rowLink.appendChild(main);
+    container.appendChild(rowLink);
+  }
 }
 
 function buildPartyRankByIdentity(candidates, areaKey = "all") {
@@ -382,6 +515,10 @@ async function bootstrap() {
     return;
   }
 
+  if (similarCandidatesSection) {
+    similarCandidatesSection.hidden = scope !== "council";
+  }
+
   primeBackNavigation(scope);
 
   try {
@@ -414,6 +551,12 @@ async function bootstrap() {
 
     renderKpis(candidate, baseCandidates.length, scope, partyRankAllAreas);
     renderAreaRanking(areaRanksContainer, rankedAreas, scope);
+
+    if (scope === "council" && similarCandidatesContainer && similarCandidatesSection) {
+      const similarCandidates = buildSimilarCandidates(candidate, baseCandidates, 10);
+      similarCandidatesSection.hidden = false;
+      renderSimilarCandidates(similarCandidatesContainer, similarCandidates, scope);
+    }
   } catch (error) {
     showError(error.message || "Fehler beim Laden der Kandidatendaten.");
   }
