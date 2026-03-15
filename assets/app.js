@@ -167,6 +167,9 @@ function getRankPillLabel(areaKey) {
   if (areaKey === "all") {
     return "Gesamt";
   }
+  if (areaKey === "briefwahl-gesamt") {
+    return "Briefwahl";
+  }
   const option = getAreaOptions().find((opt) => opt.key === areaKey);
   return option?.label || areaKey;
 }
@@ -209,7 +212,7 @@ function createCandidateCard(candidate, options = {}) {
     </div>
     <div class="vote-column">
       <p class="vote-value">${formatInteger(candidate.votes)}</p>
-      <p class="vote-label">Stimmen (${formatPercent(candidate.percent)})</p>
+      <p class="vote-label">(${formatPercent(candidate.percent)})</p>
     </div>
   `;
 
