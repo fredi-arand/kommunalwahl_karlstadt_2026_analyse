@@ -324,19 +324,15 @@ function buildPartyRankByIdentity(candidates, areaKey = "all") {
   return partyRankByIdentity;
 }
 
-function renderKpis(candidate, candidateCount, scope, partyRankAllAreas) {
+function renderKpis(candidate, scope, partyRankAllAreas) {
   const items = [
-    {
-      label: "Gesamt",
-      value: `#${formatInteger(candidate.rank)}`,
-    },
     {
       label: "Stimmen gesamt",
       value: formatInteger(candidate.votes),
     },
     {
-      label: "Kandidaten gesamt",
-      value: formatInteger(candidateCount),
+      label: "Gesamt",
+      value: `#${formatInteger(candidate.rank)}`,
     },
   ];
 
@@ -549,7 +545,7 @@ async function bootstrap() {
         : headerPartyName;
     generatedAtLabel.textContent = formatGeneratedAt(data?.meta?.generatedAt);
 
-    renderKpis(candidate, baseCandidates.length, scope, partyRankAllAreas);
+    renderKpis(candidate, scope, partyRankAllAreas);
     renderAreaRanking(areaRanksContainer, rankedAreas, scope);
 
     if (scope === "council" && similarCandidatesContainer && similarCandidatesSection) {
