@@ -114,7 +114,7 @@ This file defines the terminology used for prompting and change requests.
 - Dedicated page per candidate (`candidate.html`).
 - Contains:
   - Candidate name and party (for council: includes `Listenplatz` in header subtitle)
-  - `Gesamtrang` (total rank)
+  - `Gesamt` (total rank)
   - Full Ortsteil list sorted by candidate rank
 - Ortsteil comparison uses `areas.options` except `all`.
 - `Briefwahl (gesamt)` is treated as one single comparison area.
