@@ -155,6 +155,7 @@ function buildAreaPerformance(candidate, candidates, areaOptions) {
       key: option.key,
       label: option.label,
       party: candidate.party || "Unabhängig",
+      listPosition: candidate.id,
       votes: votesByIdentity.get(targetIdentity) || 0,
       percent: percentByIdentity.get(targetIdentity) || 0,
       rank: rankByIdentity.get(targetIdentity) || candidates.length,
@@ -324,6 +325,20 @@ function buildPartyRankByIdentity(candidates, areaKey = "all") {
   return partyRankByIdentity;
 }
 
+function parsePositiveRank(value) {
+  const numericValue = Number(value);
+  return Number.isFinite(numericValue) && numericValue > 0 ? numericValue : null;
+}
+
+function formatCouncilListPosition(partyRank, listPosition) {
+  const normalizedListPosition = parsePositiveRank(listPosition);
+  if (normalizedListPosition === null) {
+    return "";
+  }
+
+  return ` (${formatInteger(normalizedListPosition)})`;
+}
+
 function renderKpis(candidate, scope, partyRankAllAreas) {
   const items = [
     {
@@ -443,7 +458,10 @@ function renderAreaRanking(container, entries, scope) {
 
     const subtitle = document.createElement("p");
     subtitle.className = "area-rank-subtitle";
-    subtitle.textContent = `Gesamt: ${entry.rank}, ${entry.party}: ${entry.partyRank}`;
+    subtitle.textContent =
+      scope === "council"
+        ? `Gesamt: ${formatInteger(entry.rank)} ${entry.party}: ${formatInteger(entry.partyRank)}${formatCouncilListPosition(entry.partyRank, entry.listPosition)}`
+        : `Gesamt: ${formatInteger(entry.rank)}, ${entry.party}: ${formatInteger(entry.partyRank)}`;
 
     main.appendChild(title);
     main.appendChild(subtitle);

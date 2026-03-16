@@ -184,6 +184,20 @@ function buildCandidateHref(candidate, scope) {
   return `candidate.html?${params.toString()}`;
 }
 
+function parsePositiveRank(value) {
+  const numericValue = Number(value);
+  return Number.isFinite(numericValue) && numericValue > 0 ? numericValue : null;
+}
+
+function formatCouncilListPosition(partyRank, listPosition) {
+  const normalizedListPosition = parsePositiveRank(listPosition);
+  if (normalizedListPosition === null) {
+    return "";
+  }
+
+  return ` (${formatInteger(normalizedListPosition)})`;
+}
+
 function createCandidateCard(candidate, options = {}) {
   const card = document.createElement("a");
   card.className = "candidate-card candidate-card-link";
@@ -191,15 +205,22 @@ function createCandidateCard(candidate, options = {}) {
   card.setAttribute("aria-label", `Details für ${candidate.name} öffnen`);
   card.style.borderLeftColor = options.color || "#b9a999";
 
-  // \u00a0 is a non-breaking space; \u00b7 is the middle dot separator.
+  // \u00a0 is a non-breaking space; council cards use a compact separator to save width.
+  const partyName = candidate.party || "Unabhängig";
+  const listPositionLabel =
+    options.scope === "council" && options.partyRank !== null && options.partyRank !== undefined
+      ? formatCouncilListPosition(options.partyRank, options.listPosition)
+      : "";
   const partyBase =
     options.partyRank === null || options.partyRank === undefined
-      ? candidate.party
-      : `${candidate.party}:\u00a0${options.partyRank}`;
+      ? partyName
+      : `${partyName}:\u00a0${options.partyRank}${listPositionLabel}`;
+
+  const rankSeparator = options.scope === "council" ? "\u00a0" : "\u00a0\u00b7\u00a0";
 
   const subtitle =
     options.rankLabel !== undefined
-      ? `${options.rankLabel}:\u00a0${candidate.rank}\u00a0\u00b7\u00a0${partyBase}`
+      ? `${options.rankLabel}:\u00a0${candidate.rank}${rankSeparator}${partyBase}`
       : partyBase;
 
   card.innerHTML = `
@@ -375,6 +396,7 @@ function renderCouncilList() {
         color: partyInfo?.color,
         scope: "council",
         partyRank: partyRankByCandidate.get(`${candidate.party}::${candidate.name}`),
+        listPosition: candidate.id,
         rankLabel: getRankPillLabel(state.selectedAreaCouncil),
       })
     );
